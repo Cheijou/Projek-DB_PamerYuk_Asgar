@@ -16,5 +16,12 @@ namespace PamerYuk_Asgar
         {
             InitializeComponent();
         }
+
+        private void buttonRegister_Click(object sender, EventArgs e)
+        {
+            FormRegister form = new FormRegister();
+            form.Owner = this;
+            form.ShowDialog();
+        }
     }
 }
