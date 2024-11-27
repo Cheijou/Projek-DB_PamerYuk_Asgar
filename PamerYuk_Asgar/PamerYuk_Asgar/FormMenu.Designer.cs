@@ -1,6 +1,6 @@
 ﻿namespace PamerYuk_Asgar
 {
-    partial class Form1
+    partial class FormMenu
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // FormMenu
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Name = "FormMenu";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.FormMenu_Load);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
