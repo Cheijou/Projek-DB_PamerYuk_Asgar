@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Class_PamerYuk
 {
-    internal class Konten
+    public class Konten
     {
     }
 }
