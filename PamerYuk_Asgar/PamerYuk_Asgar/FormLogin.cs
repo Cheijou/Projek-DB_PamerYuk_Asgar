@@ -23,5 +23,10 @@ namespace PamerYuk_Asgar
             form.Owner = this;
             form.ShowDialog();
         }
+
+        private void FormLogin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -16,5 +16,10 @@ namespace PamerYuk_Asgar
         {
             InitializeComponent();
         }
+
+        private void FormRegister_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
