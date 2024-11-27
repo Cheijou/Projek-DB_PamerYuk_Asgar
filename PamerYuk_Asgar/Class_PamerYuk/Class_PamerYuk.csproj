@@ -45,8 +45,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="KisahHidup.cs" />
+    <Compile Include="Komen.cs" />
     <Compile Include="Koneksi.cs" />
+    <Compile Include="Konten.cs" />
+    <Compile Include="Organisasi.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tag.cs" />
+    <Compile Include="Teman.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
