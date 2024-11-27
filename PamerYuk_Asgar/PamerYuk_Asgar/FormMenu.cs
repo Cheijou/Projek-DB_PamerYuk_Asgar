@@ -23,8 +23,15 @@ namespace PamerYuk_Asgar
             this.IsMdiContainer = true;
             try
             {
-                Koneksi koneksi = new Koneksi();
-                MessageBox.Show("Berhasil cuy", "Informasi");
+                FormLogin frm = new FormLogin();
+                frm.Owner = this;
+                this.Visible = false;
+                frm.ShowDialog();
+                if (userLogin != null)
+                {
+                    Koneksi koneksi = new Koneksi();
+                    MessageBox.Show("Berhasil cuy", "Informasi");
+                }
             }
             catch (Exception ex) 
             {
