@@ -24,7 +24,7 @@ namespace PamerYuk_Asgar
             try
             {
                 Koneksi koneksi = new Koneksi();
-                MessageBox.Show("Berhasil", "Informasi");
+                MessageBox.Show("Berhasil cuy", "Informasi");
             }
             catch (Exception ex) 
             {
