@@ -67,13 +67,11 @@ namespace Class_PamerYuk
                 tampung.Foto = hasil.GetValue(2).ToString();
                 tampung.Video= hasil.GetValue(3).ToString();
                 tampung.TglUpload = DateTime.Parse(hasil.GetValue(4).ToString());
-                
-                //User user = new User();
-                //user.Username = hasil.GetValue(5).ToString();
-                //user.Password = hasil.GetValue(6).ToString();
-                //user.TglLahir = DateTime.Parse(hasil.GetValue(7).ToString());
-
-                tampung.User = user;
+                tampung.User.Username = hasil.GetValue(5).ToString();
+                tampung.User.Password = "";
+                tampung.User.TglLahir = DateTime.Parse(hasil.GetValue(7).ToString());
+                tampung.User.NoKtp = hasil.GetValue(8).ToString();
+                tampung.User.Foto = hasil.GetValue(9).ToString();
                 ListData.Add(tampung);
             }
             return ListData;
