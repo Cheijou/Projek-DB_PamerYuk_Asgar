@@ -54,7 +54,7 @@ namespace Class_PamerYuk
         #region Method 
         public static List<Konten> BacaData()
         {
-            string perintah = "select k.* from konten k inner join user u on ";
+            string perintah = "select k.* from konten k inner join user u on u.username = k.username";
 
             MySqlDataReader hasil = Koneksi.JalankanPerintahSelect(perintah);
 
