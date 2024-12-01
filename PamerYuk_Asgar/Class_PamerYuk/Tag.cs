@@ -8,5 +8,33 @@ namespace Class_PamerYuk
 {
     public class Tag
     {
+        #region Data Member
+        private Konten konten;
+        private User user;
+
+
+        #endregion
+
+        #region Constructor
+        public Tag(Konten konten, User user)
+        {
+            this.Konten = konten;
+            this.User = user;
+        }
+
+        public Tag()
+        {
+            this.Konten = new Konten();
+            this.User = new User();
+        }
+        #endregion
+
+        #region Properties
+        public Konten Konten { get => konten; set => konten = value; }
+        public User User { get => user; set => user = value; }
+        #endregion
+
+        #region Method 
+        #endregion
     }
 }

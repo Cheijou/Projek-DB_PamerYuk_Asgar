@@ -8,5 +8,16 @@ namespace Class_PamerYuk
 {
     public class Teman
     {
+        #region Data Member
+        #endregion
+
+        #region Constructor
+        #endregion
+
+        #region Properties
+        #endregion
+
+        #region Method 
+        #endregion
     }
 }
