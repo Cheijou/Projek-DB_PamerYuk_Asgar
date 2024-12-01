@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -40,6 +41,27 @@ namespace Class_PamerYuk
         #endregion
 
         #region Method 
+        public static List<Organisasi> BacaData()
+        {
+            string perintah = "select o.*, k.nama from organisasi inner join kota k on o.Kota_id = k.id";
+
+            MySqlDataReader hasil = Koneksi.JalankanPerintahSelect(perintah);
+
+            List<Organisasi> ListData = new List<Organisasi>();
+            while (hasil.Read() == true)
+            {
+                Organisasi tampung = new Organisasi();
+                tampung.Id = int.Parse(hasil.GetValue(0).ToString());
+                tampung.Nama = hasil.GetValue(1).ToString();
+                Kota kota = new Kota();
+                kota.Id = int.Parse(hasil.GetValue(2).ToString());
+                kota.Nama = hasil.GetValue(3).ToString();
+                tampung.Kota = kota;
+                ListData.Add(tampung);
+            }
+            return ListData;
+
+        }
         #endregion
     }
 }

@@ -51,8 +51,8 @@ namespace Class_PamerYuk
             }
             return ListData;
 
-            #endregion
         }
+        #endregion
     }
 }
 
