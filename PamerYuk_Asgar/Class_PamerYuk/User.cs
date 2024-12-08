@@ -96,6 +96,30 @@ namespace Class_PamerYuk
             }
             return listPengguna;
         }
+
+        public static void TambahData(User objekTambah)
+        {
+            //kurang foto
+            string perintah = "INSERT INTO User (username, password, tglLahir, noKTP, Kota_id) VALUES ('"+ objekTambah.Username + "', '" +objekTambah.Password + "', '" + objekTambah.tglLahir 
+                + "', '" + objekTambah.noKtp + "', '" + objekTambah.Kota.Id + "');";
+
+            Koneksi.JalankanPerintahNonQuery(perintah);
+        }
+
+        public static void UpdateData(User objekUbah)
+        {
+            string perintah = "UPDATE User SET Username ='"+ objekUbah.Username + "' ,tglLahir='" + objekUbah.TglLahir + "' ,Kota_id ='" + objekUbah.Kota.Id 
+               /* +"' ,foto='" + objekUbah.Foto*/ +"' WHERE username='" + objekUbah.username + "';";
+
+            Koneksi.JalankanPerintahNonQuery(perintah);
+        }
+
+        public static void UpdatePasword(User objekUbah)
+        {
+            string perintah = "UPDATE User SET password='" + objekUbah.Password + "' WHERE username='" + objekUbah.username + "';";
+
+            Koneksi.JalankanPerintahNonQuery(perintah);
+        }
         #endregion
     }
 }
