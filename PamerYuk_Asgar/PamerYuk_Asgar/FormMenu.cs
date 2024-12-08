@@ -13,7 +13,7 @@ namespace PamerYuk_Asgar
 {
     public partial class FormMenu : Form
     {
-        User userLogin;
+        public User userLogin;
         public FormMenu()
         {
             InitializeComponent();
@@ -22,6 +22,15 @@ namespace PamerYuk_Asgar
         private void FormMenu_Load(object sender, EventArgs e)
         {
             this.IsMdiContainer = true;
+            this.Visible = false;
+            buttonEditProfil.Visible = false;
+            buttonCariTeman.Visible = false;
+            buttonChat.Visible = false;
+            buttonKonten.Visible = false;
+            buttonEditProfil.Enabled = false;
+            buttonCariTeman.Enabled = false;
+            buttonChat.Enabled = false;
+            buttonKonten.Enabled = false;
             try
             {
                 FormLogin frm = new FormLogin();
@@ -31,13 +40,34 @@ namespace PamerYuk_Asgar
                 if (userLogin != null)
                 {
                     Koneksi koneksi = new Koneksi();
-                    MessageBox.Show("Berhasil cuy", "Informasi");
+                    MessageBox.Show("Selamat datang "+ userLogin.Username,"Welcome");
                 }
+                
             }
             catch (Exception ex) 
             {
                 MessageBox.Show("error"+ex.Message);    
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonMulai_Click(object sender, EventArgs e)
+        {
+            label1.Visible = false;
+            buttonMulai.Enabled = false;
+            buttonMulai.Visible = false;
+            buttonEditProfil.Visible = true;
+            buttonCariTeman.Visible = true;
+            buttonChat.Visible = true;
+            buttonKonten.Visible = true;
+            buttonEditProfil.Enabled = true;
+            buttonCariTeman.Enabled = true;
+            buttonChat.Enabled = true;
+            buttonKonten.Enabled = true;
         }
     }
 }

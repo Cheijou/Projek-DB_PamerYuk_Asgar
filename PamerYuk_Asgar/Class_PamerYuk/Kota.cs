@@ -35,10 +35,13 @@ namespace Class_PamerYuk
         #endregion
 
         #region Method 
-        public static List<Kota> BacaData()
+        public static List<Kota> BacaData(string filter = "", string nilai = "")
         {
-            string perintah = "select k.* from kota";
-
+            string perintah = "select k.* from kota k";
+            if (filter != "")
+            {
+                perintah += " where " + filter + " like '%" + nilai + "%'";
+            }
             MySqlDataReader hasil = Koneksi.JalankanPerintahSelect(perintah);
 
             List<Kota> ListData = new List<Kota>();

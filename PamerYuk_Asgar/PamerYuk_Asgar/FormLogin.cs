@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Class_PamerYuk;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,8 +21,35 @@ namespace PamerYuk_Asgar
         private void buttonRegister_Click(object sender, EventArgs e)
         {
             FormRegister form = new FormRegister();
-            form.Owner = this;
+            form.MdiParent = this;
             form.ShowDialog();
+        }
+
+        private void FormLogin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonLogin_Click(object sender, EventArgs e)
+        {
+            FormMenu formParent = (FormMenu)this.Owner;
+            string uid = textBoxUsername.Text;
+            string pwd = textBoxPassword.Text;
+            formParent.userLogin = User.CekLogin(uid, pwd);
+            if (formParent.userLogin is null)
+            {
+                MessageBox.Show("Your username/password is incorrect");
+            }
+            else
+            {
+                formParent.Visible = true;
+                this.Close();
+            }
+        }
+
+        private void buttonTutup_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

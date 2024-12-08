@@ -68,13 +68,12 @@ namespace Class_PamerYuk
                 tampung.Video= hasil.GetValue(3).ToString();
                 tampung.TglUpload = DateTime.Parse(hasil.GetValue(4).ToString());
                 User user = new User(); 
-
                 user.Username = hasil.GetValue(5).ToString();
                 //dibawah ini jika perlu tambahan, boleh di hapus kalau ga perlu
                 user.Password = "";//ga boleh terlihat
                 user.TglLahir = DateTime.Parse(hasil.GetValue(8).ToString());
                 user.NoKtp = hasil.GetValue(9).ToString();
-                user.Foto = hasil.GetValue(10).ToString();
+                //user.Foto = hasil.GetValue(10).ToString();
                 tampung.User = user;
                 ListData.Add(tampung);
             }

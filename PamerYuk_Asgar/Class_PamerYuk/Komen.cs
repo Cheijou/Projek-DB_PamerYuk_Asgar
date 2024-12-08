@@ -68,7 +68,7 @@ namespace Class_PamerYuk
                 user.Password = ""; //ga boleh di show 
                 user.TglLahir = DateTime.Parse(hasil.GetValue(7).ToString());
                 user.NoKtp = hasil.GetValue(8).ToString();
-                user.Foto = hasil.GetValue(9).ToString();
+                //user.Foto = hasil.GetValue(9).ToString();
                 user.Kota.Id = int.Parse(hasil.GetValue(10).ToString());
 
                 Konten konten = new Konten();
