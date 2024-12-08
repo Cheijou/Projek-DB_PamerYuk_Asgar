@@ -72,7 +72,7 @@ namespace Class_PamerYuk
 
         public static void UpdateData(Organisasi objekUbah)
         {
-            string perintah = "UPDATE Organisasi SET nama ='" + objekUbah.nama + "' ,Kota_id='" + objekUbah.Kota.Id + "' WHERE username='" + objekUbah.Id + "';";
+            string perintah = "UPDATE Organisasi SET nama ='" + objekUbah.nama + "' ,Kota_id='" + objekUbah.Kota.Id + "' WHERE id='" + objekUbah.Id + "';";
 
             Koneksi.JalankanPerintahNonQuery(perintah);
         }
