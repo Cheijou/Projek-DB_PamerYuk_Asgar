@@ -113,7 +113,6 @@
             this.buttonKonten.TabIndex = 6;
             this.buttonKonten.Text = "konten";
             this.buttonKonten.UseVisualStyleBackColor = true;
-            this.buttonKonten.Click += new System.EventHandler(this.buttonKonten_Click);
             // 
             // FormMenu
             // 

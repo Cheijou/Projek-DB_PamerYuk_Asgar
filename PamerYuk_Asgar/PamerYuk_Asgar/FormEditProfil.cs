@@ -21,5 +21,10 @@ namespace PamerYuk_Asgar
         {
 
         }
+
+        private void FormEditProfil_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -38,5 +38,10 @@ namespace PamerYuk_Asgar
                 dataGridViewKonten.Columns.Add(btnKomen);
             }
         }
+
+        private void FormKonten_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
