@@ -62,6 +62,20 @@ namespace Class_PamerYuk
             return ListData;
 
         }
+
+        public static void TambahData(Organisasi objekTambah)
+        {
+            string perintah = "INSERT INTO organisasi (nama, Kota_id) VALUES ('" + objekTambah.Nama + "', '"  + objekTambah.Kota.Id + "');";
+
+            Koneksi.JalankanPerintahNonQuery(perintah);
+        }
+
+        public static void UpdateData(Organisasi objekUbah)
+        {
+            string perintah = "UPDATE Organisasi SET nama ='" + objekUbah.nama + "' ,Kota_id='" + objekUbah.Kota.Id + "' WHERE id='" + objekUbah.Id + "';";
+
+            Koneksi.JalankanPerintahNonQuery(perintah);
+        }
         #endregion
     }
 }

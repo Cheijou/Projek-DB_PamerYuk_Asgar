@@ -86,6 +86,26 @@ namespace Class_PamerYuk
             return ListData;
 
         }
+
+        public static void TambahData(Komen objekTambah)
+        {
+            //kurang foto
+            string perintah = "INSERT INTO Komen (komentar, tgl, username, konten_id) VALUES ('" + objekTambah.Komentar + "', '" + objekTambah.Tgl + "', '" + objekTambah.User.Username
+                + "', '" + objekTambah.Konten.Id + "');";
+
+            Koneksi.JalankanPerintahNonQuery(perintah);
+        }
+
+        public static void UpdateData(Komen objekUbah)
+        {
+            string perintah = "UPDATE Komen SET Komentar ='" + objekUbah.Komentar + "' ,tgl='" + objekUbah.Tgl + "' ,username ='" + objekUbah.User.Username 
+                + "' WHERE id='" + objekUbah.Id + "';";
+
+            Koneksi.JalankanPerintahNonQuery(perintah);
+        }
+
+      
+
         #endregion
     }
 }
