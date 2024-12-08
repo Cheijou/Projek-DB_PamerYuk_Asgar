@@ -88,8 +88,9 @@ namespace Class_PamerYuk
                 User user = new User();
                 user.Username = hasil.GetValue(0).ToString();
                 user.Password = hasil.GetValue(1).ToString();
-                //user.Pwd = hasil.GetValue(2).ToString();
-                user.TglLahir = DateTime.Parse(hasil.GetValue(3).ToString());
+                user.TglLahir = DateTime.Parse(hasil.GetValue(2).ToString());
+                user.NoKtp = hasil.GetValue(3).ToString();
+                //user.Foto = hasil.GetValue(4).ToString();
                 user.Kota = Kota.BacaData("id", hasil.GetValue(5).ToString())[0];
                 // tambahkan ke list
                 listPengguna.Add(user);

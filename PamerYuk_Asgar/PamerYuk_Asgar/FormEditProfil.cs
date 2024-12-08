@@ -12,6 +12,7 @@ namespace PamerYuk_Asgar
 {
     public partial class FormEditProfil : Form
     {
+        FormMenu form;
         public FormEditProfil()
         {
             InitializeComponent();
@@ -24,7 +25,12 @@ namespace PamerYuk_Asgar
 
         private void FormEditProfil_Load(object sender, EventArgs e)
         {
+            form = (FormMenu)this.MdiParent;
+        }
 
+        private void FormEditProfil_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            form.LoadButton();
         }
     }
 }

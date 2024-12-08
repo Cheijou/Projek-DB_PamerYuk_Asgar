@@ -40,14 +40,25 @@ namespace PamerYuk_Asgar
                 if (userLogin != null)
                 {
                     Koneksi koneksi = new Koneksi();
-                    MessageBox.Show("Selamat datang "+ userLogin.Username,"Welcome");
+                    MessageBox.Show("Selamat datang " + userLogin.Username, "Welcome");
                 }
-                
+
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
-                MessageBox.Show("error"+ex.Message);    
+                MessageBox.Show("error" + ex.Message);
             }
+        }
+        public void LoadButton()
+        {
+            buttonEditProfil.Visible = true;
+            buttonCariTeman.Visible = true;
+            buttonChat.Visible = true;
+            buttonKonten.Visible = true;
+            buttonEditProfil.Enabled = true;
+            buttonCariTeman.Enabled = true;
+            buttonChat.Enabled = true;
+            buttonKonten.Enabled = true;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -60,14 +71,7 @@ namespace PamerYuk_Asgar
             label1.Visible = false;
             buttonMulai.Enabled = false;
             buttonMulai.Visible = false;
-            buttonEditProfil.Visible = true;
-            buttonCariTeman.Visible = true;
-            buttonChat.Visible = true;
-            buttonKonten.Visible = true;
-            buttonEditProfil.Enabled = true;
-            buttonCariTeman.Enabled = true;
-            buttonChat.Enabled = true;
-            buttonKonten.Enabled = true;
+            LoadButton();
         }
 
         private void buttonCariTeman_Click(object sender, EventArgs e)
@@ -79,13 +83,46 @@ namespace PamerYuk_Asgar
                 FormTambahTeman formTambahTeman = new FormTambahTeman();
                 formTambahTeman.MdiParent = this;
                 formTambahTeman.Show();
-
+                buttonEditProfil.Visible = false;
+                buttonCariTeman.Visible = false;
+                buttonChat.Visible = false;
+                buttonKonten.Visible = false;
+                buttonEditProfil.Enabled = false;
+                buttonCariTeman.Enabled = false;
+                buttonChat.Enabled = false;
+                buttonKonten.Enabled = false;
+                formTambahTeman.BringToFront();
             }
             else
             {
                 form.Show();
-                form.BringToFront();
             }
         }
+
+        private void buttonEditProfil_Click(object sender, EventArgs e)
+        {
+            Form form = Application.OpenForms["FormEditProfil"];
+
+            if (form == null)
+            {
+                FormEditProfil formEditProfil = new FormEditProfil();
+                formEditProfil.MdiParent = this;
+                formEditProfil.Show();
+                buttonEditProfil.Visible = false;
+                buttonCariTeman.Visible = false;
+                buttonChat.Visible = false;
+                buttonKonten.Visible = false;
+                buttonEditProfil.Enabled = false;
+                buttonCariTeman.Enabled = false;
+                buttonChat.Enabled = false;
+                buttonKonten.Enabled = false;
+                formEditProfil.BringToFront();
+            }
+            else
+            {
+                form.Show();
+            }
+        }
+
     }
 }

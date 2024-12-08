@@ -13,6 +13,7 @@ namespace PamerYuk_Asgar
 {
     public partial class FormTambahTeman : Form
     {
+        FormMenu form;
         public FormTambahTeman()
         {
             InitializeComponent();
@@ -20,6 +21,7 @@ namespace PamerYuk_Asgar
 
         private void FormTambahTeman_Load(object sender, EventArgs e)
         {
+            form = (FormMenu)this.MdiParent;
             List<User> listUser = User.BacaData();
             dataGridViewTeman.DataSource = listUser;
                 
@@ -43,7 +45,7 @@ namespace PamerYuk_Asgar
                 DialogResult jawaban = MessageBox.Show("Kirim permintaan pertemanan?", "Information", MessageBoxButtons.YesNo);
                 if (jawaban == DialogResult.Yes)
                 {
-                    Teman.TambahTeman(kode);
+                    //Teman.TambahTeman(kode);
 
                 }
             }
@@ -69,6 +71,11 @@ namespace PamerYuk_Asgar
 
             List<User> ListData = User.BacaData(filter, nilai);
             dataGridViewTeman.DataSource = ListData;
+        }
+
+        private void FormTambahTeman_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            form.LoadButton();
         }
     }
 }

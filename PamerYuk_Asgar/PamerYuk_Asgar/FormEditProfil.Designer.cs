@@ -115,7 +115,7 @@
             this.panel2.Controls.Add(this.textBoxUsername);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(9, 179);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(308, 35);
             this.panel2.TabIndex = 44;
@@ -126,7 +126,7 @@
             this.panel3.Controls.Add(this.textBoxTanggalLahir);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Location = new System.Drawing.Point(10, 219);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(308, 35);
             this.panel3.TabIndex = 45;
@@ -151,7 +151,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(122, 68);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(98, 75);
             this.pictureBox1.TabIndex = 46;
@@ -174,7 +174,7 @@
             this.panel4.Controls.Add(this.textBoxKota);
             this.panel4.Controls.Add(this.label4);
             this.panel4.Location = new System.Drawing.Point(10, 258);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(308, 35);
             this.panel4.TabIndex = 46;
@@ -209,9 +209,11 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.buttonSimpan);
             this.Controls.Add(this.buttonTutup);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormEditProfil";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "FormEditProfil";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormEditProfil_FormClosing);
             this.Load += new System.EventHandler(this.FormEditProfil_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
