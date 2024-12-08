@@ -69,5 +69,23 @@ namespace PamerYuk_Asgar
             buttonChat.Enabled = true;
             buttonKonten.Enabled = true;
         }
+
+        private void buttonCariTeman_Click(object sender, EventArgs e)
+        {
+            Form form = Application.OpenForms["FormTambahTeman"];
+
+            if (form == null)
+            {
+                FormTambahTeman formTambahTeman = new FormTambahTeman();
+                formTambahTeman.MdiParent = this;
+                formTambahTeman.Show();
+
+            }
+            else
+            {
+                form.Show();
+                form.BringToFront();
+            }
+        }
     }
 }
