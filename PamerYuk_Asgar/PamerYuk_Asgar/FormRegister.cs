@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Class_PamerYuk;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,36 @@ namespace PamerYuk_Asgar
         public FormRegister()
         {
             InitializeComponent();
+        }
+        FormLogin form;
+
+        private void FormRegister_Load(object sender, EventArgs e)
+        {
+            form = (FormLogin)this.Owner;
+            List<Kota> listKota = Kota.BacaData();
+            comboBoxKota.DataSource = listKota;
+            comboBoxKota.DisplayMember = "Nama";
+        }
+
+        private void buttonRegister_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                User u = new User();
+                u.Username = textBoxUsername.Text;
+                u.Password = textBoxPassword.Text;
+                u.NoKtp = textBoxNoKTP.Text;
+                u.TglLahir = dateTimePickerTanggalLahir.Value;
+                u.Kota = (Kota)comboBoxKota.SelectedItem;
+                User.TambahData(u);
+                MessageBox.Show("Registrasi Berhasil Disimpan");
+                this.Close();
+            }
+            catch (Exception ex) 
+            {
+                MessageBox.Show("Registrasi Gagal Disimpan");
+            }
+
         }
     }
 }

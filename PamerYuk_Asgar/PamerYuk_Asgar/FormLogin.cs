@@ -21,7 +21,7 @@ namespace PamerYuk_Asgar
         private void buttonRegister_Click(object sender, EventArgs e)
         {
             FormRegister form = new FormRegister();
-            form.MdiParent = this;
+            form.Owner = this;
             form.ShowDialog();
         }
 

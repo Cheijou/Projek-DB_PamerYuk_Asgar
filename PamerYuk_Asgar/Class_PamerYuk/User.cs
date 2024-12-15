@@ -18,6 +18,7 @@ namespace Class_PamerYuk
         private Image foto;
         private Kota kota;
         #endregion
+
         #region Constructor
         public User()
         {
@@ -101,7 +102,7 @@ namespace Class_PamerYuk
         public static void TambahData(User objekTambah)
         {
             //kurang foto
-            string perintah = "INSERT INTO User (username, password, tglLahir, noKTP, Kota_id) VALUES ('"+ objekTambah.Username + "', '" +objekTambah.Password + "', '" + objekTambah.tglLahir 
+            string perintah = "INSERT INTO User (username, password, tglLahir, noKTP, Kota_id) VALUES ('"+ objekTambah.Username + "', '" +objekTambah.Password + "', '" + objekTambah.tglLahir.ToString("yyyy-MM-dd")
                 + "', '" + objekTambah.noKtp + "', '" + objekTambah.Kota.Id + "');";
 
             Koneksi.JalankanPerintahNonQuery(perintah);
