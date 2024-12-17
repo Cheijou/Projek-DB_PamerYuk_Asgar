@@ -13,9 +13,6 @@ namespace Class_PamerYuk
         private int id;
         private string nama;
         private Kota kota;
-
-
-
         #endregion
 
         #region Constructor
@@ -41,9 +38,12 @@ namespace Class_PamerYuk
         #endregion
 
         #region Method 
-        public static List<Organisasi> BacaData()
+        public static List<Organisasi> BacaData(string filter = "", string nilai = "")
         {
-            string perintah = "select o.*, k.nama from organisasi inner join kota k on o.Kota_id = k.id";
+            string perintah = "select o.*, k.nama from organisasi o inner join kota k on o.Kota_id = k.id";
+            if (filter != "")
+                perintah += " where " + filter + " like'%" + nilai + "%';";
+
 
             MySqlDataReader hasil = Koneksi.JalankanPerintahSelect(perintah);
 

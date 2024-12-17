@@ -17,6 +17,8 @@ namespace Class_PamerYuk
         private string noKtp;
         private Image foto;
         private Kota kota;
+        private List<KisahHidup> listKisahHidup;
+
         #endregion
 
         #region Constructor
@@ -28,6 +30,8 @@ namespace Class_PamerYuk
             this.NoKtp = "";
             this.Foto = null;
             this.Kota = new Kota();
+            this.ListKisahHidup = new List<KisahHidup>();
+
         }
 
         public User(string username, string password, DateTime tglLahir, string noKtp, Image foto, Kota kota)
@@ -48,6 +52,8 @@ namespace Class_PamerYuk
         public string NoKtp { get => noKtp; set => noKtp = value; }
         public Image Foto { get => foto; set => foto = value; }
         public  Kota Kota { get => kota; set => kota = value; }
+        public List<KisahHidup> ListKisahHidup { get => listKisahHidup; set => listKisahHidup = value; }
+
         #endregion
 
         #region Method 
@@ -122,6 +128,52 @@ namespace Class_PamerYuk
 
             Koneksi.JalankanPerintahNonQuery(perintah);
         }
+
+        public void TambahKisahHidup(Organisasi organisasi, string tahunAwal, string Akhir, string Deskripsi)
+        {
+            KisahHidup k = new KisahHidup();
+            k.Organisasi = organisasi;
+            k.Thawal = tahunAwal;
+            k.Thakhir = Akhir;
+            k.Deskripsi = Deskripsi;    
+            ListKisahHidup.Add(k);
+        }
+        public static List<KisahHidup> BacaDataKisahHidup(string filter = "", string nilai = "")
+        {
+            string perintah = "select * from kisahhidup;";
+            if (filter != "")
+                perintah += " where " + filter + " like'%" + nilai + "%';";
+
+            MySqlDataReader hasil = Koneksi.JalankanPerintahSelect(perintah);
+
+            List<KisahHidup> ListData = new List<KisahHidup>();
+            while (hasil.Read() == true)
+            {
+                KisahHidup tampung = new KisahHidup();
+                tampung.Organisasi = Organisasi.BacaData("id", hasil.GetValue(0).ToString())[0];
+                tampung.User = User.BacaData("username", hasil.GetValue(1).ToString())[0];
+                tampung.Thawal = hasil.GetValue(2).ToString();
+                tampung.Thakhir = hasil.GetValue(3).ToString();
+                tampung.Deskripsi = hasil.GetValue(4).ToString();  
+                ListData.Add(tampung);
+
+            }
+            return ListData;
+        }
+
+        public static void InsertKisahHidup(User u)
+        {
+            string perintah;
+            for (int i = 0; i < u.ListKisahHidup.Count; i++)
+            {
+                perintah = "INSERT INTO kisahhidup (organisasi_id, username, thawal, thakhir, deskripsi) "
+                + "VALUES ('" + u.ListKisahHidup[i].Organisasi.Id + "', '" + u.Username + "', '" + u.ListKisahHidup[i].Thawal + "', '" + u.ListKisahHidup[i].Thakhir 
+                + "', '" + u.ListKisahHidup[i].Deskripsi  + "');";
+                Console.WriteLine(perintah);
+                Koneksi.JalankanPerintahNonQuery(perintah);
+            }
+        }
+
         #endregion
     }
 }

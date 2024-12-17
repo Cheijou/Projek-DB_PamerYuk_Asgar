@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,6 +52,12 @@
     </Compile>
     <Compile Include="FormEditProfil.Designer.cs">
       <DependentUpon>FormEditProfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormKisahHidup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormKisahHidup.Designer.cs">
+      <DependentUpon>FormKisahHidup.cs</DependentUpon>
     </Compile>
     <Compile Include="FormKonten.cs">
       <SubType>Form</SubType>
@@ -69,6 +76,12 @@
     </Compile>
     <Compile Include="FormMenu.Designer.cs">
       <DependentUpon>FormMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOrganisasi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOrganisasi.Designer.cs">
+      <DependentUpon>FormOrganisasi.cs</DependentUpon>
     </Compile>
     <Compile Include="FormProfile.cs">
       <SubType>Form</SubType>
@@ -98,6 +111,9 @@
     <EmbeddedResource Include="FormEditProfil.resx">
       <DependentUpon>FormEditProfil.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormKisahHidup.resx">
+      <DependentUpon>FormKisahHidup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormKonten.resx">
       <DependentUpon>FormKonten.cs</DependentUpon>
     </EmbeddedResource>
@@ -106,6 +122,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMenu.resx">
       <DependentUpon>FormMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOrganisasi.resx">
+      <DependentUpon>FormOrganisasi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormProfile.resx">
       <DependentUpon>FormProfile.cs</DependentUpon>

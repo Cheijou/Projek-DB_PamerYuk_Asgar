@@ -46,7 +46,7 @@
             this.panel1.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(16, 15);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(577, 62);
             this.panel1.TabIndex = 15;
@@ -67,7 +67,7 @@
             this.buttonLogin.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.buttonLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLogin.Location = new System.Drawing.Point(492, 218);
-            this.buttonLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonLogin.Margin = new System.Windows.Forms.Padding(4);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(100, 28);
             this.buttonLogin.TabIndex = 21;
@@ -80,7 +80,7 @@
             this.buttonRegister.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.buttonRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRegister.Location = new System.Drawing.Point(375, 218);
-            this.buttonRegister.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonRegister.Margin = new System.Windows.Forms.Padding(4);
             this.buttonRegister.Name = "buttonRegister";
             this.buttonRegister.Size = new System.Drawing.Size(100, 28);
             this.buttonRegister.TabIndex = 22;
@@ -93,7 +93,7 @@
             this.buttonTutup.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.buttonTutup.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonTutup.Location = new System.Drawing.Point(20, 218);
-            this.buttonTutup.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonTutup.Margin = new System.Windows.Forms.Padding(4);
             this.buttonTutup.Name = "buttonTutup";
             this.buttonTutup.Size = new System.Drawing.Size(100, 28);
             this.buttonTutup.TabIndex = 20;
@@ -104,7 +104,7 @@
             // textBoxPassword
             // 
             this.textBoxPassword.Location = new System.Drawing.Point(107, 140);
-            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Size = new System.Drawing.Size(485, 22);
             this.textBoxPassword.TabIndex = 19;
@@ -112,7 +112,7 @@
             // textBoxUsername
             // 
             this.textBoxUsername.Location = new System.Drawing.Point(107, 101);
-            this.textBoxUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxUsername.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxUsername.Name = "textBoxUsername";
             this.textBoxUsername.Size = new System.Drawing.Size(485, 22);
             this.textBoxUsername.TabIndex = 18;
@@ -161,7 +161,7 @@
             this.Controls.Add(this.textBoxUsername);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormLogin";

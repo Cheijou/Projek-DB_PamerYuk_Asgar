@@ -18,6 +18,7 @@ namespace PamerYuk_Asgar
             InitializeComponent();
         }
         FormLogin form;
+        
 
         private void FormRegister_Load(object sender, EventArgs e)
         {
@@ -38,8 +39,13 @@ namespace PamerYuk_Asgar
                 u.TglLahir = dateTimePickerTanggalLahir.Value;
                 u.Kota = (Kota)comboBoxKota.SelectedItem;
                 User.TambahData(u);
+
                 MessageBox.Show("Registrasi Berhasil Disimpan");
                 this.Close();
+                FormKisahHidup form = new FormKisahHidup();
+                form.user = u;
+                form.Owner = this;
+                form.ShowDialog();
             }
             catch (Exception ex) 
             {
