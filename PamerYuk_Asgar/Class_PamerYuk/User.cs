@@ -156,7 +156,6 @@ namespace Class_PamerYuk
                 tampung.Thakhir = hasil.GetValue(3).ToString();
                 tampung.Deskripsi = hasil.GetValue(4).ToString();  
                 ListData.Add(tampung);
-
             }
             return ListData;
         }
@@ -172,6 +171,7 @@ namespace Class_PamerYuk
                 Console.WriteLine(perintah);
                 Koneksi.JalankanPerintahNonQuery(perintah);
             }
+            u.ListKisahHidup = new List<KisahHidup>();
         }
 
         #endregion
