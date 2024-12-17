@@ -168,10 +168,8 @@ namespace Class_PamerYuk
                 perintah = "INSERT INTO kisahhidup (organisasi_id, username, thawal, thakhir, deskripsi) "
                 + "VALUES ('" + u.ListKisahHidup[i].Organisasi.Id + "', '" + u.Username + "', '" + u.ListKisahHidup[i].Thawal + "', '" + u.ListKisahHidup[i].Thakhir 
                 + "', '" + u.ListKisahHidup[i].Deskripsi  + "');";
-                Console.WriteLine(perintah);
                 Koneksi.JalankanPerintahNonQuery(perintah);
             }
-            u.ListKisahHidup = new List<KisahHidup>();
         }
 
         #endregion
