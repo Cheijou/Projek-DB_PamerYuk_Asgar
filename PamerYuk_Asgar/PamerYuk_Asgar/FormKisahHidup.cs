@@ -102,7 +102,7 @@ namespace PamerYuk_Asgar
                     user.TambahKisahHidup(o, tahunAwal, tahunAkhir, deskripsi);
                 }
                 User.InsertKisahHidup(user);
-                Console.WriteLine(user.ListKisahHidup.Count);
+              
                 
                 MessageBox.Show("Kisah Hidup Berhasil Disimpan");
             }
