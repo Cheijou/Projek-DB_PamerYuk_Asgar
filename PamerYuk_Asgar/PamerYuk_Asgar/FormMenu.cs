@@ -42,6 +42,10 @@ namespace PamerYuk_Asgar
                     Koneksi koneksi = new Koneksi();
                     MessageBox.Show("Selamat datang " + userLogin.Username, "Welcome");
                 }
+                else
+                {
+                    this.Close();
+                }
 
             }
             catch (Exception ex)
@@ -91,7 +95,9 @@ namespace PamerYuk_Asgar
                 buttonCariTeman.Enabled = false;
                 buttonChat.Enabled = false;
                 buttonKonten.Enabled = false;
+                formTambahTeman.user = userLogin;
                 formTambahTeman.BringToFront();
+                
             }
             else
             {

@@ -10,7 +10,6 @@ namespace Class_PamerYuk
     {
         #region Data Member
         private Organisasi organisasi;
-        private User user;
         private string thawal;
         private string thakhir;
         private string deskripsi;
@@ -18,10 +17,9 @@ namespace Class_PamerYuk
         #endregion
 
         #region Constructor
-        public KisahHidup(Organisasi organisasi, User user, string thawal, string thakhir, string deskripsi)
+        public KisahHidup(Organisasi organisasi,string thawal, string thakhir, string deskripsi)
         {
             this.Organisasi = organisasi;
-            this.User = user;
             this.Thawal = thawal;
             this.Thakhir = thakhir;
             this.Deskripsi = deskripsi;
@@ -30,7 +28,6 @@ namespace Class_PamerYuk
         public KisahHidup()
         {
             this.Organisasi = new Organisasi();
-            this.User = new User();
             this.Thawal = "";
             this.Thakhir = "";
             this.Deskripsi = "";
@@ -39,7 +36,6 @@ namespace Class_PamerYuk
 
         #region Properties
         public Organisasi Organisasi { get => organisasi; set => organisasi = value; }
-        public User User { get => user; set => user = value; }
         public string Thawal { get => thawal; set => thawal = value; }
         public string Thakhir { get => thakhir; set => thakhir = value; }
         public string Deskripsi { get => deskripsi; set => deskripsi = value; }

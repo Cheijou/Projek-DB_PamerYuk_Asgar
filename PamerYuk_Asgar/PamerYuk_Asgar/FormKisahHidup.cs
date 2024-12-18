@@ -102,13 +102,13 @@ namespace PamerYuk_Asgar
                     user.TambahKisahHidup(o, tahunAwal, tahunAkhir, deskripsi);
                 }
                 User.InsertKisahHidup(user);
-              
-                
                 MessageBox.Show("Kisah Hidup Berhasil Disimpan");
+                dataGridViewData.Rows.Clear();
+                user.ListKisahHidup = new List<KisahHidup>();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Kisah Hidup Sudah Pernah Didaftarkan");
             }
 
         }

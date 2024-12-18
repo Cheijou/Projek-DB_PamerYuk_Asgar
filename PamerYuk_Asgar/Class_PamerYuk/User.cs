@@ -18,6 +18,7 @@ namespace Class_PamerYuk
         private Image foto;
         private Kota kota;
         private List<KisahHidup> listKisahHidup;
+        private List<Teman> listTeman;
 
         #endregion
 
@@ -31,6 +32,7 @@ namespace Class_PamerYuk
             this.Foto = null;
             this.Kota = new Kota();
             this.ListKisahHidup = new List<KisahHidup>();
+            this.listTeman = new List<Teman>();
 
         }
 
@@ -53,6 +55,7 @@ namespace Class_PamerYuk
         public Image Foto { get => foto; set => foto = value; }
         public  Kota Kota { get => kota; set => kota = value; }
         public List<KisahHidup> ListKisahHidup { get => listKisahHidup; set => listKisahHidup = value; }
+        public List<Teman> ListTeman { get => listTeman; set => listTeman = value; }
 
         #endregion
 
@@ -138,27 +141,27 @@ namespace Class_PamerYuk
             k.Deskripsi = Deskripsi;    
             ListKisahHidup.Add(k);
         }
-        public static List<KisahHidup> BacaDataKisahHidup(string filter = "", string nilai = "")
-        {
-            string perintah = "select * from kisahhidup;";
-            if (filter != "")
-                perintah += " where " + filter + " like'%" + nilai + "%';";
+        //public static List<KisahHidup> BacaDataKisahHidup(string filter = "", string nilai = "")
+        //{
+        //    string perintah = "select * from kisahhidup;";
+        //    if (filter != "")
+        //        perintah += " where " + filter + " like'%" + nilai + "%';";
 
-            MySqlDataReader hasil = Koneksi.JalankanPerintahSelect(perintah);
+        //    MySqlDataReader hasil = Koneksi.JalankanPerintahSelect(perintah);
 
-            List<KisahHidup> ListData = new List<KisahHidup>();
-            while (hasil.Read() == true)
-            {
-                KisahHidup tampung = new KisahHidup();
-                tampung.Organisasi = Organisasi.BacaData("id", hasil.GetValue(0).ToString())[0];
-                tampung.User = User.BacaData("username", hasil.GetValue(1).ToString())[0];
-                tampung.Thawal = hasil.GetValue(2).ToString();
-                tampung.Thakhir = hasil.GetValue(3).ToString();
-                tampung.Deskripsi = hasil.GetValue(4).ToString();  
-                ListData.Add(tampung);
-            }
-            return ListData;
-        }
+        //    List<KisahHidup> ListData = new List<KisahHidup>();
+        //    while (hasil.Read() == true)
+        //    {
+        //        KisahHidup tampung = new KisahHidup();
+        //        tampung.Organisasi = Organisasi.BacaData("id", hasil.GetValue(0).ToString())[0];
+        //        tampung.User = User.BacaData("username", hasil.GetValue(1).ToString())[0];
+        //        tampung.Thawal = hasil.GetValue(2).ToString();
+        //        tampung.Thakhir = hasil.GetValue(3).ToString();
+        //        tampung.Deskripsi = hasil.GetValue(4).ToString();  
+        //        ListData.Add(tampung);
+        //    }
+        //    return ListData;
+        //}
 
         public static void InsertKisahHidup(User u)
         {
@@ -172,6 +175,25 @@ namespace Class_PamerYuk
             }
         }
 
+        public void TambahTeman(User User2, DateTime tanggalBerteman)
+        {
+            Teman t = new Teman();
+            t.User2 = User2;
+            t.TglBerteman = tanggalBerteman;
+            ListTeman.Add(t);
+            InsertTeman();
+        }
+
+        public void InsertTeman()
+        {
+            string perintah;
+            for (int i = 0; i < ListTeman.Count; i++)
+            {
+                perintah = "INSERT INTO teman (username1, username2, tglBerteman) "
+                + "VALUES ('" + Username + "', '" + ListTeman[i].User2.Username + "', '" + ListTeman[i].TglBerteman.ToString("yyyy-MM-dd") +  "');";
+                Koneksi.JalankanPerintahNonQuery(perintah);
+            }
+        }
         #endregion
     }
 }

@@ -55,6 +55,11 @@ namespace Class_PamerYuk
             return ListData;
 
         }
+
+        public override string ToString()
+        {
+            return Nama;
+        }
         #endregion
     }
 }
