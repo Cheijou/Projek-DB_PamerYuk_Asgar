@@ -64,7 +64,7 @@ namespace PamerYuk_Asgar
             string filter;
             if (comboBoxCari.SelectedIndex == 0)
             {
-                filter = "ID";
+                filter = "username";
             }
             else
             {
