@@ -194,6 +194,53 @@ namespace Class_PamerYuk
                 Koneksi.JalankanPerintahNonQuery(perintah);
             }
         }
+        public static List<User> PencariTeman(string filter = "", string nilai = "", List<KisahHidup> listKisah = null, User userLogin = null)
+        {
+            string perintah = "select distinct u.* from user u inner join kisahhidup k on u.username = k.username inner join organisasi o on k.Organisasi_id = o.id inner join kota ko on u.kota_id = ko.id where u.username != '" + userLogin.Username + "' and (o.Nama = '" + listKisah[0].Organisasi.Nama + "'";
+            if(listKisah.Count > 1)
+            {
+                for (int i = 1; i < listKisah.Count; i++)
+                {
+                    perintah += " or O.nama = '" + listKisah[i].Organisasi.Nama + "'";
+                }
+                perintah += ");";
+            }
+            MySqlDataReader hasil = Koneksi.JalankanPerintahSelect(perintah);
+            List<User> listPengguna = new List<User>();
+
+
+            while (hasil.Read() == true)
+            {
+                User user = new User();
+                user.Username = hasil.GetValue(0).ToString();
+                user.Password = hasil.GetValue(1).ToString();
+                user.TglLahir = DateTime.Parse(hasil.GetValue(2).ToString());
+                user.NoKtp = hasil.GetValue(3).ToString();
+                //user.Foto = hasil.GetValue(4).ToString();
+                user.Kota = Kota.BacaData("id", hasil.GetValue(5).ToString())[0];
+                // tambahkan ke list
+                listPengguna.Add(user);
+            }
+            return listPengguna;
+        }
+        public static List<KisahHidup> BacaKisahHidup(User user)
+        {
+            string perintah = "select * from kisahhidup k where k.username = '" + user.Username + "';";
+            MySqlDataReader hasil = Koneksi.JalankanPerintahSelect(perintah);
+            List<KisahHidup> listKisah = new List<KisahHidup>();
+            while (hasil.Read() == true)
+            {
+                KisahHidup b = new KisahHidup();
+                Organisasi o = new Organisasi();
+                o = Organisasi.BacaData("k.id", hasil.GetValue(0).ToString())[0];
+                b.Organisasi = o;
+                b.Thawal = hasil.GetValue(2).ToString();
+                b.Thakhir = hasil.GetValue(3).ToString();
+                b.Deskripsi = hasil.GetValue(4).ToString();
+                listKisah.Add(b);
+            }
+            return listKisah;
+        }
         #endregion
     }
 }

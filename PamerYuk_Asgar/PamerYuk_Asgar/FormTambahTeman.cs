@@ -23,9 +23,9 @@ namespace PamerYuk_Asgar
 
         private void FormTambahTeman_Load(object sender, EventArgs e)
         {
-            
             form = (FormMenu)this.MdiParent;
-            List<User> listUser = User.BacaData();
+            
+            List<User> listUser = User.PencariTeman("","", User.BacaKisahHidup(user), user);
             dataGridViewTeman.DataSource = listUser;
                 
             if (dataGridViewTeman.ColumnCount == 6)
@@ -37,6 +37,7 @@ namespace PamerYuk_Asgar
                 btnTambah.Name = "btnTambahGrid";
                 dataGridViewTeman.Columns.Add(btnTambah);
             }
+            
         }
 
         private void dataGridViewTeman_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -66,9 +67,13 @@ namespace PamerYuk_Asgar
             {
                 filter = "username";
             }
-            else
+            else if(comboBoxCari.SelectedIndex == 1)
             {
                 filter = "kota_id";
+            }
+            else
+            {
+                filter = "";
             }
             string nilai = textBoxCari.Text;
 
@@ -79,6 +84,11 @@ namespace PamerYuk_Asgar
         private void FormTambahTeman_FormClosing(object sender, FormClosingEventArgs e)
         {
             form.LoadButton();
+        }
+
+        private void comboBoxCari_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

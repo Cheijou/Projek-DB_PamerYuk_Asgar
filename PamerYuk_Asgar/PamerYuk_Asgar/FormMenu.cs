@@ -85,6 +85,7 @@ namespace PamerYuk_Asgar
             if (form == null)
             {
                 FormTambahTeman formTambahTeman = new FormTambahTeman();
+                formTambahTeman.user = userLogin;
                 formTambahTeman.MdiParent = this;
                 formTambahTeman.Show();
                 buttonEditProfil.Visible = false;
@@ -95,7 +96,6 @@ namespace PamerYuk_Asgar
                 buttonCariTeman.Enabled = false;
                 buttonChat.Enabled = false;
                 buttonKonten.Enabled = false;
-                formTambahTeman.user = userLogin;
                 formTambahTeman.BringToFront();
                 
             }

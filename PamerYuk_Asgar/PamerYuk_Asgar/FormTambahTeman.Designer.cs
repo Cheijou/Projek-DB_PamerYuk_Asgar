@@ -72,12 +72,14 @@
             this.comboBoxCari.FormattingEnabled = true;
             this.comboBoxCari.Items.AddRange(new object[] {
             "Username",
-            "Kota"});
+            "Kota",
+            "Organisasi"});
             this.comboBoxCari.Location = new System.Drawing.Point(293, 69);
             this.comboBoxCari.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBoxCari.Name = "comboBoxCari";
             this.comboBoxCari.Size = new System.Drawing.Size(107, 24);
             this.comboBoxCari.TabIndex = 3;
+            this.comboBoxCari.SelectedIndexChanged += new System.EventHandler(this.comboBoxCari_SelectedIndexChanged);
             // 
             // textBoxCari
             // 
