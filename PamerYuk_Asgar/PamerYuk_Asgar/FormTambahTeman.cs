@@ -50,7 +50,7 @@ namespace PamerYuk_Asgar
                 if (jawaban == DialogResult.Yes)
                 {
                     User teman = User.BacaData("Username", kode)[0];
-                    user.TambahTeman(teman,DateTime.Now);
+                    user.TambahTeman(teman);
                 }
             }
         }
@@ -89,6 +89,14 @@ namespace PamerYuk_Asgar
         private void comboBoxCari_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonRequest_Click(object sender, EventArgs e)
+        {
+            FormFriendRequest form = new FormFriendRequest();
+            form.Owner = this;
+            form.ShowDialog();
+            form.userLogin = user;
         }
     }
 }

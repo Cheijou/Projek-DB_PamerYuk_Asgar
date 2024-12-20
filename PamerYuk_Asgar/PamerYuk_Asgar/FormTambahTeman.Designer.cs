@@ -33,6 +33,7 @@
             this.labelNama = new System.Windows.Forms.Label();
             this.comboBoxCari = new System.Windows.Forms.ComboBox();
             this.textBoxCari = new System.Windows.Forms.TextBox();
+            this.buttonRequest = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTeman)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,7 +45,7 @@
             this.dataGridViewTeman.Name = "dataGridViewTeman";
             this.dataGridViewTeman.RowHeadersWidth = 51;
             this.dataGridViewTeman.RowTemplate.Height = 24;
-            this.dataGridViewTeman.Size = new System.Drawing.Size(776, 338);
+            this.dataGridViewTeman.Size = new System.Drawing.Size(776, 297);
             this.dataGridViewTeman.TabIndex = 0;
             this.dataGridViewTeman.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewTeman_CellContentClick);
             // 
@@ -90,11 +91,22 @@
             this.textBoxCari.TabIndex = 4;
             this.textBoxCari.TextChanged += new System.EventHandler(this.textBoxCari_TextChanged);
             // 
+            // buttonRequest
+            // 
+            this.buttonRequest.Location = new System.Drawing.Point(626, 400);
+            this.buttonRequest.Name = "buttonRequest";
+            this.buttonRequest.Size = new System.Drawing.Size(162, 39);
+            this.buttonRequest.TabIndex = 5;
+            this.buttonRequest.Text = "Friend Request";
+            this.buttonRequest.UseVisualStyleBackColor = true;
+            this.buttonRequest.Click += new System.EventHandler(this.buttonRequest_Click);
+            // 
             // FormTambahTeman
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonRequest);
             this.Controls.Add(this.textBoxCari);
             this.Controls.Add(this.comboBoxCari);
             this.Controls.Add(this.labelNama);
@@ -119,5 +131,6 @@
         private System.Windows.Forms.Label labelNama;
         private System.Windows.Forms.ComboBox comboBoxCari;
         private System.Windows.Forms.TextBox textBoxCari;
+        private System.Windows.Forms.Button buttonRequest;
     }
 }

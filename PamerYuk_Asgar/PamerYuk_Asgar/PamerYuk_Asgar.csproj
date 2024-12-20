@@ -53,6 +53,12 @@
     <Compile Include="FormEditProfil.Designer.cs">
       <DependentUpon>FormEditProfil.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormFriendRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFriendRequest.Designer.cs">
+      <DependentUpon>FormFriendRequest.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormKisahHidup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,9 @@
     </Compile>
     <EmbeddedResource Include="FormEditProfil.resx">
       <DependentUpon>FormEditProfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormFriendRequest.resx">
+      <DependentUpon>FormFriendRequest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormKisahHidup.resx">
       <DependentUpon>FormKisahHidup.cs</DependentUpon>

@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using Microsoft.SqlServer.Server;
+using System.Net.Http.Headers;
 
 namespace Class_PamerYuk
 {
@@ -175,41 +177,69 @@ namespace Class_PamerYuk
             }
         }
 
-        public void TambahTeman(User User2, DateTime tanggalBerteman)
+        public void TambahTeman(User User2)
         {
             Teman t = new Teman();
             t.User2 = User2;
-            t.TglBerteman = tanggalBerteman;
             ListTeman.Add(t);
-            InsertTeman();
+            InsertTeman(User2.Username);
         }
 
-        public void InsertTeman()
+        public void InsertTeman(string penerima)
         {
-            string perintah;
-            for (int i = 0; i < ListTeman.Count; i++)
+            string perintah = "select * from teman where username2 = '" + Username + "' and username1 = '" + penerima +"';";
+
+            Koneksi.JalankanPerintahSelect(perintah);
+            MySqlDataReader hasil = Koneksi.JalankanPerintahSelect(perintah);
+
+            if (hasil.Read() == true)
             {
-                perintah = "INSERT INTO teman (username1, username2, tglBerteman) "
-                + "VALUES ('" + Username + "', '" + ListTeman[i].User2.Username + "', '" + ListTeman[i].TglBerteman.ToString("yyyy-MM-dd") +  "');";
+                TerimaTeman(Username);
+            }
+            else
+            {
+                perintah = "INSERT INTO teman (username1, username2) "
+                + "VALUES ('" + Username + "', '" + penerima + "');";
                 Koneksi.JalankanPerintahNonQuery(perintah);
             }
         }
+
+        public void TerimaTeman(string pengirim)
+        {
+            string perintah = "update teman set tglberteman = " + "'" + DateTime.Now.ToString("yyyy-MM-dd") + "' where username1 = '" + pengirim + "' " +
+                "and username2 = '" + Username + "'";
+            Koneksi.JalankanPerintahNonQuery(perintah);
+        }
+
+        public void TolakTeman(string username2)
+        {
+            string perintah = "delete from teman where username1 = '" + username2 + "' and username2 = '" + Username;
+            Koneksi.JalankanPerintahNonQuery(perintah);
+        }
+
+        public static List<Teman> Permintaan(User userLogin)
+        {
+            string perintah = "select * from teman where username2 = '" + userLogin.Username + "' and tglBerteman is null;";
+            Koneksi.JalankanPerintahSelect(perintah);
+
+            MySqlDataReader hasil = Koneksi.JalankanPerintahSelect(perintah);
+            List<Teman> listPermintaan = new List<Teman>();
+
+            while (hasil.Read() == true)
+            {
+                Teman t = new Teman();
+                t.User2 = User.BacaData("username", hasil.GetValue(1).ToString())[0];
+                t.TglBerteman = DateTime.MinValue;
+                listPermintaan.Add(t);
+            }
+            return listPermintaan;
+        }
+
         public static List<User> PencariTeman(string filter = "", string nilai = "",User userLogin = null)
         {
-            //string perintah = "select distinct u.* from user u inner join kisahhidup k on u.username = " +
-            //    "k.username inner join organisasi o on k.Organisasi_id = o.id inner join kota ko on u.kota_id = ko.id where u.username " +
-            //    "!= '" + userLogin.Username + "' and (o.Nama = '" + listKisah[0].Organisasi.Nama + "'";
-
             string perintah = "select distinct u.* from user u inner join kisahhidup k on u.username = k.username inner join organisasi o on k.Organisasi_id = o.id inner join kota ko on u.kota_id = ko.id where u.username != '" + userLogin.Username + 
                 "' and (o.Nama in (select o.nama from organisasi o inner join kisahhidup k on o.id = k.organisasi_id where k.username = '" + userLogin.Username + "'));";
-            //if (listKisah.Count > 1)
-            //{
-            //    for (int i = 1; i < listKisah.Count; i++)
-            //    {
-            //        perintah += " or O.nama = '" + listKisah[i].Organisasi.Nama + "'";
-            //    }
-            //    perintah += ");";
-            //}
+
             MySqlDataReader hasil = Koneksi.JalankanPerintahSelect(perintah);
             List<User> listPengguna = new List<User>();
 
@@ -228,6 +258,9 @@ namespace Class_PamerYuk
             }
             return listPengguna;
         }
+        #endregion
+
+        #region Buangan
         //public static List<KisahHidup> BacaKisahHidup(User user)
         //{
         //    string perintah = "select * from kisahhidup k where k.username = '" + user.Username + "';";
