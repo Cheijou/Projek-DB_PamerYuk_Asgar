@@ -25,7 +25,7 @@ namespace PamerYuk_Asgar
         {
             form = (FormMenu)this.MdiParent;
             
-            List<User> listUser = User.PencariTeman("","", User.BacaKisahHidup(user), user);
+            List<User> listUser = User.PencariTeman("","", user);
             dataGridViewTeman.DataSource = listUser;
                 
             if (dataGridViewTeman.ColumnCount == 6)
