@@ -177,16 +177,18 @@ namespace Class_PamerYuk
             }
         }
 
-        public void TambahTeman(User User2)
+        public bool TambahTeman(User User2)
         {
             Teman t = new Teman();
             t.User2 = User2;
             ListTeman.Add(t);
-            InsertTeman(User2.Username);
+            bool cek = InsertTeman(User2.Username);
+            return cek;
         }
 
-        public void InsertTeman(string penerima)
+        public bool InsertTeman(string penerima)
         {
+            bool cek = false;
             string perintah = "select * from teman where username2 = '" + Username + "' and username1 = '" + penerima +"';";
 
             Koneksi.JalankanPerintahSelect(perintah);
@@ -194,7 +196,8 @@ namespace Class_PamerYuk
 
             if (hasil.Read() == true)
             {
-                TerimaTeman(Username);
+                TerimaTeman(penerima);
+                cek = true;
             }
             else
             {
@@ -202,6 +205,7 @@ namespace Class_PamerYuk
                 + "VALUES ('" + Username + "', '" + penerima + "');";
                 Koneksi.JalankanPerintahNonQuery(perintah);
             }
+            return cek;
         }
 
         public void TerimaTeman(string pengirim)
@@ -213,7 +217,7 @@ namespace Class_PamerYuk
 
         public void TolakTeman(string username2)
         {
-            string perintah = "delete from teman where username1 = '" + username2 + "' and username2 = '" + Username;
+            string perintah = "delete from teman where username1 = '" + username2 + "' and username2 = '" + Username +"';";
             Koneksi.JalankanPerintahNonQuery(perintah);
         }
 
@@ -228,7 +232,7 @@ namespace Class_PamerYuk
             while (hasil.Read() == true)
             {
                 Teman t = new Teman();
-                t.User2 = User.BacaData("username", hasil.GetValue(1).ToString())[0];
+                t.User2 = User.BacaData("username", hasil.GetValue(0).ToString())[0];
                 t.TglBerteman = DateTime.MinValue;
                 listPermintaan.Add(t);
             }
@@ -257,6 +261,11 @@ namespace Class_PamerYuk
                 listPengguna.Add(user);
             }
             return listPengguna;
+            
+        }
+        public override string ToString()
+        {
+            return Username;
         }
         #endregion
 

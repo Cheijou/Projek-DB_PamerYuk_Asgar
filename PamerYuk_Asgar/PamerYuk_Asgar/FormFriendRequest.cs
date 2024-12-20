@@ -27,17 +27,25 @@ namespace PamerYuk_Asgar
             List<Teman> listPermintaan = User.Permintaan(userLogin);
             dataGridViewPermintaan.DataSource = listPermintaan;
 
-            if (dataGridViewPermintaan.ColumnCount == 1)
+            if (dataGridViewPermintaan.ColumnCount == 2)
             {
-                DataGridViewButtonColumn btnTerima= new DataGridViewButtonColumn();
+                DataGridViewButtonColumn btnTerima = new DataGridViewButtonColumn();
                 btnTerima.Text = "Terima";
                 btnTerima.HeaderText = "";
                 btnTerima.UseColumnTextForButtonValue = true;
                 btnTerima.Name = "btnTerimaGrid";
                 dataGridViewPermintaan.Columns.Add(btnTerima);
             }
+            if (dataGridViewPermintaan.ColumnCount == 3)
+            {
+                DataGridViewButtonColumn btnTolak = new DataGridViewButtonColumn();
+                btnTolak.Text = "Tolak";
+                btnTolak.HeaderText = "";
+                btnTolak.UseColumnTextForButtonValue = true;
+                btnTolak.Name = "btnTolakGrid";
+                dataGridViewPermintaan.Columns.Add(btnTolak);
+            }
         }
-
         private void dataGridViewPermintaan_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             string kode = dataGridViewPermintaan.CurrentRow.Cells["user2"].Value.ToString();
@@ -47,7 +55,17 @@ namespace PamerYuk_Asgar
                 DialogResult jawaban = MessageBox.Show("Terima permintaan pertemanan?", "Information", MessageBoxButtons.YesNo);
                 if (jawaban == DialogResult.Yes)
                 {
-                    userLogin.TerimaTeman(userLogin.Username);
+                    userLogin.TerimaTeman(kode);
+        
+                }
+            }
+            if (e.ColumnIndex == dataGridViewPermintaan.Columns["btnTolakGrid"].Index)
+            {
+                DialogResult jawaban = MessageBox.Show("Tolak Permintaan Berteman?", "Information", MessageBoxButtons.YesNo);
+                if (jawaban == DialogResult.Yes)
+                {
+                    userLogin.TolakTeman(kode);
+                    MessageBox.Show("Berhasil Menolak Permintaan Pertemanan");
                 }
             }
         }

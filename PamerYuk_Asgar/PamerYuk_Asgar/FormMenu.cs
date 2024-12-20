@@ -130,5 +130,9 @@ namespace PamerYuk_Asgar
             }
         }
 
+        private void buttonKeluar_Click(object sender, EventArgs e)
+        {
+            FormMenu_Load(sender, e);
+        }
     }
 }

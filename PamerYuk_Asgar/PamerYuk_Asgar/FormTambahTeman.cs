@@ -50,11 +50,18 @@ namespace PamerYuk_Asgar
                 if (jawaban == DialogResult.Yes)
                 {
                     User teman = User.BacaData("Username", kode)[0];
-                    user.TambahTeman(teman);
+                    bool cek = user.TambahTeman(teman);
+                    if (cek == false)
+                    {
+                        MessageBox.Show("Permintaan berhasil dikirim");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Anda sekarang telah berteman dengan " + teman);
+                    }
                 }
             }
         }
-
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
@@ -94,9 +101,9 @@ namespace PamerYuk_Asgar
         private void buttonRequest_Click(object sender, EventArgs e)
         {
             FormFriendRequest form = new FormFriendRequest();
+            form.userLogin = user;
             form.Owner = this;
             form.ShowDialog();
-            form.userLogin = user;
         }
     }
 }
