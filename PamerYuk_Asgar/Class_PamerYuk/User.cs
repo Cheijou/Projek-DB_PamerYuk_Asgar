@@ -233,7 +233,7 @@ namespace Class_PamerYuk
             {
                 Teman t = new Teman();
                 t.User2 = User.BacaData("username", hasil.GetValue(0).ToString())[0];
-                t.TglBerteman = DateTime.MinValue;
+                t.TglBerteman = DateTime.Parse(hasil.GetValue(1).ToString());
                 listPermintaan.Add(t);
             }
             return listPermintaan;
@@ -266,6 +266,33 @@ namespace Class_PamerYuk
         public override string ToString()
         {
             return Username;
+        }
+
+        public static List<Teman> CariTeman(User userLogin)
+        {
+            string perintah = "select * from teman where (username1 = '" + userLogin.Username  + "' or username2 = '"+ userLogin.Username + "')  and tglBerteman is not null;";
+            Koneksi.JalankanPerintahSelect(perintah);
+
+            MySqlDataReader hasil = Koneksi.JalankanPerintahSelect(perintah);
+            List<Teman> listPermintaan = new List<Teman>();
+
+           
+
+            while (hasil.Read() == true)
+            {
+                Teman t = new Teman();
+                if (hasil.GetValue(0).ToString() == userLogin.Username)
+                {
+                    t.User2 = User.BacaData("username", hasil.GetValue(1).ToString())[0];
+                }
+                else
+                {
+                    t.User2 = User.BacaData("username", hasil.GetValue(0).ToString())[0];
+                }
+                t.TglBerteman = DateTime.Parse(hasil.GetValue(2).ToString()) ;
+                listPermintaan.Add(t);
+            }
+            return listPermintaan;
         }
         #endregion
 

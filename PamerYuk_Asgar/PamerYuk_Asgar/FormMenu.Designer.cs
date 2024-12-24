@@ -44,7 +44,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1067, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1067, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -64,7 +64,7 @@
             // 
             this.buttonMulai.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonMulai.Location = new System.Drawing.Point(376, 305);
-            this.buttonMulai.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonMulai.Margin = new System.Windows.Forms.Padding(4);
             this.buttonMulai.Name = "buttonMulai";
             this.buttonMulai.Size = new System.Drawing.Size(297, 87);
             this.buttonMulai.TabIndex = 2;
@@ -76,7 +76,7 @@
             // 
             this.buttonCariTeman.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCariTeman.Location = new System.Drawing.Point(112, 100);
-            this.buttonCariTeman.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonCariTeman.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCariTeman.Name = "buttonCariTeman";
             this.buttonCariTeman.Size = new System.Drawing.Size(297, 87);
             this.buttonCariTeman.TabIndex = 3;
@@ -88,7 +88,7 @@
             // 
             this.buttonEditProfil.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonEditProfil.Location = new System.Drawing.Point(112, 320);
-            this.buttonEditProfil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonEditProfil.Margin = new System.Windows.Forms.Padding(4);
             this.buttonEditProfil.Name = "buttonEditProfil";
             this.buttonEditProfil.Size = new System.Drawing.Size(297, 87);
             this.buttonEditProfil.TabIndex = 4;
@@ -100,18 +100,19 @@
             // 
             this.buttonChat.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonChat.Location = new System.Drawing.Point(665, 100);
-            this.buttonChat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonChat.Margin = new System.Windows.Forms.Padding(4);
             this.buttonChat.Name = "buttonChat";
             this.buttonChat.Size = new System.Drawing.Size(297, 87);
             this.buttonChat.TabIndex = 5;
             this.buttonChat.Text = "chat";
             this.buttonChat.UseVisualStyleBackColor = true;
+            this.buttonChat.Click += new System.EventHandler(this.buttonChat_Click);
             // 
             // buttonKonten
             // 
             this.buttonKonten.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonKonten.Location = new System.Drawing.Point(665, 320);
-            this.buttonKonten.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonKonten.Margin = new System.Windows.Forms.Padding(4);
             this.buttonKonten.Name = "buttonKonten";
             this.buttonKonten.Size = new System.Drawing.Size(297, 87);
             this.buttonKonten.TabIndex = 6;
@@ -144,7 +145,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";

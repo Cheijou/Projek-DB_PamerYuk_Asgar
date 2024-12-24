@@ -35,6 +35,11 @@ namespace Class_PamerYuk
         #endregion
 
         #region Method 
+        public override string ToString()
+        {
+            return User2.Username;
+        }
+       
         #endregion
     }
 }

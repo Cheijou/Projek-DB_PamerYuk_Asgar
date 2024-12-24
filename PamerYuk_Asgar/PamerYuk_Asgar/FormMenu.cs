@@ -134,5 +134,32 @@ namespace PamerYuk_Asgar
         {
             FormMenu_Load(sender, e);
         }
+
+        private void buttonChat_Click(object sender, EventArgs e)
+        {
+            Form form = Application.OpenForms["FormChat"];
+
+            if (form == null)
+            {
+                FormChat formChat = new FormChat();
+                formChat.user = userLogin;
+                formChat.MdiParent = this;
+                formChat.Show();
+                buttonEditProfil.Visible = false;
+                buttonCariTeman.Visible = false;
+                buttonChat.Visible = false;
+                buttonKonten.Visible = false;
+                buttonEditProfil.Enabled = false;
+                buttonCariTeman.Enabled = false;
+                buttonChat.Enabled = false;
+                buttonKonten.Enabled = false;
+                formChat.BringToFront();
+
+            }
+            else
+            {
+                form.Show();
+            }
+        }
     }
 }
