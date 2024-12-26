@@ -28,6 +28,7 @@ namespace PamerYuk_Asgar
         {
             OpenFileDialog open = new OpenFileDialog();
             open.Filter = "Choose Image(*.JPG;*.PNG)|*.jpg;*.png";
+            open.Title = "Select a Image File";
             if (open.ShowDialog() == DialogResult.OK)
             {
                 pictureBoxGambar.Image = Image.FromFile(open.FileName);
@@ -40,6 +41,7 @@ namespace PamerYuk_Asgar
             string video ="";
             OpenFileDialog open = new OpenFileDialog();
             open.Filter = "Choose Video(*.MP4;*.MOV;*.AVI)|*.mp4;*.mov;*.avi";
+            open.Title = "Select a Video File";
             if (open.ShowDialog() == DialogResult.OK)
             {
                 video = open.FileName;

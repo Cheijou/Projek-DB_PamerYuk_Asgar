@@ -26,17 +26,24 @@ namespace PamerYuk_Asgar
 
         private void dataGridViewKonten_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            List<Konten> listKonten = Konten.BacaData();
-            dataGridViewKonten.DataSource = listKonten;
+            string konten = dataGridViewKonten.CurrentRow.Cells["id"].Value.ToString();
 
-            if (dataGridViewKonten.ColumnCount == 6)
+            if (e.ColumnIndex == dataGridViewKonten.Columns["btnDetailGrid"].Index)
             {
-                DataGridViewButtonColumn btnKomen = new DataGridViewButtonColumn();
-                btnKomen.Text = "Komen";
-                btnKomen.HeaderText = "";
-                btnKomen.UseColumnTextForButtonValue = true;
-                btnKomen.Name = "btnKomenGrid";
-                dataGridViewKonten.Columns.Add(btnKomen);
+                Form formApp = Application.OpenForms["FormKomen"];
+                if (formApp == null)
+                {
+                    FormDetailKonten formKomen = new FormDetailKonten();
+                    formKomen.Owner = this;
+                    formKomen.user = user;
+                    formKomen.kontenId = konten;
+                    formKomen.Show();
+                    formKomen.BringToFront();
+                }
+                else
+                {
+                    formApp.Show();
+                }
             }
         }
 
@@ -53,7 +60,7 @@ namespace PamerYuk_Asgar
                 btnDetail.Text = "Detail";
                 btnDetail.HeaderText = "";
                 btnDetail.UseColumnTextForButtonValue = true;
-                btnDetail.Name = "btnDetailData";
+                btnDetail.Name = "btnDetailGrid";
                 dataGridViewKonten.Columns.Add(btnDetail);
             }
         }

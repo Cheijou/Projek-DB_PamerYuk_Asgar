@@ -56,9 +56,13 @@ namespace Class_PamerYuk
         #endregion
 
         #region Method 
-        public static List<Konten> BacaData()
+        public static List<Konten> BacaData(string filter="", string nilai ="")
         {
-            string perintah = "select k.*, u.* from konten k inner join user u on u.username = k.username";
+            string perintah = "select k.* from Konten k";
+            if (filter != "")
+            {
+                perintah += " where " + filter + " like '%" + nilai + "%'";
+            }
 
             MySqlDataReader hasil = Koneksi.JalankanPerintahSelect(perintah);
 
@@ -73,11 +77,6 @@ namespace Class_PamerYuk
                 tampung.TglUpload = DateTime.Parse(hasil.GetValue(4).ToString());
                 User user = new User(); 
                 user.Username = hasil.GetValue(5).ToString();
-                //dibawah ini jika perlu tambahan, boleh di hapus kalau ga perlu
-                user.Password = "";//ga boleh terlihat
-                user.TglLahir = DateTime.Parse(hasil.GetValue(8).ToString());
-                user.NoKtp = hasil.GetValue(9).ToString();
-                //user.Foto = hasil.GetValue(10).ToString();
                 tampung.User = user;
                 ListData.Add(tampung);
             }
@@ -196,7 +195,6 @@ namespace Class_PamerYuk
                 ListData.Add(tampung);
             }
             return ListData;
-
         }
 
         #endregion

@@ -77,6 +77,12 @@
     <Compile Include="FormKisahHidup.Designer.cs">
       <DependentUpon>FormKisahHidup.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormDetailKonten.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDetailKonten.Designer.cs">
+      <DependentUpon>FormDetailKonten.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormKonten.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormKisahHidup.resx">
       <DependentUpon>FormKisahHidup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDetailKonten.resx">
+      <DependentUpon>FormDetailKonten.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormKonten.resx">
       <DependentUpon>FormKonten.cs</DependentUpon>
