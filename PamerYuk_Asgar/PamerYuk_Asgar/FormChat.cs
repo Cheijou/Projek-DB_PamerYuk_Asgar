@@ -13,9 +13,8 @@ namespace PamerYuk_Asgar
 {
     public partial class FormChat : Form
     {
-        FormMenu form;
         public User user;
-
+        FormMenu form;
         public FormChat()
         {
             InitializeComponent();
@@ -24,38 +23,61 @@ namespace PamerYuk_Asgar
         private void FormChat_Load(object sender, EventArgs e)
         {
             form = (FormMenu)this.MdiParent;
-            List<Teman> listTeman = User.CariTeman(user);
-            comboBoxTeman.DataSource = listTeman;
-            comboBoxTeman.DisplayMember = "user2";
-            comboBoxTeman.SelectedIndex= -1;
-        }
-
-        private void buttonAddChat_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Chat chat = new Chat();
-                chat.Saya = user;
-                chat.Temanku = Chat.Teman("username", comboBoxTeman.Text);
-                chat.Isi = textBoxAdd.Text;
-                chat.Tanggal = DateTime.Now;
-                Chat.TambahChat(chat);
-                MessageBox.Show("Chat Terkirim Disimpan");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Chat Gagal Terkirim");
-            }
-            comboBoxTeman_SelectedIndexChanged(sender, e);
-        }
-
-        private void comboBoxTeman_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            listBoxChat.Items.Clear();
-            List<Chat> listChat = Chat.BacaData(user.Username, comboBoxTeman.Text);
+            List<Chat> listChat = Chat.BacaDataChatTerbaru(user);
             for (int i = 0; i < listChat.Count; i++)
             {
-                listBoxChat.Items.Add(listChat[i].Saya.Username + " : " + listChat[i].Isi + "\n");
+                dataGridViewData.Rows.Add(listChat[i].Temanku.Username, "[" + listChat[i].Tanggal.ToString()+"] " + listChat[i].Isi);
+                if (dataGridViewData.ColumnCount == 2)
+                {
+                    DataGridViewButtonColumn btnChat = new DataGridViewButtonColumn();
+                    btnChat.Text = "Buka Chat";
+                    btnChat.HeaderText = "";
+                    btnChat.UseColumnTextForButtonValue = true;
+                    btnChat.Name = "btnChatGrid";
+                    dataGridViewData.Columns.Add(btnChat);
+                }
+            }
+            
+        }
+
+        private void dataGridViewData_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string teman = dataGridViewData.CurrentRow.Cells["Username"].Value.ToString();
+
+            if (e.ColumnIndex == dataGridViewData.Columns["btnChatGrid"].Index)
+            {
+                Form form = Application.OpenForms["FormChatTeman"];
+                if (form == null)
+                {
+                    FormChatTeman formChatTeman = new FormChatTeman();
+                    formChatTeman.user = user;
+                    formChatTeman.comboBoxTeman.Text = teman;
+                    formChatTeman.check = true;
+                    formChatTeman.Show();
+                    formChatTeman.BringToFront();
+
+                }
+                else
+                {
+                    form.Show();
+                }
+            }
+        }
+
+        private void buttonChatTeman_Click(object sender, EventArgs e)
+        {
+            Form form = Application.OpenForms["FormChatTeman"];
+
+            if (form == null)
+            {
+                FormChatTeman formChatTeman = new FormChatTeman();
+                formChatTeman.user = user;
+                formChatTeman.Show();
+                formChatTeman.BringToFront();
+            }
+            else
+            {
+                form.Show();
             }
         }
 
@@ -65,3 +87,4 @@ namespace PamerYuk_Asgar
         }
     }
 }
+

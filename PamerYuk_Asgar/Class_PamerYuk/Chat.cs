@@ -77,6 +77,26 @@ namespace Class_PamerYuk
             }
             return listChat;
         }
+        public static List<Chat> BacaDataChatTerbaru(User user)
+        {
+            string perintah = "SELECT DISTINCT c.id, u.username, c.temanku, c.isi, c.tanggal FROM user u INNER JOIN chat c ON u.username = c.saya " +
+                "WHERE (c.temanku = '"+user.Username+"') AND c.tanggal = (SELECT MAX(c2.tanggal) FROM chat c2 WHERE c2.saya = c.saya AND c2.temanku = c.temanku" +
+                " AND DATEDIFF(now(), c2.tanggal) < 1) ORDER BY c.tanggal DESC;";
+            Koneksi.JalankanPerintahSelect(perintah);
+            MySqlDataReader hasil = Koneksi.JalankanPerintahSelect(perintah);
+            List<Chat> listChat = new List<Chat>();
+            while (hasil.Read() == true)
+            {
+                Chat tampung = new Chat();
+                tampung.Id = int.Parse(hasil.GetValue(0).ToString());
+                tampung.Temanku.Username = hasil.GetValue(1).ToString();
+                tampung.Saya.Username = hasil.GetValue(2).ToString();
+                tampung.Isi = hasil.GetValue(3).ToString(); 
+                tampung.Tanggal = DateTime.Parse(hasil.GetValue(4).ToString());
+                listChat.Add(tampung);
+            }
+            return listChat;
+        }
         //public static List<Chat> BacaData(Chat objek)
         //{
         //    string perintah = "select * from Chat where saya = '" + objek.Saya.Username + "' and temanku = '" +objek.Temanku.Username + "' ;";

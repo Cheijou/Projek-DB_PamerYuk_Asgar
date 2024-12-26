@@ -23,7 +23,10 @@ namespace PamerYuk_Asgar
         private void FormFriendRequest_Load(object sender, EventArgs e)
         {
             form = (FormTambahTeman)this.Owner;
-
+            RefreshForm();
+        }
+        private void RefreshForm()
+        {
             List<Teman> listPermintaan = User.Permintaan(userLogin);
             dataGridViewPermintaan.DataSource = listPermintaan;
 
@@ -56,6 +59,8 @@ namespace PamerYuk_Asgar
                 if (jawaban == DialogResult.Yes)
                 {
                     userLogin.TerimaTeman(kode);
+                    MessageBox.Show("Berhasil Menerima Pertemanan");
+                    RefreshForm();
         
                 }
             }
@@ -66,6 +71,7 @@ namespace PamerYuk_Asgar
                 {
                     userLogin.TolakTeman(kode);
                     MessageBox.Show("Berhasil Menolak Permintaan Pertemanan");
+                    RefreshForm();
                 }
             }
         }

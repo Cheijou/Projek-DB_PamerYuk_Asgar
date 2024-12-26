@@ -40,7 +40,11 @@ namespace PamerYuk_Asgar
                 if (userLogin != null)
                 {
                     Koneksi koneksi = new Koneksi();
+                    label1.Visible = true;
+                    buttonMulai.Visible = true;
+                    buttonMulai.Enabled = true;
                     MessageBox.Show("Selamat datang " + userLogin.Username, "Welcome");
+                    
                 }
                 else
                 {
@@ -148,6 +152,8 @@ namespace PamerYuk_Asgar
                 FormChat formChat = new FormChat();
                 formChat.user = userLogin;
                 formChat.MdiParent = this;
+                FormChatTeman formChatTeman = new FormChatTeman();
+                formChatTeman.MdiParent = this;
                 formChat.Show();
                 buttonEditProfil.Visible = false;
                 buttonCariTeman.Visible = false;

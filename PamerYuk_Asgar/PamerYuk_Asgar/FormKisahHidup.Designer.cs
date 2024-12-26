@@ -215,6 +215,7 @@
             this.dataGridViewData.RowTemplate.Height = 24;
             this.dataGridViewData.Size = new System.Drawing.Size(523, 253);
             this.dataGridViewData.TabIndex = 32;
+            this.dataGridViewData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewData_CellContentClick);
             // 
             // idOrganisasi
             // 

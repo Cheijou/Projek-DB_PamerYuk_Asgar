@@ -28,142 +28,106 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.labelJudul = new System.Windows.Forms.Label();
-            this.comboBoxTeman = new System.Windows.Forms.ComboBox();
-            this.labelTeman = new System.Windows.Forms.Label();
-            this.listBoxChat = new System.Windows.Forms.ListBox();
-            this.labelChat = new System.Windows.Forms.Label();
-            this.textBoxAdd = new System.Windows.Forms.TextBox();
-            this.buttonAddChat = new System.Windows.Forms.Button();
-            this.labelDialog = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.panelKonten = new System.Windows.Forms.Panel();
+            this.labelKonten = new System.Windows.Forms.Label();
+            this.dataGridViewData = new System.Windows.Forms.DataGridView();
+            this.buttonChatTeman = new System.Windows.Forms.Button();
+            this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ChatTerbaru = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panelKonten.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewData)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // panelKonten
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.panel1.Controls.Add(this.labelJudul);
-            this.panel1.Location = new System.Drawing.Point(13, 4);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(591, 62);
-            this.panel1.TabIndex = 24;
+            this.panelKonten.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.panelKonten.Controls.Add(this.labelKonten);
+            this.panelKonten.Location = new System.Drawing.Point(12, 11);
+            this.panelKonten.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelKonten.Name = "panelKonten";
+            this.panelKonten.Size = new System.Drawing.Size(755, 54);
+            this.panelKonten.TabIndex = 5;
             // 
-            // labelJudul
+            // labelKonten
             // 
-            this.labelJudul.AutoSize = true;
-            this.labelJudul.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelJudul.Location = new System.Drawing.Point(231, 5);
-            this.labelJudul.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelJudul.Name = "labelJudul";
-            this.labelJudul.Size = new System.Drawing.Size(118, 52);
-            this.labelJudul.TabIndex = 0;
-            this.labelJudul.Text = "Chat";
+            this.labelKonten.AutoSize = true;
+            this.labelKonten.Font = new System.Drawing.Font("Arial Narrow", 28.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelKonten.Location = new System.Drawing.Point(316, -3);
+            this.labelKonten.Name = "labelKonten";
+            this.labelKonten.Size = new System.Drawing.Size(110, 55);
+            this.labelKonten.TabIndex = 3;
+            this.labelKonten.Text = "Chat";
             // 
-            // comboBoxTeman
+            // dataGridViewData
             // 
-            this.comboBoxTeman.FormattingEnabled = true;
-            this.comboBoxTeman.Location = new System.Drawing.Point(90, 96);
-            this.comboBoxTeman.Name = "comboBoxTeman";
-            this.comboBoxTeman.Size = new System.Drawing.Size(121, 24);
-            this.comboBoxTeman.TabIndex = 25;
-            this.comboBoxTeman.SelectedIndexChanged += new System.EventHandler(this.comboBoxTeman_SelectedIndexChanged);
+            this.dataGridViewData.AllowUserToAddRows = false;
+            this.dataGridViewData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Username,
+            this.ChatTerbaru});
+            this.dataGridViewData.Location = new System.Drawing.Point(12, 80);
+            this.dataGridViewData.Name = "dataGridViewData";
+            this.dataGridViewData.RowHeadersWidth = 51;
+            this.dataGridViewData.RowTemplate.Height = 24;
+            this.dataGridViewData.Size = new System.Drawing.Size(756, 306);
+            this.dataGridViewData.TabIndex = 6;
+            this.dataGridViewData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewData_CellContentClick);
             // 
-            // labelTeman
+            // buttonChatTeman
             // 
-            this.labelTeman.AutoSize = true;
-            this.labelTeman.Location = new System.Drawing.Point(13, 99);
-            this.labelTeman.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelTeman.Name = "labelTeman";
-            this.labelTeman.Size = new System.Drawing.Size(56, 16);
-            this.labelTeman.TabIndex = 26;
-            this.labelTeman.Text = "Teman :";
+            this.buttonChatTeman.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.buttonChatTeman.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonChatTeman.Location = new System.Drawing.Point(590, 391);
+            this.buttonChatTeman.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonChatTeman.Name = "buttonChatTeman";
+            this.buttonChatTeman.Size = new System.Drawing.Size(180, 40);
+            this.buttonChatTeman.TabIndex = 41;
+            this.buttonChatTeman.Text = "Chat Teman";
+            this.buttonChatTeman.UseVisualStyleBackColor = false;
+            this.buttonChatTeman.Click += new System.EventHandler(this.buttonChatTeman_Click);
             // 
-            // listBoxChat
+            // Username
             // 
-            this.listBoxChat.FormattingEnabled = true;
-            this.listBoxChat.ItemHeight = 16;
-            this.listBoxChat.Location = new System.Drawing.Point(16, 160);
-            this.listBoxChat.Name = "listBoxChat";
-            this.listBoxChat.Size = new System.Drawing.Size(588, 260);
-            this.listBoxChat.TabIndex = 27;
+            this.Username.HeaderText = "Username";
+            this.Username.MinimumWidth = 6;
+            this.Username.Name = "Username";
+            this.Username.Width = 125;
             // 
-            // labelChat
+            // ChatTerbaru
             // 
-            this.labelChat.AutoSize = true;
-            this.labelChat.Location = new System.Drawing.Point(13, 141);
-            this.labelChat.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelChat.Name = "labelChat";
-            this.labelChat.Size = new System.Drawing.Size(40, 16);
-            this.labelChat.TabIndex = 28;
-            this.labelChat.Text = "Chat :";
-            // 
-            // textBoxAdd
-            // 
-            this.textBoxAdd.Location = new System.Drawing.Point(16, 465);
-            this.textBoxAdd.Multiline = true;
-            this.textBoxAdd.Name = "textBoxAdd";
-            this.textBoxAdd.Size = new System.Drawing.Size(588, 55);
-            this.textBoxAdd.TabIndex = 29;
-            // 
-            // buttonAddChat
-            // 
-            this.buttonAddChat.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.buttonAddChat.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAddChat.Location = new System.Drawing.Point(504, 555);
-            this.buttonAddChat.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonAddChat.Name = "buttonAddChat";
-            this.buttonAddChat.Size = new System.Drawing.Size(100, 28);
-            this.buttonAddChat.TabIndex = 31;
-            this.buttonAddChat.Text = "Kirim";
-            this.buttonAddChat.UseVisualStyleBackColor = false;
-            this.buttonAddChat.Click += new System.EventHandler(this.buttonAddChat_Click);
-            // 
-            // labelDialog
-            // 
-            this.labelDialog.AutoSize = true;
-            this.labelDialog.Location = new System.Drawing.Point(13, 446);
-            this.labelDialog.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelDialog.Name = "labelDialog";
-            this.labelDialog.Size = new System.Drawing.Size(53, 16);
-            this.labelDialog.TabIndex = 32;
-            this.labelDialog.Text = "Dialog :";
+            this.ChatTerbaru.HeaderText = "Chat Terbaru";
+            this.ChatTerbaru.MinimumWidth = 6;
+            this.ChatTerbaru.Name = "ChatTerbaru";
+            this.ChatTerbaru.Width = 300;
             // 
             // FormChat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(619, 596);
-            this.Controls.Add(this.labelDialog);
-            this.Controls.Add(this.buttonAddChat);
-            this.Controls.Add(this.textBoxAdd);
-            this.Controls.Add(this.labelChat);
-            this.Controls.Add(this.listBoxChat);
-            this.Controls.Add(this.labelTeman);
-            this.Controls.Add(this.comboBoxTeman);
-            this.Controls.Add(this.panel1);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(780, 437);
+            this.Controls.Add(this.buttonChatTeman);
+            this.Controls.Add(this.dataGridViewData);
+            this.Controls.Add(this.panelKonten);
             this.Name = "FormChat";
-            this.Text = "FormChat";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "e";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormChat_FormClosing);
             this.Load += new System.EventHandler(this.FormChat_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panelKonten.ResumeLayout(false);
+            this.panelKonten.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewData)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label labelJudul;
-        private System.Windows.Forms.ComboBox comboBoxTeman;
-        private System.Windows.Forms.Label labelTeman;
-        private System.Windows.Forms.ListBox listBoxChat;
-        private System.Windows.Forms.Label labelChat;
-        private System.Windows.Forms.TextBox textBoxAdd;
-        private System.Windows.Forms.Button buttonAddChat;
-        private System.Windows.Forms.Label labelDialog;
+        private System.Windows.Forms.Panel panelKonten;
+        private System.Windows.Forms.Label labelKonten;
+        private System.Windows.Forms.DataGridView dataGridViewData;
+        private System.Windows.Forms.Button buttonChatTeman;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Username;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ChatTerbaru;
     }
 }

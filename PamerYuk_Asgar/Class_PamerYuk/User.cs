@@ -99,7 +99,7 @@ namespace Class_PamerYuk
             {
                 User user = new User();
                 user.Username = hasil.GetValue(0).ToString();
-                user.Password = hasil.GetValue(1).ToString();
+                //user.Password = hasil.GetValue(1).ToString();
                 user.TglLahir = DateTime.Parse(hasil.GetValue(2).ToString());
                 user.NoKtp = hasil.GetValue(3).ToString();
                 //user.Foto = hasil.GetValue(4).ToString();
@@ -233,7 +233,7 @@ namespace Class_PamerYuk
             {
                 Teman t = new Teman();
                 t.User2 = User.BacaData("username", hasil.GetValue(0).ToString())[0];
-                t.TglBerteman = DateTime.Parse(hasil.GetValue(1).ToString());
+                t.TglBerteman = DateTime.MinValue;
                 listPermintaan.Add(t);
             }
             return listPermintaan;
@@ -241,8 +241,11 @@ namespace Class_PamerYuk
 
         public static List<User> PencariTeman(string filter = "", string nilai = "",User userLogin = null)
         {
-            string perintah = "select distinct u.* from user u inner join kisahhidup k on u.username = k.username inner join organisasi o on k.Organisasi_id = o.id inner join kota ko on u.kota_id = ko.id where u.username != '" + userLogin.Username + 
-                "' and (o.Nama in (select o.nama from organisasi o inner join kisahhidup k on o.id = k.organisasi_id where k.username = '" + userLogin.Username + "'));";
+            string perintah = "select distinct u.* from user u inner join kisahhidup k on u.username = k.username inner join organisasi o on k.Organisasi_id = o.id inner join kota ko on u.kota_id = ko.id" +
+                " where u.username != '" + userLogin.Username +
+                "' and (o.Nama in (select o.nama from organisasi o inner join kisahhidup k on o.id = k.organisasi_id where k.username = '" + userLogin.Username + "')) ";
+                //"and (u.username in (select u.username from user u " +
+                //"inner join teman t on u.username = t.username1 where t.username1 = '"+userLogin.Username+"'))";
 
             MySqlDataReader hasil = Koneksi.JalankanPerintahSelect(perintah);
             List<User> listPengguna = new List<User>();
@@ -252,7 +255,7 @@ namespace Class_PamerYuk
             {
                 User user = new User();
                 user.Username = hasil.GetValue(0).ToString();
-                user.Password = hasil.GetValue(1).ToString();
+                user.Password = "********";
                 user.TglLahir = DateTime.Parse(hasil.GetValue(2).ToString());
                 user.NoKtp = hasil.GetValue(3).ToString();
                 //user.Foto = hasil.GetValue(4).ToString();

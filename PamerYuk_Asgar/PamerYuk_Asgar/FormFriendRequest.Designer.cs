@@ -37,9 +37,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(174, 9);
+            this.label1.Location = new System.Drawing.Point(92, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(494, 52);
+            this.label1.Size = new System.Drawing.Size(489, 51);
             this.label1.TabIndex = 0;
             this.label1.Text = "Permintaan Pertemanan";
             // 
@@ -50,7 +50,7 @@
             this.dataGridViewPermintaan.Name = "dataGridViewPermintaan";
             this.dataGridViewPermintaan.RowHeadersWidth = 51;
             this.dataGridViewPermintaan.RowTemplate.Height = 24;
-            this.dataGridViewPermintaan.Size = new System.Drawing.Size(776, 374);
+            this.dataGridViewPermintaan.Size = new System.Drawing.Size(640, 374);
             this.dataGridViewPermintaan.TabIndex = 1;
             this.dataGridViewPermintaan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPermintaan_CellContentClick);
             // 
@@ -58,7 +58,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(669, 450);
             this.Controls.Add(this.dataGridViewPermintaan);
             this.Controls.Add(this.label1);
             this.Name = "FormFriendRequest";

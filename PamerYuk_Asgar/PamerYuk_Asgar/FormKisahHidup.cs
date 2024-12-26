@@ -112,5 +112,10 @@ namespace PamerYuk_Asgar
             }
 
         }
+
+        private void dataGridViewData_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

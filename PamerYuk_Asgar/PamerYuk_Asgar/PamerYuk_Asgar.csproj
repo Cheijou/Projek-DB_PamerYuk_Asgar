@@ -53,6 +53,12 @@
     <Compile Include="FormChat.Designer.cs">
       <DependentUpon>FormChat.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormChatTeman.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormChatTeman.Designer.cs">
+      <DependentUpon>FormChatTeman.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormEditProfil.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +134,9 @@
     </Compile>
     <EmbeddedResource Include="FormChat.resx">
       <DependentUpon>FormChat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormChatTeman.resx">
+      <DependentUpon>FormChatTeman.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormEditProfil.resx">
       <DependentUpon>FormEditProfil.cs</DependentUpon>
