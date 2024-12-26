@@ -60,7 +60,7 @@ namespace PamerYuk_Asgar
             List<Teman> listTeman = User.CariTeman(user);
             comboBoxTag.DataSource = listTeman;
             comboBoxTag.DisplayMember = "user2";
-            comboBoxTag.SelectedIndex = 0;
+            
 
         }
 
