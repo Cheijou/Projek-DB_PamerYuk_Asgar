@@ -18,6 +18,7 @@ namespace PamerYuk_Asgar
             InitializeComponent();
         }
         public User user;
+        FormMenu form;
         private void buttonTutup_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -41,7 +42,20 @@ namespace PamerYuk_Asgar
 
         private void FormKonten_Load(object sender, EventArgs e)
         {
-         
+            form = (FormMenu)this.MdiParent;
+
+            List<Konten> listKonten = Konten.Daftarkonten(user);
+            dataGridViewKonten.DataSource = listKonten;
+
+            if (dataGridViewKonten.ColumnCount == 6)
+            {
+                DataGridViewButtonColumn btnDetail = new DataGridViewButtonColumn();
+                btnDetail.Text = "Detail";
+                btnDetail.HeaderText = "";
+                btnDetail.UseColumnTextForButtonValue = true;
+                btnDetail.Name = "btnDetailData";
+                dataGridViewKonten.Columns.Add(btnDetail);
+            }
         }
 
         private void buttonTambahKonten_Click(object sender, EventArgs e)
@@ -50,6 +64,11 @@ namespace PamerYuk_Asgar
             form.user = user;
             form.Owner = this;
             form.ShowDialog();
+        }
+
+        private void FormKonten_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            form.LoadButton();
         }
     }
 }

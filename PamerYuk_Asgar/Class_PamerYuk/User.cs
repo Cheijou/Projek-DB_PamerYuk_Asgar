@@ -143,6 +143,7 @@ namespace Class_PamerYuk
             k.Deskripsi = Deskripsi;    
             ListKisahHidup.Add(k);
         }
+
         //public static List<KisahHidup> BacaDataKisahHidup(string filter = "", string nilai = "")
         //{
         //    string perintah = "select * from kisahhidup;";
@@ -159,7 +160,7 @@ namespace Class_PamerYuk
         //        tampung.User = User.BacaData("username", hasil.GetValue(1).ToString())[0];
         //        tampung.Thawal = hasil.GetValue(2).ToString();
         //        tampung.Thakhir = hasil.GetValue(3).ToString();
-        //        tampung.Deskripsi = hasil.GetValue(4).ToString();  
+        //        tampung.Deskripsi = hasil.GetValue(4).ToString();
         //        ListData.Add(tampung);
         //    }
         //    return ListData;

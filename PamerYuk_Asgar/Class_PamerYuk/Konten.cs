@@ -167,6 +167,38 @@ namespace Class_PamerYuk
 
         }
 
+        public static List<Konten> Daftarkonten(User userLogin)
+        {
+            string perintah = "select Distinct k.* from konten k " +
+                "inner join user u on k.username = u.username  " + 
+                "where (k.username = '" + userLogin.Username + "') " +
+                "or " +
+                "(k.username in (select k2.username from  konten k2 " +
+                "inner join user u2 on k2.username = u2.username " +
+                "inner join teman t on u2.username = t.username1 " +
+                "inner join teman tm on u2.username = tm.username2 " +
+                "where k2.username = '" + userLogin.Username +"')) order by k.tglUpload asc";
+            MySqlDataReader hasil = Koneksi.JalankanPerintahSelect(perintah);
+
+            List<Konten> ListData = new List<Konten>();
+            while (hasil.Read() == true)
+            {
+                Konten tampung = new Konten();
+                tampung.Id = int.Parse(hasil.GetValue(0).ToString());
+                tampung.Caption = hasil.GetValue(1).ToString();
+                tampung.Foto = hasil.GetValue(2).ToString();
+                tampung.Video = hasil.GetValue(3).ToString();
+                tampung.TglUpload = DateTime.Parse(hasil.GetValue(4).ToString());
+                User user = new User();
+                user.Username = hasil.GetValue(5).ToString();
+                
+                tampung.User = user;
+                ListData.Add(tampung);
+            }
+            return ListData;
+
+        }
+
         #endregion
     }
 }

@@ -123,6 +123,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormKonten";
             this.Text = "FormKonten";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormKonten_FormClosing);
             this.Load += new System.EventHandler(this.FormKonten_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKonten)).EndInit();
             this.panelKonten.ResumeLayout(false);
