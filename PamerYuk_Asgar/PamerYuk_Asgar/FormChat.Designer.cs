@@ -145,6 +145,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "FormChat";
             this.Text = "FormChat";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormChat_FormClosing);
             this.Load += new System.EventHandler(this.FormChat_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

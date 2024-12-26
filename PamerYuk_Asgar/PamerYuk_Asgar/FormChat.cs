@@ -58,5 +58,10 @@ namespace PamerYuk_Asgar
                 listBoxChat.Items.Add(listChat[i].Saya.Username + " : " + listChat[i].Isi + "\n");
             }
         }
+
+        private void FormChat_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            form.LoadButton();
+        }
     }
 }

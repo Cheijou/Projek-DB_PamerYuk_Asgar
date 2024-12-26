@@ -58,7 +58,6 @@
             this.label1.Size = new System.Drawing.Size(561, 97);
             this.label1.TabIndex = 1;
             this.label1.Text = "Pamer Yuk!";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // buttonMulai
             // 
@@ -118,6 +117,7 @@
             this.buttonKonten.TabIndex = 6;
             this.buttonKonten.Text = "konten";
             this.buttonKonten.UseVisualStyleBackColor = true;
+            this.buttonKonten.Click += new System.EventHandler(this.buttonKonten_Click);
             // 
             // buttonKeluar
             // 

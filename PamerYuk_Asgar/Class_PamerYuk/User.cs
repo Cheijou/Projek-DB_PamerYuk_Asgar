@@ -34,7 +34,7 @@ namespace Class_PamerYuk
             this.Foto = null;
             this.Kota = new Kota();
             this.ListKisahHidup = new List<KisahHidup>();
-            this.listTeman = new List<Teman>();
+            this.ListTeman = new List<Teman>();
 
         }
 

@@ -59,16 +59,16 @@ namespace PamerYuk_Asgar
             buttonCariTeman.Visible = true;
             buttonChat.Visible = true;
             buttonKonten.Visible = true;
+            buttonKeluar.Visible = true;
             buttonEditProfil.Enabled = true;
             buttonCariTeman.Enabled = true;
             buttonChat.Enabled = true;
             buttonKonten.Enabled = true;
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
+            buttonKeluar.Enabled = true;
 
         }
+
+        
 
         private void buttonMulai_Click(object sender, EventArgs e)
         {
@@ -92,10 +92,12 @@ namespace PamerYuk_Asgar
                 buttonCariTeman.Visible = false;
                 buttonChat.Visible = false;
                 buttonKonten.Visible = false;
+                buttonKeluar.Visible = false;
                 buttonEditProfil.Enabled = false;
                 buttonCariTeman.Enabled = false;
                 buttonChat.Enabled = false;
                 buttonKonten.Enabled = false;
+                buttonKeluar.Enabled = false;
                 formTambahTeman.BringToFront();
                 
             }
@@ -118,10 +120,12 @@ namespace PamerYuk_Asgar
                 buttonCariTeman.Visible = false;
                 buttonChat.Visible = false;
                 buttonKonten.Visible = false;
+                buttonKeluar.Visible = false;
                 buttonEditProfil.Enabled = false;
                 buttonCariTeman.Enabled = false;
                 buttonChat.Enabled = false;
                 buttonKonten.Enabled = false;
+                buttonKeluar.Enabled = false;
                 formEditProfil.BringToFront();
             }
             else
@@ -149,11 +153,42 @@ namespace PamerYuk_Asgar
                 buttonCariTeman.Visible = false;
                 buttonChat.Visible = false;
                 buttonKonten.Visible = false;
+                buttonKeluar.Visible = false;
                 buttonEditProfil.Enabled = false;
                 buttonCariTeman.Enabled = false;
                 buttonChat.Enabled = false;
                 buttonKonten.Enabled = false;
+                buttonKeluar.Enabled = false;
                 formChat.BringToFront();
+
+            }
+            else
+            {
+                form.Show();
+            }
+        }
+
+        private void buttonKonten_Click(object sender, EventArgs e)
+        {
+            Form form = Application.OpenForms["FormKonten"];
+
+            if (form == null)
+            {
+                FormKonten formKonten = new FormKonten();
+                formKonten.user = userLogin;
+                formKonten.MdiParent = this;
+                formKonten.Show();
+                buttonEditProfil.Visible = false;
+                buttonCariTeman.Visible = false;
+                buttonChat.Visible = false;
+                buttonKonten.Visible = false;
+                buttonKeluar.Visible = false;
+                buttonEditProfil.Enabled = false;
+                buttonCariTeman.Enabled = false;
+                buttonChat.Enabled = false;
+                buttonKonten.Enabled = false;
+                buttonKeluar.Enabled = false;
+                formKonten.BringToFront();
 
             }
             else

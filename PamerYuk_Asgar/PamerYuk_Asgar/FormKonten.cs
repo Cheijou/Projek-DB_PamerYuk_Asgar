@@ -17,7 +17,7 @@ namespace PamerYuk_Asgar
         {
             InitializeComponent();
         }
-
+        public User user;
         private void buttonTutup_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -41,7 +41,15 @@ namespace PamerYuk_Asgar
 
         private void FormKonten_Load(object sender, EventArgs e)
         {
+         
+        }
 
+        private void buttonTambahKonten_Click(object sender, EventArgs e)
+        {
+            FormTambahKonten form = new FormTambahKonten();
+            form.user = user;
+            form.Owner = this;
+            form.ShowDialog();
         }
     }
 }

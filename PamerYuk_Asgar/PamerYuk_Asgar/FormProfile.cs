@@ -53,5 +53,7 @@ namespace PamerYuk_Asgar
         {
             listBoxDetail.Items.Clear();
         }
+
+       
     }
 }
