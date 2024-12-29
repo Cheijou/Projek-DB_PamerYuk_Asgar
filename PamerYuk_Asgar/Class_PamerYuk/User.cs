@@ -61,7 +61,7 @@ namespace Class_PamerYuk
 
         #endregion
 
-        #region Method 
+        #region Method User
         public static User CekLogin(string uid = "", string passwd = "")
         {
             string perintah = "select * from User " +
@@ -88,7 +88,7 @@ namespace Class_PamerYuk
         }
         public static List<User> BacaData(string filter = "", string nilai = "")
         {
-            string perintah = "select * from User";
+            string perintah = "select u.*,k.nama from User u inner join kota k on u.kota_id = k.id";
             if (filter != "")
             {
                 perintah += " where " + filter + " like '%" + nilai + "%'";
@@ -103,7 +103,7 @@ namespace Class_PamerYuk
                 user.TglLahir = DateTime.Parse(hasil.GetValue(2).ToString());
                 user.NoKtp = hasil.GetValue(3).ToString();
                 //user.Foto = hasil.GetValue(4).ToString();
-                user.Kota = Kota.BacaData("id", hasil.GetValue(5).ToString())[0];
+                user.Kota.Nama = hasil.GetValue(6).ToString();
                 // tambahkan ke list
                 listPengguna.Add(user);
             }
@@ -133,7 +133,9 @@ namespace Class_PamerYuk
 
             Koneksi.JalankanPerintahNonQuery(perintah);
         }
+        #endregion
 
+        #region Method Kisah Hidup
         public void TambahKisahHidup(Organisasi organisasi, string tahunAwal, string Akhir, string Deskripsi)
         {
             KisahHidup k = new KisahHidup();
@@ -144,27 +146,28 @@ namespace Class_PamerYuk
             ListKisahHidup.Add(k);
         }
 
-        //public static List<KisahHidup> BacaDataKisahHidup(string filter = "", string nilai = "")
-        //{
-        //    string perintah = "select * from kisahhidup;";
-        //    if (filter != "")
-        //        perintah += " where " + filter + " like'%" + nilai + "%';";
+        public static List<KisahHidup> BacaDataKisahHidup(string filter = "", string nilai = "")
+        {
+            string perintah = "select kh.username,o.nama,k.nama,kh.thawal,kh.thakhir,kh.deskripsi from kisahhidup kh " +
+                "inner join organisasi o on kh.organisasi_id = o.id inner join kota k on o.kota_id = k.id";
+            if (filter != "")
+                perintah += " where kh." + filter + " like'%" + nilai + "%';";
 
-        //    MySqlDataReader hasil = Koneksi.JalankanPerintahSelect(perintah);
+            MySqlDataReader hasil = Koneksi.JalankanPerintahSelect(perintah);
 
-        //    List<KisahHidup> ListData = new List<KisahHidup>();
-        //    while (hasil.Read() == true)
-        //    {
-        //        KisahHidup tampung = new KisahHidup();
-        //        tampung.Organisasi = Organisasi.BacaData("id", hasil.GetValue(0).ToString())[0];
-        //        tampung.User = User.BacaData("username", hasil.GetValue(1).ToString())[0];
-        //        tampung.Thawal = hasil.GetValue(2).ToString();
-        //        tampung.Thakhir = hasil.GetValue(3).ToString();
-        //        tampung.Deskripsi = hasil.GetValue(4).ToString();
-        //        ListData.Add(tampung);
-        //    }
-        //    return ListData;
-        //}
+            List<KisahHidup> ListData = new List<KisahHidup>();
+            while (hasil.Read() == true)
+            {
+                KisahHidup tampung = new KisahHidup();
+                tampung.Organisasi.Nama = hasil.GetValue(1).ToString();
+                tampung.Organisasi.Kota.Nama = hasil.GetValue(2).ToString();
+                tampung.Thawal = hasil.GetValue(3).ToString();
+                tampung.Thakhir = hasil.GetValue(4).ToString();
+                tampung.Deskripsi = hasil.GetValue(5).ToString();
+                ListData.Add(tampung);
+            }
+            return ListData;
+        }
 
         public static void InsertKisahHidup(User u)
         {
@@ -177,7 +180,9 @@ namespace Class_PamerYuk
                 Koneksi.JalankanPerintahNonQuery(perintah);
             }
         }
+        #endregion
 
+        #region Method Teman
         public bool TambahTeman(User User2)
         {
             Teman t = new Teman();
@@ -242,12 +247,26 @@ namespace Class_PamerYuk
 
         public static List<User> PencariTeman(string filter = "", string nilai = "",User userLogin = null)
         {
-            string perintah = "select distinct u.* from user u inner join kisahhidup k on u.username = k.username inner join organisasi o on k.Organisasi_id = o.id inner join kota ko on u.kota_id = ko.id" +
+            string perintah = "select distinct u.* from user u inner join kisahhidup k on u.username = k.username " +
+                "inner join organisasi o on k.Organisasi_id = o.id inner join kota ko on u.kota_id = ko.id" +
                 " where u.username != '" + userLogin.Username +
-                "' and (o.Nama in (select o.nama from organisasi o inner join kisahhidup k on o.id = k.organisasi_id where k.username = '" + userLogin.Username + "')) ";
+                "' and (o.Nama in (select o.nama from organisasi o inner join kisahhidup k on o.id = k.organisasi_id " +
+                "where k.username = '" + userLogin.Username + "')) ";
                 //"and (u.username in (select u.username from user u " +
                 //"inner join teman t on u.username = t.username1 where t.username1 = '"+userLogin.Username+"'))";
 
+            if (filter == "username")
+            {
+                perintah +=  "and u." + filter + " like'%" + nilai + "%';";
+            }
+            else if (filter == "ko.nama")
+            {
+                perintah += "and " + filter + " like'%" + nilai + "%';";
+            }
+            else if (filter == "o.nama")
+            {
+                perintah += "and " + filter + " like'%" + nilai + "%';";
+            }
             MySqlDataReader hasil = Koneksi.JalankanPerintahSelect(perintah);
             List<User> listPengguna = new List<User>();
 
@@ -267,10 +286,7 @@ namespace Class_PamerYuk
             return listPengguna;
             
         }
-        public override string ToString()
-        {
-            return Username;
-        }
+        
 
         public static List<Teman> CariTeman(User userLogin)
         {
@@ -299,6 +315,11 @@ namespace Class_PamerYuk
             return listPermintaan;
         }
         #endregion
+
+        public override string ToString()
+        {
+            return Username;
+        }
 
         #region Buangan
         //public static List<KisahHidup> BacaKisahHidup(User user)

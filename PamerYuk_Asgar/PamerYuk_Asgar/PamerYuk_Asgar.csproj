@@ -89,6 +89,12 @@
     <Compile Include="FormKonten.Designer.cs">
       <DependentUpon>FormKonten.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormLihatProfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLihatProfil.Designer.cs">
+      <DependentUpon>FormLihatProfil.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +164,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormKonten.resx">
       <DependentUpon>FormKonten.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLihatProfil.resx">
+      <DependentUpon>FormLihatProfil.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>

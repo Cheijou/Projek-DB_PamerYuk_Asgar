@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Class_PamerYuk;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace PamerYuk_Asgar
 {
@@ -26,16 +27,26 @@ namespace PamerYuk_Asgar
             form = (FormMenu)this.MdiParent;
             
             List<User> listUser = User.PencariTeman("","", user);
-            dataGridViewTeman.DataSource = listUser;
-                
-            if (dataGridViewTeman.ColumnCount == 6)
+            for (int i = 0; i < listUser.Count; i++)
             {
+                dataGridViewTeman.Rows.Add(listUser[i].Username);
+            }
+                
+            if (dataGridViewTeman.ColumnCount == 1)
+            {
+                DataGridViewButtonColumn btnLihat = new DataGridViewButtonColumn();
+                btnLihat.Text = "Lihat Profil";
+                btnLihat.HeaderText = "";
+                btnLihat.UseColumnTextForButtonValue = true;
+                btnLihat.Name = "btnLihatGrid";
+                dataGridViewTeman.Columns.Add(btnLihat);
                 DataGridViewButtonColumn btnTambah = new DataGridViewButtonColumn();
-                btnTambah.Text = "Tambah";
+                btnTambah.Text = "Tambah Teman";
                 btnTambah.HeaderText = "";
                 btnTambah.UseColumnTextForButtonValue = true;
                 btnTambah.Name = "btnTambahGrid";
                 dataGridViewTeman.Columns.Add(btnTambah);
+
             }
             
         }
@@ -61,6 +72,13 @@ namespace PamerYuk_Asgar
                     }
                 }
             }
+            else
+            {
+                FormLihatProfil form = new FormLihatProfil();
+                form.user = User.BacaData("username", kode)[0];
+                form.Owner = this;
+                form.ShowDialog();
+            }
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -76,16 +94,19 @@ namespace PamerYuk_Asgar
             }
             else if(comboBoxCari.SelectedIndex == 1)
             {
-                filter = "kota_id";
+                filter = "ko.nama";
             }
             else
             {
-                filter = "";
+                filter = "o.nama";
             }
             string nilai = textBoxCari.Text;
-
-            List<User> ListData = User.BacaData(filter, nilai);
-            dataGridViewTeman.DataSource = ListData;
+            dataGridViewTeman.Rows.Clear();
+            List<User> listUser = User.PencariTeman(filter, nilai, user);
+            for (int i = 0; i < listUser.Count; i++)
+            {
+                dataGridViewTeman.Rows.Add(listUser[i].Username);
+            }
         }
 
         private void FormTambahTeman_FormClosing(object sender, FormClosingEventArgs e)

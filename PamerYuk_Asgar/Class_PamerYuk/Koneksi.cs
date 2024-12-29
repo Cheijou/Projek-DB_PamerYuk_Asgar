@@ -32,14 +32,14 @@ namespace Class_PamerYuk
                 string DbUsername = settingsSection.Settings.Get("DbUsername").Value.ValueXml.InnerText;
                 string DbPassword = settingsSection.Settings.Get("DbPassword").Value.ValueXml.InnerText;
 
-                string strCon = "server=" + DbServer + ";database=" + DbName + ";uid=" + DbUsername + ";password=" + DbPassword;
+                string strCon = "server=" + DbServer + ";database=" + DbName + ";uid=" + DbUsername + ";password=" + DbPassword + ";Max Pool Size=200;";
                 koneksiDB = new MySqlConnection();
                 koneksiDB.ConnectionString = strCon;
                 Connect();
             }
             public Koneksi(string pS, string pD, string pU, string pP)
             {
-                string conString = "Server=" + pS + ";Database=" + pD + ";Uid=" + pU + ";pwd=" + pP;
+                string conString = "Server=" + pS + ";Database=" + pD + ";Uid=" + pU + ";pwd=" + pP+ ";Max Pool Size=200;";
                 koneksiDB = new MySqlConnection();
                 KoneksiDB.ConnectionString = conString;
                 Connect();

@@ -34,18 +34,22 @@
             this.comboBoxCari = new System.Windows.Forms.ComboBox();
             this.textBoxCari = new System.Windows.Forms.TextBox();
             this.buttonRequest = new System.Windows.Forms.Button();
+            this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTeman)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewTeman
             // 
+            this.dataGridViewTeman.AllowUserToAddRows = false;
             this.dataGridViewTeman.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewTeman.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Username});
             this.dataGridViewTeman.Location = new System.Drawing.Point(12, 98);
             this.dataGridViewTeman.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridViewTeman.Name = "dataGridViewTeman";
             this.dataGridViewTeman.RowHeadersWidth = 51;
             this.dataGridViewTeman.RowTemplate.Height = 24;
-            this.dataGridViewTeman.Size = new System.Drawing.Size(776, 297);
+            this.dataGridViewTeman.Size = new System.Drawing.Size(540, 261);
             this.dataGridViewTeman.TabIndex = 0;
             this.dataGridViewTeman.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewTeman_CellContentClick);
             // 
@@ -53,7 +57,7 @@
             // 
             this.labelCari.AutoSize = true;
             this.labelCari.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCari.Location = new System.Drawing.Point(264, 9);
+            this.labelCari.Location = new System.Drawing.Point(141, 1);
             this.labelCari.Name = "labelCari";
             this.labelCari.Size = new System.Drawing.Size(277, 54);
             this.labelCari.TabIndex = 1;
@@ -62,7 +66,7 @@
             // labelNama
             // 
             this.labelNama.AutoSize = true;
-            this.labelNama.Location = new System.Drawing.Point(172, 71);
+            this.labelNama.Location = new System.Drawing.Point(52, 66);
             this.labelNama.Name = "labelNama";
             this.labelNama.Size = new System.Drawing.Size(117, 16);
             this.labelNama.TabIndex = 2;
@@ -75,7 +79,7 @@
             "Username",
             "Kota",
             "Organisasi"});
-            this.comboBoxCari.Location = new System.Drawing.Point(293, 69);
+            this.comboBoxCari.Location = new System.Drawing.Point(174, 64);
             this.comboBoxCari.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBoxCari.Name = "comboBoxCari";
             this.comboBoxCari.Size = new System.Drawing.Size(107, 24);
@@ -84,7 +88,7 @@
             // 
             // textBoxCari
             // 
-            this.textBoxCari.Location = new System.Drawing.Point(405, 70);
+            this.textBoxCari.Location = new System.Drawing.Point(293, 65);
             this.textBoxCari.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxCari.Name = "textBoxCari";
             this.textBoxCari.Size = new System.Drawing.Size(193, 22);
@@ -93,7 +97,7 @@
             // 
             // buttonRequest
             // 
-            this.buttonRequest.Location = new System.Drawing.Point(626, 400);
+            this.buttonRequest.Location = new System.Drawing.Point(390, 376);
             this.buttonRequest.Name = "buttonRequest";
             this.buttonRequest.Size = new System.Drawing.Size(162, 39);
             this.buttonRequest.TabIndex = 5;
@@ -101,11 +105,18 @@
             this.buttonRequest.UseVisualStyleBackColor = true;
             this.buttonRequest.Click += new System.EventHandler(this.buttonRequest_Click);
             // 
+            // Username
+            // 
+            this.Username.HeaderText = "Username";
+            this.Username.MinimumWidth = 6;
+            this.Username.Name = "Username";
+            this.Username.Width = 125;
+            // 
             // FormTambahTeman
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(570, 432);
             this.Controls.Add(this.buttonRequest);
             this.Controls.Add(this.textBoxCari);
             this.Controls.Add(this.comboBoxCari);
@@ -132,5 +143,6 @@
         private System.Windows.Forms.ComboBox comboBoxCari;
         private System.Windows.Forms.TextBox textBoxCari;
         private System.Windows.Forms.Button buttonRequest;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Username;
     }
 }
