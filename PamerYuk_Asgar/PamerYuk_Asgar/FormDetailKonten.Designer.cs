@@ -228,7 +228,6 @@
         private System.Windows.Forms.Panel panelKonten;
         private System.Windows.Forms.Label labelKomen;
         private System.Windows.Forms.Label labelCaption;
-        private System.Windows.Forms.PictureBox pictureBoxGambar;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label labelKomentar;
         private System.Windows.Forms.Label labelHasilCaption;
@@ -239,5 +238,6 @@
         private System.Windows.Forms.Button buttonTambahKomentar;
         public AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayerVideo;
         public System.Windows.Forms.ListBox listBoxKomentar;
+        public System.Windows.Forms.PictureBox pictureBoxGambar;
     }
 }

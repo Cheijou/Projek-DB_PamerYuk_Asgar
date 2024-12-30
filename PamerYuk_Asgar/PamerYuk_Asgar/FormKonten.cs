@@ -37,6 +37,7 @@ namespace PamerYuk_Asgar
                     formKomen.Owner = this;
                     formKomen.user = user;
                     formKomen.kontenId = konten;
+                    formKomen.pictureBoxGambar.Image = (Image)dataGridViewKonten.CurrentRow.Cells["Gambar"].Value;
                     formKomen.Show();
                     formKomen.BringToFront();
                 }
