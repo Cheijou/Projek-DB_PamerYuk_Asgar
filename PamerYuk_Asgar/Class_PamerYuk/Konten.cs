@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,7 +18,7 @@ namespace Class_PamerYuk
         private DateTime tglUpload;
         private User user;
         private List<Tag> listTag;
-
+        private Image gambar;
 
         #endregion
 
@@ -52,6 +53,7 @@ namespace Class_PamerYuk
         public DateTime TglUpload { get => tglUpload; set => tglUpload = value; }
         public User User { get => user; set => user = value; }
         public List<Tag> ListTag { get => listTag; set => listTag = value; }
+        public Image Gambar { get => gambar; set => gambar = value; }
 
         #endregion
 
@@ -138,9 +140,9 @@ namespace Class_PamerYuk
         public static void InsertKonten(Konten k)
         {
             string perintah;
-            
-                perintah = "INSERT INTO konten (caption, foto, video, tglUpload, username) "
-                + "VALUES ('" + k.Caption + "', '" + k.foto + "', '" + k.Video + "', '" + k.TglUpload.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + k.User.Username + "');";
+            string fotoPath = k.foto.Replace("\\", "\\\\");
+            perintah = "INSERT INTO konten (caption, foto, video, tglUpload, username) "
+                + "VALUES ('" + k.Caption + "', '" + fotoPath + "', '" + k.Video + "', '" + k.TglUpload.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + k.User.Username + "');";
                 Koneksi.JalankanPerintahNonQuery(perintah);
             k.Id = k.BacaID("username", k.User.ToString(), "tglUpload", k.TglUpload.ToString("yyyy-MM-dd HH:mm:ss"));
             Konten.InsertTag(k);
@@ -190,11 +192,28 @@ namespace Class_PamerYuk
                 tampung.TglUpload = DateTime.Parse(hasil.GetValue(4).ToString());
                 User user = new User();
                 user.Username = hasil.GetValue(5).ToString();
-                
+                if (System.IO.File.Exists(tampung.Foto))
+                {
+                    tampung.Gambar = UbahUkuran(Image.FromFile(tampung.Foto),189);
+                }
+                else
+                {
+                    tampung.Gambar = null;
+                }
                 tampung.User = user;
                 ListData.Add(tampung);
             }
             return ListData;
+        }
+        private static Image UbahUkuran(Image img, int panjang)
+        {
+            Bitmap squareImg = new Bitmap(panjang, panjang); 
+            using (Graphics g = Graphics.FromImage(squareImg))
+            {
+                g.Clear(Color.White);
+                g.DrawImage(img, 0, 0, panjang, panjang); 
+            }
+            return squareImg;
         }
 
         #endregion

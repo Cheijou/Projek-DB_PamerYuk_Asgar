@@ -53,8 +53,21 @@ namespace PamerYuk_Asgar
 
             List<Konten> listKonten = Konten.Daftarkonten(user);
             dataGridViewKonten.DataSource = listKonten;
+            DataGridViewImageColumn imageColumn = new DataGridViewImageColumn
+            {
+                Name = "Gambar",
+                HeaderText = "Foto",
+            };
+            dataGridViewKonten.Columns["Gambar"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewKonten.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+                
+            for (int i = 0; i < listKonten.Count; i++)
+            {
+                
+                dataGridViewKonten.Rows[i].Cells[6].Value = listKonten[i].Gambar; 
+            }
 
-            if (dataGridViewKonten.ColumnCount == 6)
+            if (dataGridViewKonten.ColumnCount == 7)
             {
                 DataGridViewButtonColumn btnDetail = new DataGridViewButtonColumn();
                 btnDetail.Text = "Detail";
