@@ -230,14 +230,14 @@
         private System.Windows.Forms.Label labelCaption;
         private System.Windows.Forms.PictureBox pictureBoxGambar;
         private System.Windows.Forms.Panel panel1;
-        private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayerVideo;
         private System.Windows.Forms.Label labelKomentar;
-        private System.Windows.Forms.ListBox listBoxKomentar;
         private System.Windows.Forms.Label labelHasilCaption;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label labelTextBox;
         private System.Windows.Forms.Button buttonBatal;
         private System.Windows.Forms.TextBox textBoxKomen;
         private System.Windows.Forms.Button buttonTambahKomentar;
+        public AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayerVideo;
+        public System.Windows.Forms.ListBox listBoxKomentar;
     }
 }
