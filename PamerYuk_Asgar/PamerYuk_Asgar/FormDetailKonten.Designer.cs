@@ -86,6 +86,7 @@
             this.pictureBoxGambar.Location = new System.Drawing.Point(12, 449);
             this.pictureBoxGambar.Name = "pictureBoxGambar";
             this.pictureBoxGambar.Size = new System.Drawing.Size(520, 250);
+            this.pictureBoxGambar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxGambar.TabIndex = 31;
             this.pictureBoxGambar.TabStop = false;
             // 
@@ -103,8 +104,9 @@
             this.axWindowsMediaPlayerVideo.Location = new System.Drawing.Point(0, -1);
             this.axWindowsMediaPlayerVideo.Name = "axWindowsMediaPlayerVideo";
             this.axWindowsMediaPlayerVideo.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayerVideo.OcxState")));
-            this.axWindowsMediaPlayerVideo.Size = new System.Drawing.Size(520, 382);
+            this.axWindowsMediaPlayerVideo.Size = new System.Drawing.Size(517, 379);
             this.axWindowsMediaPlayerVideo.TabIndex = 0;
+            this.axWindowsMediaPlayerVideo.Enter += new System.EventHandler(this.axWindowsMediaPlayerVideo_Enter);
             // 
             // labelKomentar
             // 

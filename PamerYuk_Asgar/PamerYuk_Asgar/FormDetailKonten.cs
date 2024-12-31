@@ -28,9 +28,10 @@ namespace PamerYuk_Asgar
         {
             form = (FormKonten)this.Owner;
             konten = Konten.BacaData("id", kontenId)[0];
-            //axWindowsMediaPlayerVideo.URL = konten.Video;
-            //axWindowsMediaPlayerVideo.Ctlcontrols.play();
-            //pictureBoxGambar.Image = Image.FromFile(konten.Foto);
+            axWindowsMediaPlayerVideo.URL = konten.Video;
+            axWindowsMediaPlayerVideo.Ctlcontrols.play();
+            axWindowsMediaPlayerVideo.stretchToFit = true;
+            pictureBoxGambar.Image = Image.FromFile(konten.Foto);
             labelHasilCaption.Text = konten.Caption;
             List<Komen> listKomen = Komen.BacaData(kontenId);
             for ( int i = 0;i< listKomen.Count; i++)
@@ -78,6 +79,11 @@ namespace PamerYuk_Asgar
         {
             labelTextBox.Visible = false;
             labelTextBox.Enabled = false;
+        }
+
+        private void axWindowsMediaPlayerVideo_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

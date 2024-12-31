@@ -141,8 +141,10 @@ namespace Class_PamerYuk
         {
             string perintah;
             string fotoPath = k.foto.Replace("\\", "\\\\");
+            string videoPath = k.video.Replace("\\", "\\\\");
+           
             perintah = "INSERT INTO konten (caption, foto, video, tglUpload, username) "
-                + "VALUES ('" + k.Caption + "', '" + fotoPath + "', '" + k.Video + "', '" + k.TglUpload.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + k.User.Username + "');";
+                + "VALUES ('" + k.Caption + "', '" + fotoPath + "', '" + videoPath + "', '" + k.TglUpload.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + k.User.Username + "');";
                 Koneksi.JalankanPerintahNonQuery(perintah);
             k.Id = k.BacaID("username", k.User.ToString(), "tglUpload", k.TglUpload.ToString("yyyy-MM-dd HH:mm:ss"));
             Konten.InsertTag(k);
@@ -189,6 +191,7 @@ namespace Class_PamerYuk
                 tampung.Caption = hasil.GetValue(1).ToString();
                 tampung.Foto = hasil.GetValue(2).ToString();
                 tampung.Video = hasil.GetValue(3).ToString();
+                tampung.Video.Replace(" ", "_");
                 tampung.TglUpload = DateTime.Parse(hasil.GetValue(4).ToString());
                 User user = new User();
                 user.Username = hasil.GetValue(5).ToString();
