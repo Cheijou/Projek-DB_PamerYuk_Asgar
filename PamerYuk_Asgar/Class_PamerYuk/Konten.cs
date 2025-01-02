@@ -141,12 +141,20 @@ namespace Class_PamerYuk
         {
             
             string perintah;
-            if (k.Video == null || k.Foto == null)
+            string fotoPath = "";
+            string videoPath = "";  
+            if (k.video == null && k.Foto == null)
             {
                 throw new Exception("Kamu belum menambahkan Foto/Video");
             }
-            string fotoPath = k.Foto.Replace("\\", "\\\\");
-            string videoPath = k.Video.Replace("\\", "\\\\");
+            if (k.Foto != null)
+            {
+                fotoPath = k.Foto.Replace("\\", "\\\\");
+            }
+            if (k.Video != null)
+            {
+                videoPath = k.Video.Replace("\\", "\\\\");
+            }
            
             perintah = "INSERT INTO konten (caption, foto, video, tglUpload, username) "
                 + "VALUES ('" + k.Caption + "', '" + fotoPath + "', '" + videoPath + "', '" + k.TglUpload.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + k.User.Username + "');";
