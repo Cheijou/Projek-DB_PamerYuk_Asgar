@@ -104,7 +104,7 @@
             this.axWindowsMediaPlayerVideo.Location = new System.Drawing.Point(0, -1);
             this.axWindowsMediaPlayerVideo.Name = "axWindowsMediaPlayerVideo";
             this.axWindowsMediaPlayerVideo.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayerVideo.OcxState")));
-            this.axWindowsMediaPlayerVideo.Size = new System.Drawing.Size(517, 379);
+            this.axWindowsMediaPlayerVideo.Size = new System.Drawing.Size(380, 306);
             this.axWindowsMediaPlayerVideo.TabIndex = 0;
             this.axWindowsMediaPlayerVideo.Enter += new System.EventHandler(this.axWindowsMediaPlayerVideo_Enter);
             // 

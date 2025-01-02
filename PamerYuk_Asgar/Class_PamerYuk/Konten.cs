@@ -139,9 +139,14 @@ namespace Class_PamerYuk
 
         public static void InsertKonten(Konten k)
         {
+            
             string perintah;
-            string fotoPath = k.foto.Replace("\\", "\\\\");
-            string videoPath = k.video.Replace("\\", "\\\\");
+            if (k.Video == null || k.Foto == null)
+            {
+                throw new Exception("Kamu belum menambahkan Foto/Video");
+            }
+            string fotoPath = k.Foto.Replace("\\", "\\\\");
+            string videoPath = k.Video.Replace("\\", "\\\\");
            
             perintah = "INSERT INTO konten (caption, foto, video, tglUpload, username) "
                 + "VALUES ('" + k.Caption + "', '" + fotoPath + "', '" + videoPath + "', '" + k.TglUpload.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + k.User.Username + "');";
@@ -170,17 +175,13 @@ namespace Class_PamerYuk
 
         }
 
-        public static List<Konten> Daftarkonten(User userLogin)
+        public static List<Konten> DaftarkontenTeman(User userLogin)
         {
-            string perintah = "select Distinct k.* from konten k " +
-                "inner join user u on k.username = u.username  " + 
-                "where (k.username = '" + userLogin.Username + "') " +
-                "or " +
-                "(k.username in (select k2.username from  konten k2 " +
-                "inner join user u2 on k2.username = u2.username " +
-                "inner join teman t on u2.username = t.username1 " +
-                "inner join teman tm on u2.username = tm.username2 " +
-                "where k2.username = '" + userLogin.Username +"')) order by k.tglUpload asc";
+            string perintah = "select  k.* from konten k " +
+                "where k.username in (select username1 from teman where username2 = '"+ userLogin.Username +
+                "' union select username2 from teman where username1 = '"+ userLogin.Username + 
+                "' )" +
+                " order by k.tglUpload asc";
             MySqlDataReader hasil = Koneksi.JalankanPerintahSelect(perintah);
 
             List<Konten> ListData = new List<Konten>();
@@ -191,13 +192,44 @@ namespace Class_PamerYuk
                 tampung.Caption = hasil.GetValue(1).ToString();
                 tampung.Foto = hasil.GetValue(2).ToString();
                 tampung.Video = hasil.GetValue(3).ToString();
-                tampung.Video.Replace(" ", "_");
                 tampung.TglUpload = DateTime.Parse(hasil.GetValue(4).ToString());
                 User user = new User();
                 user.Username = hasil.GetValue(5).ToString();
                 if (System.IO.File.Exists(tampung.Foto))
                 {
                     tampung.Gambar = UbahUkuran(Image.FromFile(tampung.Foto),189);
+                }
+                else
+                {
+                    tampung.Gambar = null;
+                }
+                tampung.User = user;
+                ListData.Add(tampung);
+            }
+            return ListData;
+        }
+        public static List<Konten> DaftarkontenSaya(User userLogin)
+        {
+            string perintah = "select  k.* from konten k " +
+                "inner join user u on k.username = u.username  " +
+                "where (k.username = '" + userLogin.Username + "') " +
+                " order by k.tglUpload asc";
+            MySqlDataReader hasil = Koneksi.JalankanPerintahSelect(perintah);
+
+            List<Konten> ListData = new List<Konten>();
+            while (hasil.Read() == true)
+            {
+                Konten tampung = new Konten();
+                tampung.Id = int.Parse(hasil.GetValue(0).ToString());
+                tampung.Caption = hasil.GetValue(1).ToString();
+                tampung.Foto = hasil.GetValue(2).ToString();
+                tampung.Video = hasil.GetValue(3).ToString();
+                tampung.TglUpload = DateTime.Parse(hasil.GetValue(4).ToString());
+                User user = new User();
+                user.Username = hasil.GetValue(5).ToString();
+                if (System.IO.File.Exists(tampung.Foto))
+                {
+                    tampung.Gambar = UbahUkuran(Image.FromFile(tampung.Foto), 189);
                 }
                 else
                 {

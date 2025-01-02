@@ -52,7 +52,7 @@ namespace PamerYuk_Asgar
         {
             form = (FormMenu)this.MdiParent;
 
-            List<Konten> listKonten = Konten.Daftarkonten(user);
+            List<Konten> listKonten = Konten.DaftarkontenTeman(user);
             dataGridViewKonten.DataSource = listKonten;
             DataGridViewImageColumn imageColumn = new DataGridViewImageColumn
             {

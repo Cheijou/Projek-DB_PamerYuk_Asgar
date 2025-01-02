@@ -65,7 +65,7 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.panel1.Controls.Add(this.labelJudul);
-            this.panel1.Location = new System.Drawing.Point(65, 1);
+            this.panel1.Location = new System.Drawing.Point(26, 3);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1080, 62);
@@ -161,7 +161,7 @@
             this.axWindowsMediaPlayerVideo.Location = new System.Drawing.Point(0, 0);
             this.axWindowsMediaPlayerVideo.Name = "axWindowsMediaPlayerVideo";
             this.axWindowsMediaPlayerVideo.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayerVideo.OcxState")));
-            this.axWindowsMediaPlayerVideo.Size = new System.Drawing.Size(403, 430);
+            this.axWindowsMediaPlayerVideo.Size = new System.Drawing.Size(315, 267);
             this.axWindowsMediaPlayerVideo.TabIndex = 0;
             // 
             // buttonTambahTag
