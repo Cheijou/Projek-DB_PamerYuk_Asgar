@@ -211,7 +211,6 @@ namespace Class_PamerYuk
         public static List<Konten> DaftarkontenSaya(User userLogin)
         {
             string perintah = "select  k.* from konten k " +
-                "inner join user u on k.username = u.username  " +
                 "where (k.username = '" + userLogin.Username + "') " +
                 " order by k.tglUpload asc";
             MySqlDataReader hasil = Koneksi.JalankanPerintahSelect(perintah);

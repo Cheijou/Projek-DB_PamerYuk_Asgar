@@ -91,5 +91,23 @@ namespace PamerYuk_Asgar
         {
             form.LoadButton();
         }
+
+        private void buttonKontenSaya_Click(object sender, EventArgs e)
+        {
+            FormKontenSaya form = new FormKontenSaya();
+            form.user = user;
+            form.Owner = this;
+            form.ShowDialog();  
+        }
+
+        private void labelKonten_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelKonten_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

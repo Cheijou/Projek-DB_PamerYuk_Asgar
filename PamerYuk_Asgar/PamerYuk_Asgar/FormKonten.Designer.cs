@@ -50,6 +50,7 @@
             this.buttonKontenSaya.TabIndex = 0;
             this.buttonKontenSaya.Text = "Konten Saya";
             this.buttonKontenSaya.UseVisualStyleBackColor = false;
+            this.buttonKontenSaya.Click += new System.EventHandler(this.buttonKontenSaya_Click);
             // 
             // buttonTambahKonten
             // 
@@ -85,6 +86,7 @@
             this.labelKonten.Size = new System.Drawing.Size(158, 55);
             this.labelKonten.TabIndex = 3;
             this.labelKonten.Text = "Konten";
+            this.labelKonten.Click += new System.EventHandler(this.labelKonten_Click);
             // 
             // panelKonten
             // 
@@ -95,6 +97,7 @@
             this.panelKonten.Name = "panelKonten";
             this.panelKonten.Size = new System.Drawing.Size(776, 54);
             this.panelKonten.TabIndex = 4;
+            this.panelKonten.Paint += new System.Windows.Forms.PaintEventHandler(this.panelKonten_Paint);
             // 
             // buttonTutup
             // 
