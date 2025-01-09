@@ -118,6 +118,7 @@ namespace PamerYuk_Asgar
             if (form == null)
             {
                 FormEditProfil formEditProfil = new FormEditProfil();
+                formEditProfil.user = userLogin;
                 formEditProfil.MdiParent = this;
                 formEditProfil.Show();
                 buttonEditProfil.Visible = false;

@@ -24,60 +24,92 @@ namespace PamerYuk_Asgar
 
         private void FormTambahTeman_Load(object sender, EventArgs e)
         {
-            form = (FormMenu)this.MdiParent;
-            
-            List<User> listUser = User.PencariTeman("","", user);
-            for (int i = 0; i < listUser.Count; i++)
+            try
             {
-                dataGridViewTeman.Rows.Add(listUser[i].Username);
-            }
-                
-            if (dataGridViewTeman.ColumnCount == 1)
-            {
-                DataGridViewButtonColumn btnLihat = new DataGridViewButtonColumn();
-                btnLihat.Text = "Lihat Profil";
-                btnLihat.HeaderText = "";
-                btnLihat.UseColumnTextForButtonValue = true;
-                btnLihat.Name = "btnLihatGrid";
-                dataGridViewTeman.Columns.Add(btnLihat);
-                DataGridViewButtonColumn btnTambah = new DataGridViewButtonColumn();
-                btnTambah.Text = "Tambah Teman";
-                btnTambah.HeaderText = "";
-                btnTambah.UseColumnTextForButtonValue = true;
-                btnTambah.Name = "btnTambahGrid";
-                dataGridViewTeman.Columns.Add(btnTambah);
+                form = (FormMenu)this.MdiParent;
 
+                List<User> listUser = User.PencariTeman("", "", user);
+                for (int i = 0; i < listUser.Count; i++)
+                {
+                    dataGridViewTeman.Rows.Add(listUser[i].Username);
+                }
+
+                if (dataGridViewTeman.ColumnCount == 1)
+                {
+                    DataGridViewButtonColumn btnLihat = new DataGridViewButtonColumn();
+                    btnLihat.Text = "Lihat Profil";
+                    btnLihat.HeaderText = "";
+                    btnLihat.UseColumnTextForButtonValue = true;
+                    btnLihat.Name = "btnLihatGrid";
+                    dataGridViewTeman.Columns.Add(btnLihat);
+
+                    List<Teman> listTeman = User.BacaDataTeman("", "", user);
+
+                    DataGridViewButtonColumn btnTambah = new DataGridViewButtonColumn();
+                    btnTambah.Text = "Tambah Teman";
+                    btnTambah.HeaderText = "";
+                    btnTambah.UseColumnTextForButtonValue = true;
+                    btnTambah.Name = "btnTambahGrid";
+                    dataGridViewTeman.Columns.Add(btnTambah);
+                }
             }
-            
-        }
+            catch  
+            {
+                MessageBox.Show("Anda sudah berteman dengan user ini");
+            }
+
+                //for (int i = 0; i < dataGridViewTeman.Rows.Count; i++)
+                //{
+                //    string user = dataGridViewTeman.Rows[i].Cells["Username"].Value.ToString();
+                //    Console.WriteLine(user);
+                //    for (int j = 0; j < listTeman.Count; j++)
+                //    {
+                //        if (user != listTeman[j].User2.Username)
+                //        {
+                //            //btnTambah.Text = "Tambah Teman";
+                //            //btnTambah.HeaderText = "";
+                //            //btnTambah.UseColumnTextForButtonValue = true;
+                //            //btnTambah.Name = "btnTambahGrid";
+                //            dataGridViewTeman.Rows[i].Cells["btnTambahGrid"].Value = DBNull.Value;
+                //        }
+                //    }
+                //}
+        }        
 
         private void dataGridViewTeman_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            string kode = dataGridViewTeman.CurrentRow.Cells["Username"].Value.ToString();
-
-            if (e.ColumnIndex == dataGridViewTeman.Columns["btnTambahGrid"].Index)
+            try
             {
-                DialogResult jawaban = MessageBox.Show("Kirim permintaan pertemanan?", "Information", MessageBoxButtons.YesNo);
-                if (jawaban == DialogResult.Yes)
+                string kode = dataGridViewTeman.CurrentRow.Cells["Username"].Value.ToString();
+
+                if (e.ColumnIndex == dataGridViewTeman.Columns["btnTambahGrid"].Index)
                 {
-                    User teman = User.BacaData("Username", kode)[0];
-                    bool cek = user.TambahTeman(teman);
-                    if (cek == false)
+                    DialogResult jawaban = MessageBox.Show("Kirim permintaan pertemanan?", "Information", MessageBoxButtons.YesNo);
+                    if (jawaban == DialogResult.Yes)
                     {
-                        MessageBox.Show("Permintaan berhasil dikirim");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Anda sekarang telah berteman dengan " + teman);
+                        User teman = User.BacaData("Username", kode)[0];
+                        bool cek = user.TambahTeman(teman);
+                        if (cek == false)
+                        {
+                            MessageBox.Show("Permintaan berhasil dikirim");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Anda telah berteman dengan user ini");
+                        }
                     }
                 }
+                else
+                {
+                    FormLihatProfil form = new FormLihatProfil();
+                    form.user = User.BacaData("username", kode)[0];
+                    form.Owner = this;
+                    form.ShowDialog();
+                }
             }
-            else
+            catch
             {
-                FormLihatProfil form = new FormLihatProfil();
-                form.user = User.BacaData("username", kode)[0];
-                form.Owner = this;
-                form.ShowDialog();
+                MessageBox.Show("Anda sudah berteman dengan user ini");
             }
         }
         private void textBox1_TextChanged(object sender, EventArgs e)

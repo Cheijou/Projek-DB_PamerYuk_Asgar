@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Microsoft.SqlServer.Server;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -18,6 +19,7 @@ namespace Class_PamerYuk
         private DateTime tglUpload;
         private User user;
         private List<Tag> listTag;
+        private List<Like> listLike;
         private Image gambar;
 
         #endregion
@@ -42,6 +44,7 @@ namespace Class_PamerYuk
             this.TglUpload = DateTime.Now;
             this.User = new User();
             this.ListTag = new List<Tag>();
+            this.ListLike = new List<Like>();
         }
         #endregion
 
@@ -54,6 +57,7 @@ namespace Class_PamerYuk
         public User User { get => user; set => user = value; }
         public List<Tag> ListTag { get => listTag; set => listTag = value; }
         public Image Gambar { get => gambar; set => gambar = value; }
+        public List<Like> ListLike { get => listLike; set => listLike = value; }
 
         #endregion
 
@@ -83,7 +87,24 @@ namespace Class_PamerYuk
                 ListData.Add(tampung);
             }
             return ListData;
+        }
 
+        public static bool CekLike(string filter = "", string nilai = "", string kontenid = "")
+        {
+            bool cek = false;
+            string perintah = "select l.* from likes l";
+            if (filter != "")
+            {
+                perintah += " where " + filter + " = '" + nilai + "' and konten_id = '" + kontenid + "'";
+            }
+
+            MySqlDataReader hasil = Koneksi.JalankanPerintahSelect(perintah);
+
+            while (hasil.Read() == true)
+            {
+                cek = true;
+            }
+            return cek;
         }
         public void TambahTag(User user)
         {
@@ -103,6 +124,34 @@ namespace Class_PamerYuk
             ListTag.Add(t);
         }
 
+        public void TambahLike(User user, string kontenid)
+        {
+
+            Like l = new Like();
+            l.User = user;
+            //if (ListLike != null)
+            //{
+            //    foreach (Like like in ListLike)
+            //    {
+            //        if (like.User.Username == user.Username)
+            //        {
+            //            HapusLike();
+            //        }
+            //    }
+            //}
+            ListLike.Add(l);
+            InsertLike(kontenid);
+        }
+
+        public void HapusLike(string kontenid, User userLogin)
+        {
+            string perintah = "";
+                perintah = "delete from likes "
+                + "where konten_id = '" + kontenid + "' and User_username = '" + userLogin.Username+ "'";
+                Koneksi.JalankanPerintahNonQuery(perintah);
+
+        }
+
         public static void InsertTag(Konten k)
         {
             string perintah;
@@ -112,6 +161,32 @@ namespace Class_PamerYuk
                 + "VALUES ('" + k.Id + "', '" + k.ListTag[i].User.Username + "');";
                 Koneksi.JalankanPerintahNonQuery(perintah);
             }
+        }
+
+        public void InsertLike(string kontenid)
+        {
+            string perintah;
+                perintah = "INSERT INTO Likes (Konten_id, user_username) "
+                + "VALUES ('" + kontenid + "', '" + this.ListLike[0].User.Username + "');";
+                Koneksi.JalankanPerintahNonQuery(perintah);
+        }
+
+        public static int HitungTotalLikes(string filter = "", string nilai = "")
+        {
+            int total = 0;
+            string perintah = "select count(l.konten_id) from likes l";
+            if (filter != "")
+            {
+                perintah += " where " + filter + " = '" + nilai + "'";
+            }
+
+            MySqlDataReader hasil = Koneksi.JalankanPerintahSelect(perintah);
+
+            while (hasil.Read() == true)
+            {
+                total = int.Parse(hasil.GetValue(0).ToString());
+            }
+            return total;
         }
 
         public static User Teman(string filter = "", string nilai = "")

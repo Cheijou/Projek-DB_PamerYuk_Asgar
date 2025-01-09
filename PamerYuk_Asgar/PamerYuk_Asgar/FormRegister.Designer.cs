@@ -39,12 +39,13 @@
             this.labelTglLahir = new System.Windows.Forms.Label();
             this.labelFoto = new System.Windows.Forms.Label();
             this.labelKota = new System.Windows.Forms.Label();
-            this.textBoxFoto = new System.Windows.Forms.TextBox();
             this.comboBoxKota = new System.Windows.Forms.ComboBox();
             this.labelNoKtp = new System.Windows.Forms.Label();
             this.textBoxNoKTP = new System.Windows.Forms.TextBox();
             this.dateTimePickerTanggalLahir = new System.Windows.Forms.DateTimePicker();
+            this.pictureBoxPFP = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPFP)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -159,14 +160,6 @@
             this.labelKota.TabIndex = 33;
             this.labelKota.Text = "Kota  :";
             // 
-            // textBoxFoto
-            // 
-            this.textBoxFoto.Location = new System.Drawing.Point(119, 298);
-            this.textBoxFoto.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxFoto.Name = "textBoxFoto";
-            this.textBoxFoto.Size = new System.Drawing.Size(485, 22);
-            this.textBoxFoto.TabIndex = 35;
-            // 
             // comboBoxKota
             // 
             this.comboBoxKota.FormattingEnabled = true;
@@ -200,16 +193,26 @@
             this.dateTimePickerTanggalLahir.Size = new System.Drawing.Size(200, 22);
             this.dateTimePickerTanggalLahir.TabIndex = 39;
             // 
+            // pictureBoxPFP
+            // 
+            this.pictureBoxPFP.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBoxPFP.Location = new System.Drawing.Point(118, 287);
+            this.pictureBoxPFP.Name = "pictureBoxPFP";
+            this.pictureBoxPFP.Size = new System.Drawing.Size(51, 49);
+            this.pictureBoxPFP.TabIndex = 40;
+            this.pictureBoxPFP.TabStop = false;
+            this.pictureBoxPFP.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pictureBoxPFP_MouseDoubleClick);
+            // 
             // FormRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(617, 460);
+            this.Controls.Add(this.pictureBoxPFP);
             this.Controls.Add(this.dateTimePickerTanggalLahir);
             this.Controls.Add(this.textBoxNoKTP);
             this.Controls.Add(this.labelNoKtp);
             this.Controls.Add(this.comboBoxKota);
-            this.Controls.Add(this.textBoxFoto);
             this.Controls.Add(this.labelKota);
             this.Controls.Add(this.labelFoto);
             this.Controls.Add(this.labelTglLahir);
@@ -225,6 +228,7 @@
             this.Load += new System.EventHandler(this.FormRegister_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPFP)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -243,10 +247,10 @@
         private System.Windows.Forms.Label labelTglLahir;
         private System.Windows.Forms.Label labelFoto;
         private System.Windows.Forms.Label labelKota;
-        private System.Windows.Forms.TextBox textBoxFoto;
         private System.Windows.Forms.ComboBox comboBoxKota;
         private System.Windows.Forms.Label labelNoKtp;
         private System.Windows.Forms.TextBox textBoxNoKTP;
         private System.Windows.Forms.DateTimePicker dateTimePickerTanggalLahir;
+        private System.Windows.Forms.PictureBox pictureBoxPFP;
     }
 }

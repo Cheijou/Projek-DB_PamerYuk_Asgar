@@ -108,7 +108,9 @@ namespace PamerYuk_Asgar
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Kisah Hidup Sudah Pernah Didaftarkan");
+                MessageBox.Show("Kisah hidup sudah pernah ditambahkan");
+                dataGridViewData.Rows.Clear();
+                user.ListKisahHidup = new List<KisahHidup>();
             }
 
         }
@@ -116,6 +118,12 @@ namespace PamerYuk_Asgar
         private void dataGridViewData_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void buttonHapusKisah_Click(object sender, EventArgs e)
+        {
+            dataGridViewData.Rows.Clear();
+            user.ListKisahHidup = new List<KisahHidup>();
         }
     }
 }

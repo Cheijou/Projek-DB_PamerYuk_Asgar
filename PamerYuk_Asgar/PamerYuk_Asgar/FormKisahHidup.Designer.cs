@@ -53,6 +53,7 @@
             this.deskripsi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonTambah = new System.Windows.Forms.Button();
             this.labelKota = new System.Windows.Forms.Label();
+            this.buttonHapusKisah = new System.Windows.Forms.Button();
             this.panelKisahHidup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewData)).BeginInit();
             this.SuspendLayout();
@@ -289,11 +290,25 @@
             this.labelKota.TabIndex = 36;
             this.labelKota.Text = "Kota";
             // 
+            // buttonHapusKisah
+            // 
+            this.buttonHapusKisah.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.buttonHapusKisah.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonHapusKisah.Location = new System.Drawing.Point(11, 772);
+            this.buttonHapusKisah.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonHapusKisah.Name = "buttonHapusKisah";
+            this.buttonHapusKisah.Size = new System.Drawing.Size(147, 47);
+            this.buttonHapusKisah.TabIndex = 37;
+            this.buttonHapusKisah.Text = "Hapus";
+            this.buttonHapusKisah.UseVisualStyleBackColor = false;
+            this.buttonHapusKisah.Click += new System.EventHandler(this.buttonHapusKisah_Click);
+            // 
             // FormKisahHidup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(553, 830);
+            this.Controls.Add(this.buttonHapusKisah);
             this.Controls.Add(this.labelKota);
             this.Controls.Add(this.buttonTambah);
             this.Controls.Add(this.dataGridViewData);
@@ -347,5 +362,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn thakhir;
         private System.Windows.Forms.DataGridViewTextBoxColumn deskripsi;
         private System.Windows.Forms.Label labelKota;
+        private System.Windows.Forms.Button buttonHapusKisah;
     }
 }

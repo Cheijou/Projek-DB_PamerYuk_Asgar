@@ -19,7 +19,7 @@ namespace PamerYuk_Asgar
             InitializeComponent();
         }
         FormLogin form;
-        
+        string gambarPath;
 
         private void FormRegister_Load(object sender, EventArgs e)
         {
@@ -38,6 +38,7 @@ namespace PamerYuk_Asgar
                 u.Password = textBoxPassword.Text;
                 u.NoKtp = textBoxNoKTP.Text;
                 u.TglLahir = dateTimePickerTanggalLahir.Value;
+                u.Foto = gambarPath;
                 u.Kota = (Kota)comboBoxKota.SelectedItem;
                 User.TambahData(u);
 
@@ -53,6 +54,18 @@ namespace PamerYuk_Asgar
                 MessageBox.Show("Username Sudah Pernah Terdaftar");
             }
 
+        }
+
+        private void pictureBoxPFP_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "Choose Image(*.JPG;*.PNG)|*.jpg;*.png";
+            open.Title = "Select a Image File";
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+                pictureBoxPFP.Image = Image.FromFile(open.FileName);
+                gambarPath = open.FileName;
+            }
         }
     }
 }

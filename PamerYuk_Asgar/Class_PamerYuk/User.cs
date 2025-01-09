@@ -17,7 +17,7 @@ namespace Class_PamerYuk
         private string password;
         private DateTime tglLahir;
         private string noKtp;
-        private Image foto;
+        private string foto;
         private Kota kota;
         private List<KisahHidup> listKisahHidup;
         private List<Teman> listTeman;
@@ -38,7 +38,7 @@ namespace Class_PamerYuk
 
         }
 
-        public User(string username, string password, DateTime tglLahir, string noKtp, Image foto, Kota kota)
+        public User(string username, string password, DateTime tglLahir, string noKtp, string foto, Kota kota)
         {
             this.Username = username;
             this.Password = password;
@@ -54,7 +54,7 @@ namespace Class_PamerYuk
         public string Password { get => password; set => password = value; }
         public DateTime TglLahir { get => tglLahir; set => tglLahir = value; }
         public string NoKtp { get => noKtp; set => noKtp = value; }
-        public Image Foto { get => foto; set => foto = value; }
+        public string Foto { get => foto; set => foto = value; }
         public  Kota Kota { get => kota; set => kota = value; }
         public List<KisahHidup> ListKisahHidup { get => listKisahHidup; set => listKisahHidup = value; }
         public List<Teman> ListTeman { get => listTeman; set => listTeman = value; }
@@ -75,7 +75,7 @@ namespace Class_PamerYuk
                 user.Password = hasil.GetValue(1).ToString();
                 user.TglLahir = DateTime.Parse(hasil.GetValue(2).ToString());
                 user.NoKtp = hasil.GetValue(3).ToString();
-                //user.Foto = hasil.GetValue(4).ToString();
+                user.Foto = hasil.GetValue(4).ToString();
                 user.Kota = Kota.BacaData("id", hasil.GetValue(5).ToString())[0];
                 // tambahkan ke list
                 return user;
@@ -102,7 +102,7 @@ namespace Class_PamerYuk
                 //user.Password = hasil.GetValue(1).ToString();
                 user.TglLahir = DateTime.Parse(hasil.GetValue(2).ToString());
                 user.NoKtp = hasil.GetValue(3).ToString();
-                //user.Foto = hasil.GetValue(4).ToString();
+                user.Foto = hasil.GetValue(4).ToString();
                 user.Kota.Nama = hasil.GetValue(6).ToString();
                 // tambahkan ke list
                 listPengguna.Add(user);
@@ -111,18 +111,18 @@ namespace Class_PamerYuk
         }
 
         public static void TambahData(User objekTambah)
-        {
+        { 
             //kurang foto
-            string perintah = "INSERT INTO User (username, password, tglLahir, noKTP, Kota_id) VALUES ('"+ objekTambah.Username + "', '" +objekTambah.Password + "', '" + objekTambah.tglLahir.ToString("yyyy-MM-dd")
-                + "', '" + objekTambah.noKtp + "', '" + objekTambah.Kota.Id + "');";
+            string perintah = "INSERT INTO User (username, password, tglLahir, noKTP, foto, Kota_id) VALUES ('"+ objekTambah.Username + "', '" +objekTambah.Password + "', '" + objekTambah.tglLahir.ToString("yyyy-MM-dd")
+                + "', '" + objekTambah.noKtp + "', '" + objekTambah.Foto.Replace("\\", "\\\\") + "', '" + objekTambah.Kota.Id + "');";
 
             Koneksi.JalankanPerintahNonQuery(perintah);
         }
 
         public static void UpdateData(User objekUbah)
         {
-            string perintah = "UPDATE User SET Username ='"+ objekUbah.Username + "' ,tglLahir='" + objekUbah.TglLahir + "' ,Kota_id ='" + objekUbah.Kota.Id 
-               /* +"' ,foto='" + objekUbah.Foto*/ +"' WHERE username='" + objekUbah.username + "';";
+            string perintah = "UPDATE User SET tglLahir='" + objekUbah.TglLahir.ToString("yyyy-MM-dd") + "' ,Kota_id ='" + objekUbah.Kota.Id
+                + "' ,foto='" + objekUbah.Foto.Replace("\\", "\\\\") + "' WHERE username='" + objekUbah.username + "';";
 
             Koneksi.JalankanPerintahNonQuery(perintah);
         }
@@ -192,6 +192,28 @@ namespace Class_PamerYuk
             return cek;
         }
 
+        public static List<Teman> BacaDataTeman(string filter = "", string nilai = "", User userLogin = null)
+        {
+            string perintah = "SELECT username2, tglBerteman " +
+                "FROM teman WHERE username1 = '" + userLogin.Username + "' and tglberteman is not null" +
+                " UNION SELECT username1, tglBerteman FROM teman WHERE username2 = '" + userLogin.Username + "' and tglberteman is not null";
+
+            Koneksi.JalankanPerintahSelect(perintah);
+            MySqlDataReader hasil = Koneksi.JalankanPerintahSelect(perintah);
+
+            List<Teman> listTeman = new List<Teman>();
+
+            while (hasil.Read() == true)
+            {
+                Teman t = new Teman();
+                t.User2.Username = hasil.GetValue(0).ToString();
+                t.TglBerteman = DateTime.Parse(hasil.GetValue(1).ToString());
+                listTeman.Add(t);
+            }
+
+            return listTeman;
+        }
+
         public bool InsertTeman(string penerima)
         {
             bool cek = false;
@@ -251,7 +273,7 @@ namespace Class_PamerYuk
                 "inner join organisasi o on k.Organisasi_id = o.id inner join kota ko on u.kota_id = ko.id" +
                 " where u.username != '" + userLogin.Username +
                 "' and (o.Nama in (select o.nama from organisasi o inner join kisahhidup k on o.id = k.organisasi_id " +
-                "where k.username = '" + userLogin.Username + "')) ";
+                "where k.username = '" + userLogin.Username + "'))";
                 //"and (u.username in (select u.username from user u " +
                 //"inner join teman t on u.username = t.username1 where t.username1 = '"+userLogin.Username+"'))";
 
@@ -283,8 +305,7 @@ namespace Class_PamerYuk
                 // tambahkan ke list
                 listPengguna.Add(user);
             }
-            return listPengguna;
-            
+            return listPengguna;         
         }
         
 

@@ -43,6 +43,8 @@
             this.buttonBatal = new System.Windows.Forms.Button();
             this.textBoxKomen = new System.Windows.Forms.TextBox();
             this.buttonTambahKomentar = new System.Windows.Forms.Button();
+            this.buttonLike = new System.Windows.Forms.Button();
+            this.labelTotalLike = new System.Windows.Forms.Label();
             this.panelKonten.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGambar)).BeginInit();
             this.panel1.SuspendLayout();
@@ -66,9 +68,9 @@
             this.labelKomen.Font = new System.Drawing.Font("Arial Narrow", 28.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelKomen.Location = new System.Drawing.Point(362, -1);
             this.labelKomen.Name = "labelKomen";
-            this.labelKomen.Size = new System.Drawing.Size(155, 55);
+            this.labelKomen.Size = new System.Drawing.Size(158, 55);
             this.labelKomen.TabIndex = 3;
-            this.labelKomen.Text = "Komen";
+            this.labelKomen.Text = "Konten";
             // 
             // labelCaption
             // 
@@ -112,7 +114,7 @@
             // 
             this.labelKomentar.AutoSize = true;
             this.labelKomentar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelKomentar.Location = new System.Drawing.Point(548, 139);
+            this.labelKomentar.Location = new System.Drawing.Point(548, 187);
             this.labelKomentar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelKomentar.Name = "labelKomentar";
             this.labelKomentar.Size = new System.Drawing.Size(101, 20);
@@ -123,9 +125,9 @@
             // 
             this.listBoxKomentar.FormattingEnabled = true;
             this.listBoxKomentar.ItemHeight = 16;
-            this.listBoxKomentar.Location = new System.Drawing.Point(552, 162);
+            this.listBoxKomentar.Location = new System.Drawing.Point(552, 210);
             this.listBoxKomentar.Name = "listBoxKomentar";
-            this.listBoxKomentar.Size = new System.Drawing.Size(348, 388);
+            this.listBoxKomentar.Size = new System.Drawing.Size(348, 340);
             this.listBoxKomentar.TabIndex = 34;
             // 
             // labelHasilCaption
@@ -198,11 +200,34 @@
             this.buttonTambahKomentar.UseVisualStyleBackColor = false;
             this.buttonTambahKomentar.Click += new System.EventHandler(this.buttonTambahKomentar_Click);
             // 
+            // buttonLike
+            // 
+            this.buttonLike.Location = new System.Drawing.Point(552, 120);
+            this.buttonLike.Name = "buttonLike";
+            this.buttonLike.Size = new System.Drawing.Size(75, 23);
+            this.buttonLike.TabIndex = 39;
+            this.buttonLike.Text = "Like";
+            this.buttonLike.UseVisualStyleBackColor = true;
+            this.buttonLike.Click += new System.EventHandler(this.buttonLike_Click);
+            // 
+            // labelTotalLike
+            // 
+            this.labelTotalLike.AutoSize = true;
+            this.labelTotalLike.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotalLike.Location = new System.Drawing.Point(548, 146);
+            this.labelTotalLike.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelTotalLike.Name = "labelTotalLike";
+            this.labelTotalLike.Size = new System.Drawing.Size(102, 20);
+            this.labelTotalLike.TabIndex = 40;
+            this.labelTotalLike.Text = "Total Likes";
+            // 
             // FormDetailKonten
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(906, 723);
+            this.Controls.Add(this.labelTotalLike);
+            this.Controls.Add(this.buttonLike);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.labelHasilCaption);
             this.Controls.Add(this.listBoxKomentar);
@@ -241,5 +266,7 @@
         public AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayerVideo;
         public System.Windows.Forms.ListBox listBoxKomentar;
         public System.Windows.Forms.PictureBox pictureBoxGambar;
+        private System.Windows.Forms.Button buttonLike;
+        private System.Windows.Forms.Label labelTotalLike;
     }
 }

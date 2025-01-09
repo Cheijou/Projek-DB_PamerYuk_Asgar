@@ -26,21 +26,36 @@ namespace PamerYuk_Asgar
 
         private void FormDetailKonten_Load(object sender, EventArgs e)
         {
-            form = (FormKonten)this.Owner;
-            konten = Konten.BacaData("id", kontenId)[0];
-            axWindowsMediaPlayerVideo.URL = konten.Video;
-            axWindowsMediaPlayerVideo.Ctlcontrols.play();
-            axWindowsMediaPlayerVideo.stretchToFit = true;
-            pictureBoxGambar.Image = Image.FromFile(konten.Foto);
-            labelHasilCaption.Text = konten.Caption;
-            List<Komen> listKomen = Komen.BacaData(kontenId);
-            for ( int i = 0;i< listKomen.Count; i++)
+            try
             {
-                listBoxKomentar.Items.Add("[" + listKomen[i].Tgl.ToString() + "] " + listKomen[i].User.Username + " : " + listKomen[i].Komentar + "\n");
-
+                form = (FormKonten)this.Owner;
+                int total = Konten.HitungTotalLikes("konten_id", kontenId);
+                bool isLiked = Konten.CekLike("user_username", user.Username, kontenId);
+                if (isLiked == true)
+                {
+                    buttonLike.Text = "Dislike";
+                }
+                else
+                {
+                    buttonLike.Text = "Like";
+                }    
+                labelTotalLike.Text = total.ToString();
+                konten = Konten.BacaData("id", kontenId)[0];
+                axWindowsMediaPlayerVideo.URL = konten.Video;
+                axWindowsMediaPlayerVideo.Ctlcontrols.play();
+                axWindowsMediaPlayerVideo.stretchToFit = true;
+                pictureBoxGambar.Image = Image.FromFile(konten.Foto);
+                labelHasilCaption.Text = konten.Caption;
+                List<Komen> listKomen = Komen.BacaData(kontenId);
+                for (int i = 0; i < listKomen.Count; i++)
+                {
+                    listBoxKomentar.Items.Add("[" + listKomen[i].Tgl.ToString() + "] " + listKomen[i].User.Username + " : " + listKomen[i].Komentar + "\n");
+                }
             }
-
-
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void buttonTambahKomentar_Click(object sender, EventArgs e)
@@ -84,6 +99,31 @@ namespace PamerYuk_Asgar
         private void axWindowsMediaPlayerVideo_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonLike_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (buttonLike.Text == "Like")
+                {
+                    konten.TambahLike(user, kontenId);
+                    MessageBox.Show("Berhasil Like");
+                    buttonLike.Text = "Dislike";
+                }
+                else
+                {
+                    konten.HapusLike(kontenId, user);
+                    MessageBox.Show("Sdh dislik");
+                    buttonLike.Text = "Like";
+                }
+                int total = Konten.HitungTotalLikes("konten_id", kontenId);
+                labelTotalLike.Text = total.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
