@@ -84,7 +84,9 @@ namespace PamerYuk_Asgar
 
         private void FormChat_FormClosing(object sender, FormClosingEventArgs e)
         {
+            form.panelBG.Visible = true;
             form.LoadButton();
+            form.labelUser.Visible = true;
         }
     }
 }

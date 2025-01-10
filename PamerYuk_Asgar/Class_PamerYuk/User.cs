@@ -133,7 +133,7 @@ namespace Class_PamerYuk
                 user.TglLahir = DateTime.Parse(hasil.GetValue(2).ToString());
                 user.NoKtp = hasil.GetValue(3).ToString();
                 user.Foto = hasil.GetValue(4).ToString();
-                user.Kota.Nama = hasil.GetValue(6).ToString();
+                user.Kota.Nama = hasil.GetValue(7).ToString();
                 // tambahkan ke list
                 listPengguna.Add(user);
             }

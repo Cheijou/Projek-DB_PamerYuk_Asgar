@@ -143,7 +143,9 @@ namespace PamerYuk_Asgar
 
         private void FormTambahTeman_FormClosing(object sender, FormClosingEventArgs e)
         {
+            form.panelBG.Visible = true;
             form.LoadButton();
+            form.labelUser.Visible = true;
         }
 
         private void comboBoxCari_SelectedIndexChanged(object sender, EventArgs e)

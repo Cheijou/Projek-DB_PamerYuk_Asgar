@@ -23,6 +23,10 @@ namespace PamerYuk_Asgar
         {          
             labelUsername.Text = user.Username;
             labelTglLahir.Text = user.TglLahir.ToString("MM-dd-yyyy");
+            if (user.Foto != "")
+            {
+                pictureBox1.Image = Image.FromFile(user.Foto);
+            }
             labelKota.Text = user.Kota.Nama;
             List<KisahHidup> listKisah = User.BacaDataKisahHidup("username", user.Username);
             for (int i = 0; i < listKisah.Count; i++) 

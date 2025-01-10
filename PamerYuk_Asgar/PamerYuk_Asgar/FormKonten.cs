@@ -23,6 +23,9 @@ namespace PamerYuk_Asgar
         private void buttonTutup_Click(object sender, EventArgs e)
         {
             this.Close();
+            form.panelBG.Visible = true;
+            form.LoadButton();
+            form.labelUser.Visible = true;
         }
 
         private void dataGridViewKonten_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -91,7 +94,9 @@ namespace PamerYuk_Asgar
 
         private void FormKonten_FormClosing(object sender, FormClosingEventArgs e)
         {
+            form.panelBG.Visible = true;
             form.LoadButton();
+            form.labelUser.Visible = true;
         }
 
         private void buttonKontenSaya_Click(object sender, EventArgs e)

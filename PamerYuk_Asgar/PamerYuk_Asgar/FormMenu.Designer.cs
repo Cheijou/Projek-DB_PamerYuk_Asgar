@@ -268,9 +268,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panelBG;
-        private System.Windows.Forms.Label labelUser;
         private System.Windows.Forms.PictureBox pictureBoxTerbaru;
         private System.Windows.Forms.PictureBox pictureBoxPermintaan;
         private System.Windows.Forms.PictureBox pictureBoxLihat;
@@ -283,6 +280,8 @@
         private System.Windows.Forms.PictureBox pictureBoxChat;
         private System.Windows.Forms.PictureBox pictureBoxKonten;
         private System.Windows.Forms.PictureBox pictureBoxCariTeman;
+        public System.Windows.Forms.Panel panelBG;
+        public System.Windows.Forms.Label labelUser;
     }
 }
 

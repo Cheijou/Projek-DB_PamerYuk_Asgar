@@ -95,11 +95,11 @@ namespace PamerYuk_Asgar
                     k.Id = orgPilih.Kota.Id;
                     k.Nama = row.Cells[2].Value.ToString();
                     o.Kota = k;
-                    string tahunAwal = row.Cells[3].Value.ToString();
-                    string tahunAkhir = row.Cells[4].Value.ToString();
-                    string deskripsi = row.Cells[5].Value.ToString();
+                    string tahunAwal = row.Cells[4].Value.ToString();
+                    string tahunAkhir = row.Cells[5].Value.ToString();
+                    string deskripsi = row.Cells[6].Value.ToString();
 
-                    user.TambahKisahHidup(o, tahunAwal, tahunAkhir, deskripsi);
+                    user.TambahKisahHidup(o,tahunAwal, tahunAkhir, deskripsi);
                 }
                 User.InsertKisahHidup(user);
                 MessageBox.Show("Kisah Hidup Berhasil Disimpan");

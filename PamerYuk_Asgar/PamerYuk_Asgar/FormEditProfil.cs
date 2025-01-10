@@ -41,7 +41,9 @@ namespace PamerYuk_Asgar
 
         private void FormEditProfil_FormClosing(object sender, FormClosingEventArgs e)
         {
+            form.panelBG.Visible = true;
             form.LoadButton();
+            form.labelUser.Visible = true;
         }
 
         private void buttonEditKisahHidup_Click(object sender, EventArgs e)
