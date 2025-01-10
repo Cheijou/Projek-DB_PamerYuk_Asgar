@@ -41,10 +41,9 @@
             // 
             this.labelJudul.AutoSize = true;
             this.labelJudul.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelJudul.Location = new System.Drawing.Point(94, 29);
-            this.labelJudul.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelJudul.Location = new System.Drawing.Point(70, 24);
             this.labelJudul.Name = "labelJudul";
-            this.labelJudul.Size = new System.Drawing.Size(200, 36);
+            this.labelJudul.Size = new System.Drawing.Size(167, 29);
             this.labelJudul.TabIndex = 0;
             this.labelJudul.Text = "Pilih Teman :";
             // 
@@ -52,10 +51,11 @@
             // 
             this.comboBoxTeman.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxTeman.FormattingEnabled = true;
-            this.comboBoxTeman.ItemHeight = 29;
-            this.comboBoxTeman.Location = new System.Drawing.Point(315, 30);
+            this.comboBoxTeman.ItemHeight = 22;
+            this.comboBoxTeman.Location = new System.Drawing.Point(236, 24);
+            this.comboBoxTeman.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBoxTeman.Name = "comboBoxTeman";
-            this.comboBoxTeman.Size = new System.Drawing.Size(158, 37);
+            this.comboBoxTeman.Size = new System.Drawing.Size(120, 30);
             this.comboBoxTeman.TabIndex = 25;
             this.comboBoxTeman.SelectedIndexChanged += new System.EventHandler(this.comboBoxTeman_SelectedIndexChanged);
             // 
@@ -63,29 +63,30 @@
             // 
             this.listBoxChat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBoxChat.FormattingEnabled = true;
-            this.listBoxChat.ItemHeight = 20;
-            this.listBoxChat.Location = new System.Drawing.Point(16, 107);
+            this.listBoxChat.ItemHeight = 17;
+            this.listBoxChat.Location = new System.Drawing.Point(12, 87);
+            this.listBoxChat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listBoxChat.Name = "listBoxChat";
-            this.listBoxChat.Size = new System.Drawing.Size(534, 204);
+            this.listBoxChat.Size = new System.Drawing.Size(402, 157);
             this.listBoxChat.TabIndex = 27;
             // 
             // labelChat
             // 
             this.labelChat.AutoSize = true;
             this.labelChat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelChat.Location = new System.Drawing.Point(13, 81);
-            this.labelChat.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelChat.Location = new System.Drawing.Point(10, 66);
             this.labelChat.Name = "labelChat";
-            this.labelChat.Size = new System.Drawing.Size(60, 20);
+            this.labelChat.Size = new System.Drawing.Size(51, 17);
             this.labelChat.TabIndex = 28;
             this.labelChat.Text = "Chat :";
             // 
             // textBoxAdd
             // 
-            this.textBoxAdd.Location = new System.Drawing.Point(17, 350);
+            this.textBoxAdd.Location = new System.Drawing.Point(13, 284);
+            this.textBoxAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxAdd.Multiline = true;
             this.textBoxAdd.Name = "textBoxAdd";
-            this.textBoxAdd.Size = new System.Drawing.Size(534, 55);
+            this.textBoxAdd.Size = new System.Drawing.Size(402, 45);
             this.textBoxAdd.TabIndex = 29;
             this.textBoxAdd.TextChanged += new System.EventHandler(this.textBoxAdd_TextChanged);
             // 
@@ -93,10 +94,9 @@
             // 
             this.buttonAddChat.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.buttonAddChat.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAddChat.Location = new System.Drawing.Point(451, 412);
-            this.buttonAddChat.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonAddChat.Location = new System.Drawing.Point(338, 335);
             this.buttonAddChat.Name = "buttonAddChat";
-            this.buttonAddChat.Size = new System.Drawing.Size(100, 28);
+            this.buttonAddChat.Size = new System.Drawing.Size(75, 23);
             this.buttonAddChat.TabIndex = 31;
             this.buttonAddChat.Text = "Kirim";
             this.buttonAddChat.UseVisualStyleBackColor = false;
@@ -106,18 +106,17 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(15, 326);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(11, 265);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 20);
+            this.label1.Size = new System.Drawing.Size(91, 17);
             this.label1.TabIndex = 33;
             this.label1.Text = "Kirim Pesan :";
             // 
             // FormChatTeman
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(564, 457);
+            this.ClientSize = new System.Drawing.Size(423, 371);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelJudul);
             this.Controls.Add(this.buttonAddChat);
@@ -125,6 +124,7 @@
             this.Controls.Add(this.labelChat);
             this.Controls.Add(this.listBoxChat);
             this.Controls.Add(this.comboBoxTeman);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormChatTeman";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormChat";

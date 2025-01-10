@@ -44,12 +44,12 @@
             this.dataGridViewTeman.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewTeman.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Username});
-            this.dataGridViewTeman.Location = new System.Drawing.Point(12, 98);
-            this.dataGridViewTeman.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridViewTeman.Location = new System.Drawing.Point(9, 80);
+            this.dataGridViewTeman.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridViewTeman.Name = "dataGridViewTeman";
             this.dataGridViewTeman.RowHeadersWidth = 51;
             this.dataGridViewTeman.RowTemplate.Height = 24;
-            this.dataGridViewTeman.Size = new System.Drawing.Size(540, 261);
+            this.dataGridViewTeman.Size = new System.Drawing.Size(405, 212);
             this.dataGridViewTeman.TabIndex = 0;
             this.dataGridViewTeman.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewTeman_CellContentClick);
             // 
@@ -64,18 +64,20 @@
             // 
             this.labelCari.AutoSize = true;
             this.labelCari.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCari.Location = new System.Drawing.Point(141, 1);
+            this.labelCari.Location = new System.Drawing.Point(106, 1);
+            this.labelCari.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelCari.Name = "labelCari";
-            this.labelCari.Size = new System.Drawing.Size(277, 54);
+            this.labelCari.Size = new System.Drawing.Size(228, 44);
             this.labelCari.TabIndex = 1;
             this.labelCari.Text = "Cari Teman";
             // 
             // labelNama
             // 
             this.labelNama.AutoSize = true;
-            this.labelNama.Location = new System.Drawing.Point(52, 66);
+            this.labelNama.Location = new System.Drawing.Point(39, 54);
+            this.labelNama.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelNama.Name = "labelNama";
-            this.labelNama.Size = new System.Drawing.Size(117, 16);
+            this.labelNama.Size = new System.Drawing.Size(93, 13);
             this.labelNama.TabIndex = 2;
             this.labelNama.Text = "Cari berdasarkan :";
             // 
@@ -86,27 +88,28 @@
             "Username",
             "Kota",
             "Organisasi"});
-            this.comboBoxCari.Location = new System.Drawing.Point(174, 64);
-            this.comboBoxCari.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBoxCari.Location = new System.Drawing.Point(130, 52);
+            this.comboBoxCari.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBoxCari.Name = "comboBoxCari";
-            this.comboBoxCari.Size = new System.Drawing.Size(107, 24);
+            this.comboBoxCari.Size = new System.Drawing.Size(81, 21);
             this.comboBoxCari.TabIndex = 3;
             this.comboBoxCari.SelectedIndexChanged += new System.EventHandler(this.comboBoxCari_SelectedIndexChanged);
             // 
             // textBoxCari
             // 
-            this.textBoxCari.Location = new System.Drawing.Point(293, 65);
-            this.textBoxCari.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxCari.Location = new System.Drawing.Point(220, 53);
+            this.textBoxCari.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxCari.Name = "textBoxCari";
-            this.textBoxCari.Size = new System.Drawing.Size(193, 22);
+            this.textBoxCari.Size = new System.Drawing.Size(146, 20);
             this.textBoxCari.TabIndex = 4;
             this.textBoxCari.TextChanged += new System.EventHandler(this.textBoxCari_TextChanged);
             // 
             // buttonRequest
             // 
-            this.buttonRequest.Location = new System.Drawing.Point(390, 376);
+            this.buttonRequest.Location = new System.Drawing.Point(292, 306);
+            this.buttonRequest.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonRequest.Name = "buttonRequest";
-            this.buttonRequest.Size = new System.Drawing.Size(162, 39);
+            this.buttonRequest.Size = new System.Drawing.Size(122, 32);
             this.buttonRequest.TabIndex = 5;
             this.buttonRequest.Text = "Friend Request";
             this.buttonRequest.UseVisualStyleBackColor = true;
@@ -114,16 +117,16 @@
             // 
             // FormTambahTeman
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(570, 432);
+            this.ClientSize = new System.Drawing.Size(428, 351);
             this.Controls.Add(this.buttonRequest);
             this.Controls.Add(this.textBoxCari);
             this.Controls.Add(this.comboBoxCari);
             this.Controls.Add(this.labelNama);
             this.Controls.Add(this.labelCari);
             this.Controls.Add(this.dataGridViewTeman);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormTambahTeman";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormTambahTeman";

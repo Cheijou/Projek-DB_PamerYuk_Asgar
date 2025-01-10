@@ -56,19 +56,20 @@
             // 
             this.panelKonten.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.panelKonten.Controls.Add(this.labelKomen);
-            this.panelKonten.Location = new System.Drawing.Point(12, 3);
-            this.panelKonten.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelKonten.Location = new System.Drawing.Point(9, 2);
+            this.panelKonten.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panelKonten.Name = "panelKonten";
-            this.panelKonten.Size = new System.Drawing.Size(882, 54);
+            this.panelKonten.Size = new System.Drawing.Size(662, 44);
             this.panelKonten.TabIndex = 5;
             // 
             // labelKomen
             // 
             this.labelKomen.AutoSize = true;
             this.labelKomen.Font = new System.Drawing.Font("Arial Narrow", 28.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelKomen.Location = new System.Drawing.Point(362, -1);
+            this.labelKomen.Location = new System.Drawing.Point(272, -1);
+            this.labelKomen.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelKomen.Name = "labelKomen";
-            this.labelKomen.Size = new System.Drawing.Size(158, 55);
+            this.labelKomen.Size = new System.Drawing.Size(125, 44);
             this.labelKomen.TabIndex = 3;
             this.labelKomen.Text = "Konten";
             // 
@@ -76,18 +77,18 @@
             // 
             this.labelCaption.AutoSize = true;
             this.labelCaption.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCaption.Location = new System.Drawing.Point(548, 62);
-            this.labelCaption.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelCaption.Location = new System.Drawing.Point(411, 50);
             this.labelCaption.Name = "labelCaption";
-            this.labelCaption.Size = new System.Drawing.Size(85, 20);
+            this.labelCaption.Size = new System.Drawing.Size(73, 17);
             this.labelCaption.TabIndex = 29;
             this.labelCaption.Text = "Caption :";
             // 
             // pictureBoxGambar
             // 
-            this.pictureBoxGambar.Location = new System.Drawing.Point(12, 449);
+            this.pictureBoxGambar.Location = new System.Drawing.Point(9, 365);
+            this.pictureBoxGambar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBoxGambar.Name = "pictureBoxGambar";
-            this.pictureBoxGambar.Size = new System.Drawing.Size(520, 250);
+            this.pictureBoxGambar.Size = new System.Drawing.Size(390, 203);
             this.pictureBoxGambar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxGambar.TabIndex = 31;
             this.pictureBoxGambar.TabStop = false;
@@ -95,15 +96,17 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.axWindowsMediaPlayerVideo);
-            this.panel1.Location = new System.Drawing.Point(12, 62);
+            this.panel1.Location = new System.Drawing.Point(9, 50);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(520, 381);
+            this.panel1.Size = new System.Drawing.Size(390, 310);
             this.panel1.TabIndex = 32;
             // 
             // axWindowsMediaPlayerVideo
             // 
             this.axWindowsMediaPlayerVideo.Enabled = true;
             this.axWindowsMediaPlayerVideo.Location = new System.Drawing.Point(0, -1);
+            this.axWindowsMediaPlayerVideo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.axWindowsMediaPlayerVideo.Name = "axWindowsMediaPlayerVideo";
             this.axWindowsMediaPlayerVideo.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayerVideo.OcxState")));
             this.axWindowsMediaPlayerVideo.Size = new System.Drawing.Size(380, 306);
@@ -114,30 +117,28 @@
             // 
             this.labelKomentar.AutoSize = true;
             this.labelKomentar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelKomentar.Location = new System.Drawing.Point(548, 187);
-            this.labelKomentar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelKomentar.Location = new System.Drawing.Point(411, 152);
             this.labelKomentar.Name = "labelKomentar";
-            this.labelKomentar.Size = new System.Drawing.Size(101, 20);
+            this.labelKomentar.Size = new System.Drawing.Size(87, 17);
             this.labelKomentar.TabIndex = 33;
             this.labelKomentar.Text = "Komentar :";
             // 
             // listBoxKomentar
             // 
             this.listBoxKomentar.FormattingEnabled = true;
-            this.listBoxKomentar.ItemHeight = 16;
-            this.listBoxKomentar.Location = new System.Drawing.Point(552, 210);
+            this.listBoxKomentar.Location = new System.Drawing.Point(414, 171);
+            this.listBoxKomentar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listBoxKomentar.Name = "listBoxKomentar";
-            this.listBoxKomentar.Size = new System.Drawing.Size(348, 340);
+            this.listBoxKomentar.Size = new System.Drawing.Size(262, 277);
             this.listBoxKomentar.TabIndex = 34;
             // 
             // labelHasilCaption
             // 
             this.labelHasilCaption.AutoSize = true;
             this.labelHasilCaption.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelHasilCaption.Location = new System.Drawing.Point(548, 92);
-            this.labelHasilCaption.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelHasilCaption.Location = new System.Drawing.Point(411, 75);
             this.labelHasilCaption.Name = "labelHasilCaption";
-            this.labelHasilCaption.Size = new System.Drawing.Size(19, 20);
+            this.labelHasilCaption.Size = new System.Drawing.Size(17, 17);
             this.labelHasilCaption.TabIndex = 35;
             this.labelHasilCaption.Text = "0";
             // 
@@ -147,9 +148,10 @@
             this.panel2.Controls.Add(this.buttonBatal);
             this.panel2.Controls.Add(this.textBoxKomen);
             this.panel2.Controls.Add(this.buttonTambahKomentar);
-            this.panel2.Location = new System.Drawing.Point(552, 566);
+            this.panel2.Location = new System.Drawing.Point(414, 460);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(348, 117);
+            this.panel2.Size = new System.Drawing.Size(261, 95);
             this.panel2.TabIndex = 38;
             // 
             // labelTextBox
@@ -157,10 +159,9 @@
             this.labelTextBox.AutoSize = true;
             this.labelTextBox.BackColor = System.Drawing.Color.White;
             this.labelTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTextBox.Location = new System.Drawing.Point(4, 5);
-            this.labelTextBox.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelTextBox.Location = new System.Drawing.Point(3, 4);
             this.labelTextBox.Name = "labelTextBox";
-            this.labelTextBox.Size = new System.Drawing.Size(190, 20);
+            this.labelTextBox.Size = new System.Drawing.Size(166, 17);
             this.labelTextBox.TabIndex = 42;
             this.labelTextBox.Text = "Tambahkan Komentar";
             // 
@@ -168,10 +169,10 @@
             // 
             this.buttonBatal.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.buttonBatal.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonBatal.Location = new System.Drawing.Point(102, 80);
-            this.buttonBatal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonBatal.Location = new System.Drawing.Point(76, 65);
+            this.buttonBatal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonBatal.Name = "buttonBatal";
-            this.buttonBatal.Size = new System.Drawing.Size(120, 35);
+            this.buttonBatal.Size = new System.Drawing.Size(90, 28);
             this.buttonBatal.TabIndex = 40;
             this.buttonBatal.Text = "Batal";
             this.buttonBatal.UseVisualStyleBackColor = false;
@@ -181,9 +182,10 @@
             // 
             this.textBoxKomen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold);
             this.textBoxKomen.Location = new System.Drawing.Point(0, 0);
+            this.textBoxKomen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxKomen.Multiline = true;
             this.textBoxKomen.Name = "textBoxKomen";
-            this.textBoxKomen.Size = new System.Drawing.Size(348, 68);
+            this.textBoxKomen.Size = new System.Drawing.Size(262, 56);
             this.textBoxKomen.TabIndex = 39;
             this.textBoxKomen.Click += new System.EventHandler(this.textBoxKomen_Click);
             // 
@@ -191,10 +193,10 @@
             // 
             this.buttonTambahKomentar.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.buttonTambahKomentar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonTambahKomentar.Location = new System.Drawing.Point(228, 80);
-            this.buttonTambahKomentar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonTambahKomentar.Location = new System.Drawing.Point(171, 65);
+            this.buttonTambahKomentar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonTambahKomentar.Name = "buttonTambahKomentar";
-            this.buttonTambahKomentar.Size = new System.Drawing.Size(120, 35);
+            this.buttonTambahKomentar.Size = new System.Drawing.Size(90, 28);
             this.buttonTambahKomentar.TabIndex = 38;
             this.buttonTambahKomentar.Text = "Komentar";
             this.buttonTambahKomentar.UseVisualStyleBackColor = false;
@@ -202,9 +204,10 @@
             // 
             // buttonLike
             // 
-            this.buttonLike.Location = new System.Drawing.Point(552, 120);
+            this.buttonLike.Location = new System.Drawing.Point(414, 98);
+            this.buttonLike.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.buttonLike.Name = "buttonLike";
-            this.buttonLike.Size = new System.Drawing.Size(75, 23);
+            this.buttonLike.Size = new System.Drawing.Size(56, 19);
             this.buttonLike.TabIndex = 39;
             this.buttonLike.Text = "Like";
             this.buttonLike.UseVisualStyleBackColor = true;
@@ -214,18 +217,17 @@
             // 
             this.labelTotalLike.AutoSize = true;
             this.labelTotalLike.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotalLike.Location = new System.Drawing.Point(548, 146);
-            this.labelTotalLike.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelTotalLike.Location = new System.Drawing.Point(411, 119);
             this.labelTotalLike.Name = "labelTotalLike";
-            this.labelTotalLike.Size = new System.Drawing.Size(102, 20);
+            this.labelTotalLike.Size = new System.Drawing.Size(88, 17);
             this.labelTotalLike.TabIndex = 40;
             this.labelTotalLike.Text = "Total Likes";
             // 
             // FormDetailKonten
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(906, 723);
+            this.ClientSize = new System.Drawing.Size(680, 587);
             this.Controls.Add(this.labelTotalLike);
             this.Controls.Add(this.buttonLike);
             this.Controls.Add(this.panel2);
@@ -236,6 +238,7 @@
             this.Controls.Add(this.pictureBoxGambar);
             this.Controls.Add(this.labelCaption);
             this.Controls.Add(this.panelKonten);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormDetailKonten";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormKomen";
