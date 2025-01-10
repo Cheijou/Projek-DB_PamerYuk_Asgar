@@ -21,20 +21,9 @@ namespace Class_PamerYuk
         private List<Tag> listTag;
         private List<Like> listLike;
         private Image gambar;
-
         #endregion
 
         #region Constructor
-        public Konten(int id, string caption, string foto, string video, DateTime tglUpload, User user)
-        {
-            this.Id = id;
-            this.Caption = caption;
-            this.Foto = foto;
-            this.Video = video;
-            this.TglUpload = tglUpload;
-            this.User = user;
-        }
-
         public Konten()
         {
             this.Id = 0;
@@ -129,16 +118,6 @@ namespace Class_PamerYuk
 
             Like l = new Like();
             l.User = user;
-            //if (ListLike != null)
-            //{
-            //    foreach (Like like in ListLike)
-            //    {
-            //        if (like.User.Username == user.Username)
-            //        {
-            //            HapusLike();
-            //        }
-            //    }
-            //}
             ListLike.Add(l);
             InsertLike(kontenid);
         }
@@ -205,7 +184,7 @@ namespace Class_PamerYuk
                 user.Password = hasil.GetValue(1).ToString();
                 user.TglLahir = DateTime.Parse(hasil.GetValue(2).ToString());
                 user.NoKtp = hasil.GetValue(3).ToString();
-                //user.Foto = hasil.GetValue(4).ToString();
+                user.Foto = hasil.GetValue(4).ToString();
                 user.Kota = Kota.BacaData("id", hasil.GetValue(5).ToString())[0];
 
             }
@@ -332,7 +311,6 @@ namespace Class_PamerYuk
             }
             return squareImg;
         }
-
         #endregion
     }
 }

@@ -8,18 +8,20 @@ namespace Class_PamerYuk
 {
     public class Like
     {
+        #region DataMember
         private User user;
+        #endregion
 
-        public Like(User user)
-        {
-            this.User = user;
-        }
 
+        #region Constructor
         public Like()
         {
             this.User = user;
         }
+        #endregion
 
+        #region Properties
         public User User { get => user; set => user = value; }
+        #endregion
     }
 }

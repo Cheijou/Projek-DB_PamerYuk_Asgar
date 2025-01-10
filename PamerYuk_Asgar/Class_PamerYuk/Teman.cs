@@ -11,22 +11,14 @@ namespace Class_PamerYuk
         #region Data Member
         private User user2;
         private DateTime tglBerteman;
-
-
         #endregion
 
         #region Constructor
-        public Teman( User user2, DateTime tglBerteman)
-        {
-            this.User2 = user2;
-            this.TglBerteman = tglBerteman;
-        }
         public Teman()
         {
             this.User2 = new User();
             this.TglBerteman = DateTime.Now;
         }
-
         #endregion
 
         #region Properties
@@ -39,7 +31,6 @@ namespace Class_PamerYuk
         {
             return User2.Username;
         }
-       
         #endregion
     }
 }

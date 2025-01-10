@@ -21,32 +21,18 @@ namespace Class_PamerYuk
         private Kota kota;
         private List<KisahHidup> listKisahHidup;
         private List<Teman> listTeman;
+        private bool notif;
 
         #endregion
 
         #region Constructor
         public User()
         {
-            //this.Username = "";
-            //this.Password = "";
-            //this.TglLahir = DateTime.Now;
-            //this.NoKtp = "";
-            //this.Foto = null;
             this.Kota = new Kota();
             this.ListKisahHidup = new List<KisahHidup>();
             this.ListTeman = new List<Teman>();
 
         }
-
-        //public User(string username, string password, DateTime tglLahir, string noKtp, string foto, Kota kota)
-        //{
-        //    this.Username = username;
-        //    this.Password = password;
-        //    this.TglLahir = tglLahir;
-        //    this.NoKtp = noKtp;
-        //    this.Foto = foto;
-        //    this.Kota = kota;
-        //}
         #endregion
 
         #region Properties
@@ -100,6 +86,8 @@ namespace Class_PamerYuk
         public  Kota Kota { get => kota; set => kota = value; }
         public List<KisahHidup> ListKisahHidup { get => listKisahHidup; set => listKisahHidup = value; }
         public List<Teman> ListTeman { get => listTeman; set => listTeman = value; }
+        public bool Notif { get => notif; set => notif = value; }
+
 
         #endregion
 
@@ -342,7 +330,7 @@ namespace Class_PamerYuk
                 user.Password = "********";
                 user.TglLahir = DateTime.Parse(hasil.GetValue(2).ToString());
                 user.NoKtp = hasil.GetValue(3).ToString();
-                //user.Foto = hasil.GetValue(4).ToString();
+                user.Foto = hasil.GetValue(4).ToString();
                 user.Kota = Kota.BacaData("id", hasil.GetValue(5).ToString())[0];
                 // tambahkan ke list
                 listPengguna.Add(user);
@@ -377,6 +365,27 @@ namespace Class_PamerYuk
             }
             return listPermintaan;
         }
+
+        public static void UpdateNotif(User userLogin)
+        {
+            string perintah = "UPDATE User SET dilihat = '" + 1 + "' where username = '" + userLogin.Username + "' ;";
+
+            Koneksi.JalankanPerintahNonQuery(perintah);
+        }
+        public static int TotalFriendRequest()
+        {
+            string perintah = "select count(tglBerteman) from teman where tglBerteman = " + null;
+            Koneksi.JalankanPerintahNonQuery(perintah);
+            MySqlDataReader hasil = Koneksi.JalankanPerintahSelect(perintah);
+            int total = 0;
+            while (hasil.Read() == true)
+            {
+                total = int.Parse(hasil.GetValue(0).ToString());
+            }
+            return total;
+        }
+
+
         #endregion
 
         public override string ToString()
@@ -384,25 +393,6 @@ namespace Class_PamerYuk
             return Username;
         }
 
-        #region Buangan
-        //public static List<KisahHidup> BacaKisahHidup(User user)
-        //{
-        //    string perintah = "select * from kisahhidup k where k.username = '" + user.Username + "';";
-        //    MySqlDataReader hasil = Koneksi.JalankanPerintahSelect(perintah);
-        //    List<KisahHidup> listKisah = new List<KisahHidup>();
-        //    while (hasil.Read() == true)
-        //    {
-        //        KisahHidup b = new KisahHidup();
-        //        Organisasi o = new Organisasi();
-        //        o = Organisasi.BacaData("k.id", hasil.GetValue(0).ToString())[0];
-        //        b.Organisasi = o;
-        //        b.Thawal = hasil.GetValue(2).ToString();
-        //        b.Thakhir = hasil.GetValue(3).ToString();
-        //        b.Deskripsi = hasil.GetValue(4).ToString();
-        //        listKisah.Add(b);
-        //    }
-        //    return listKisah;
-        //}
-        #endregion
+  
     }
 }

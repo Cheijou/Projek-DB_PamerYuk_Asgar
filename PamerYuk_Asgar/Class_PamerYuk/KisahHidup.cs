@@ -17,13 +17,7 @@ namespace Class_PamerYuk
         #endregion
 
         #region Constructor
-        public KisahHidup(Organisasi organisasi,string thawal, string thakhir, string deskripsi)
-        {
-            this.Organisasi = organisasi;
-            this.Thawal = thawal;
-            this.Thakhir = thakhir;
-            this.Deskripsi = deskripsi;
-        }
+       
 
         public KisahHidup()
         {
