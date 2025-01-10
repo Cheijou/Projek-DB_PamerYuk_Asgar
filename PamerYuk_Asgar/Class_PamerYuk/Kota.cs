@@ -22,11 +22,7 @@ namespace Class_PamerYuk
             this.Nama = "";
         }
 
-        public Kota(int id, string nama)
-        {
-            this.Id = id;
-            this.Nama = nama;
-        }
+       
         #endregion
 
         #region Properties

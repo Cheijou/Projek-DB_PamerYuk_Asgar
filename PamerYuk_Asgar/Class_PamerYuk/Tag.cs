@@ -16,12 +16,6 @@ namespace Class_PamerYuk
         #endregion
 
         #region Constructor
-        public Tag(Konten konten, User user)
-        {
-            this.Konten = konten;
-            this.User = user;
-        }
-
         public Tag()
         {
             this.Konten = new Konten();

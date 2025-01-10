@@ -15,6 +15,7 @@ namespace Class_PamerYuk
         private User temanku;
         private string isi;
         private DateTime tanggal;
+        private bool notif;
 
        
 
@@ -22,12 +23,7 @@ namespace Class_PamerYuk
         #endregion
 
         #region Constructor 
-        public Chat(int id, string chat, DateTime tanggal)
-        {
-            this.Id = id;
-            this.Isi = chat;
-            this.Tanggal = tanggal;
-        }
+        
         public Chat()
         {
             this.Id = 0;
@@ -35,6 +31,7 @@ namespace Class_PamerYuk
             this.Temanku = new User();
             this.Isi = "";
             this.Tanggal = DateTime.Now;
+            
         }
 
         
@@ -46,6 +43,7 @@ namespace Class_PamerYuk
         public DateTime Tanggal { get => tanggal; set => tanggal = value; }
         public User Saya { get => saya; set => saya = value; }
         public User Temanku { get => temanku; set => temanku = value; }
+        public bool Notif { get => notif; set => notif = value; }
 
         #endregion
 
@@ -139,6 +137,32 @@ namespace Class_PamerYuk
             }
             return user;
         }
+
+        public static void UpdateNotif(User userLogin)
+        {
+            string perintah = "UPDATE Chat SET dibaca = '" + 1 + "' where saya = '" + userLogin.Username + "' ;";
+
+            Koneksi.JalankanPerintahNonQuery(perintah);
+        }
+
+
+        public static int TotalChat()
+        {
+            string perintah = "select count(dibaca) from Chat where dibaca = 0";
+            Koneksi.JalankanPerintahNonQuery(perintah);
+            MySqlDataReader hasil = Koneksi.JalankanPerintahSelect(perintah);
+            int total = 0;
+            while (hasil.Read() == true)
+            {
+                total = int.Parse(hasil.GetValue(0).ToString());
+            }
+            return total;
+        }
+
+
+
+
+
 
         #endregion
     }

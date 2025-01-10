@@ -25,15 +25,7 @@ namespace Class_PamerYuk
         #endregion
 
         #region Constructor
-        public Konten(int id, string caption, string foto, string video, DateTime tglUpload, User user)
-        {
-            this.Id = id;
-            this.Caption = caption;
-            this.Foto = foto;
-            this.Video = video;
-            this.TglUpload = tglUpload;
-            this.User = user;
-        }
+        
 
         public Konten()
         {

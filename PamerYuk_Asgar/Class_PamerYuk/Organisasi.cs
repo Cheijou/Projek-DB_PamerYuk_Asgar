@@ -16,12 +16,7 @@ namespace Class_PamerYuk
         #endregion
 
         #region Constructor
-        public Organisasi(int id, string nama, Kota kota)
-        {
-            this.Id = id;
-            this.Nama = nama;
-            this.Kota = kota;
-        }
+       
 
         public Organisasi()
         {

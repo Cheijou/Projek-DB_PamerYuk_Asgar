@@ -22,15 +22,7 @@ namespace Class_PamerYuk
         #endregion
 
         #region Constructor
-        public Komen(int id, string komentar, DateTime tgl, User user, Konten konten)
-        {
-            this.Id = id;
-            this.Komentar = komentar;
-            this.Tgl = tgl;
-            this.User = user;
-            this.Konten = konten;
-        }
-
+        
         public Komen()
         {
             this.Id = 0;

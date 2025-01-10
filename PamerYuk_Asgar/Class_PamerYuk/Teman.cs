@@ -16,11 +16,7 @@ namespace Class_PamerYuk
         #endregion
 
         #region Constructor
-        public Teman( User user2, DateTime tglBerteman)
-        {
-            this.User2 = user2;
-            this.TglBerteman = tglBerteman;
-        }
+  
         public Teman()
         {
             this.User2 = new User();

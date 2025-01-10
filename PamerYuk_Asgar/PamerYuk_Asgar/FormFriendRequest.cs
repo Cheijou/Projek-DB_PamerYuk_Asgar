@@ -23,6 +23,7 @@ namespace PamerYuk_Asgar
         private void FormFriendRequest_Load(object sender, EventArgs e)
         {
             form = (FormTambahTeman)this.Owner;
+            User.UpdateNotif(userLogin);
             RefreshForm();
         }
         private void RefreshForm()
