@@ -14,6 +14,7 @@ namespace PamerYuk_Asgar
     public partial class FormMenu : Form
     {
         public User userLogin;
+        public bool buka = false;
         public FormMenu()
         {
             InitializeComponent();
@@ -23,14 +24,7 @@ namespace PamerYuk_Asgar
         {
             this.IsMdiContainer = true;
             this.Visible = false;
-            buttonEditProfil.Visible = false;
-            buttonCariTeman.Visible = false;
-            buttonChat.Visible = false;
-            buttonKonten.Visible = false;
-            buttonEditProfil.Enabled = false;
-            buttonCariTeman.Enabled = false;
-            buttonChat.Enabled = false;
-            buttonKonten.Enabled = false;
+            DisableButton();
             try
             {
                 FormLogin frm = new FormLogin();
@@ -40,10 +34,10 @@ namespace PamerYuk_Asgar
                 if (userLogin != null)
                 {
                     Koneksi koneksi = new Koneksi();
-                    label1.Visible = true;
-                    buttonMulai.Visible = true;
-                    buttonMulai.Enabled = true;
+                    pictureBoxMulai.Visible = true;
+                    pictureBoxMulai.Enabled = true;
                     MessageBox.Show("Selamat datang " + userLogin.Username, "Welcome");
+                    labelUser.Text = userLogin.Username;
                     
                 }
                 else
@@ -59,51 +53,66 @@ namespace PamerYuk_Asgar
         }
         public void LoadButton()
         {
-            buttonEditProfil.Visible = true;
-            buttonCariTeman.Visible = true;
-            buttonChat.Visible = true;
-            buttonKonten.Visible = true;
-            buttonKeluar.Visible = true;
-            buttonEditProfil.Enabled = true;
-            buttonCariTeman.Enabled = true;
-            buttonChat.Enabled = true;
-            buttonKonten.Enabled = true;
-            buttonKeluar.Enabled = true;
+            pictureBoxCariTeman.Visible = true;
+            pictureBoxCariTeman.Enabled = true;
+            pictureBoxEditProfil.Visible = true;
+            pictureBoxEditProfil.Enabled = true;
+            pictureBoxChat.Visible = true;
+            pictureBoxChat.Enabled = true;
+            pictureBoxKonten.Visible = true;
+            pictureBoxKonten.Enabled = true;
+            pictureBoxProfil.Visible =true;
+            pictureBoxProfil.Enabled = true;
+            pictureBoxNotif.Visible = true;
+            pictureBoxNotif.Enabled = true;
+            pictureBoxCr.Visible = true;
+            pictureBoxCr.Enabled = true;
+
 
         }
-
-        
-
-        private void buttonMulai_Click(object sender, EventArgs e)
+        public void DisableButton()
         {
-            label1.Visible = false;
-            buttonMulai.Enabled = false;
-            buttonMulai.Visible = false;
-            LoadButton();
+            pictureBoxCariTeman.Visible = false;
+            pictureBoxCariTeman.Enabled = false;
+            pictureBoxEditProfil.Visible = false;
+            pictureBoxEditProfil.Enabled = false;
+            pictureBoxChat.Visible = false;
+            pictureBoxChat.Enabled = false;
+            pictureBoxKonten.Visible = false;
+            pictureBoxKonten.Enabled = false;
+            pictureBoxProfil.Visible = false;
+            pictureBoxProfil.Enabled = false;
+            pictureBoxNotif.Visible = false;
+            pictureBoxNotif.Enabled = false;
+            pictureBoxCr.Visible = false;
+            pictureBoxCr.Enabled = false;
+            pictureBoxPermintaan.Visible = false;
+            pictureBoxPermintaan.Enabled = false;
+            pictureBoxTerbaru.Enabled = false;
+            pictureBoxTerbaru.Visible = false;
+            pictureBoxLihat.Visible = false;
+            pictureBoxLihat.Enabled = false;
+            pictureBoxLogOut.Visible = false;
+            pictureBoxLogOut.Enabled = false;
         }
-
-        private void buttonCariTeman_Click(object sender, EventArgs e)
+        private void pictureBoxCariTeman_Click(object sender, EventArgs e)
         {
             Form form = Application.OpenForms["FormTambahTeman"];
 
             if (form == null)
             {
+                panelBG.Visible = false;
                 FormTambahTeman formTambahTeman = new FormTambahTeman();
                 formTambahTeman.user = userLogin;
                 formTambahTeman.MdiParent = this;
                 formTambahTeman.Show();
-                buttonEditProfil.Visible = false;
-                buttonCariTeman.Visible = false;
-                buttonChat.Visible = false;
-                buttonKonten.Visible = false;
-                buttonKeluar.Visible = false;
-                buttonEditProfil.Enabled = false;
-                buttonCariTeman.Enabled = false;
-                buttonChat.Enabled = false;
-                buttonKonten.Enabled = false;
-                buttonKeluar.Enabled = false;
-                formTambahTeman.BringToFront();
+                DisableButton();
                 
+                labelUser.Visible = false;
+                BackgroundImage = Properties.Resources.bg_only;
+                
+                formTambahTeman.BringToFront();
+
             }
             else
             {
@@ -111,61 +120,22 @@ namespace PamerYuk_Asgar
             }
         }
 
-        private void buttonEditProfil_Click(object sender, EventArgs e)
-        {
-            Form form = Application.OpenForms["FormEditProfil"];
-
-            if (form == null)
-            {
-                FormEditProfil formEditProfil = new FormEditProfil();
-                formEditProfil.user = userLogin;
-                formEditProfil.MdiParent = this;
-                formEditProfil.Show();
-                buttonEditProfil.Visible = false;
-                buttonCariTeman.Visible = false;
-                buttonChat.Visible = false;
-                buttonKonten.Visible = false;
-                buttonKeluar.Visible = false;
-                buttonEditProfil.Enabled = false;
-                buttonCariTeman.Enabled = false;
-                buttonChat.Enabled = false;
-                buttonKonten.Enabled = false;
-                buttonKeluar.Enabled = false;
-                formEditProfil.BringToFront();
-            }
-            else
-            {
-                form.Show();
-            }
-        }
-
-        private void buttonKeluar_Click(object sender, EventArgs e)
-        {
-            FormMenu_Load(sender, e);
-        }
-
-        private void buttonChat_Click(object sender, EventArgs e)
+        private void pictureBoxChat_Click(object sender, EventArgs e)
         {
             Form form = Application.OpenForms["FormChat"];
 
             if (form == null)
             {
+                panelBG.Visible = false;
                 FormChat formChat = new FormChat();
                 formChat.user = userLogin;
                 formChat.MdiParent = this;
                 FormChatTeman formChatTeman = new FormChatTeman();
                 formChatTeman.MdiParent = this;
                 formChat.Show();
-                buttonEditProfil.Visible = false;
-                buttonCariTeman.Visible = false;
-                buttonChat.Visible = false;
-                buttonKonten.Visible = false;
-                buttonKeluar.Visible = false;
-                buttonEditProfil.Enabled = false;
-                buttonCariTeman.Enabled = false;
-                buttonChat.Enabled = false;
-                buttonKonten.Enabled = false;
-                buttonKeluar.Enabled = false;
+                DisableButton();
+                labelUser.Visible = false;
+                BackgroundImage = Properties.Resources.bg_only;
                 formChat.BringToFront();
 
             }
@@ -175,26 +145,20 @@ namespace PamerYuk_Asgar
             }
         }
 
-        private void buttonKonten_Click(object sender, EventArgs e)
+        private void pictureBoxKonten_Click(object sender, EventArgs e)
         {
             Form form = Application.OpenForms["FormKonten"];
 
             if (form == null)
             {
+                panelBG.Visible = false;
                 FormKonten formKonten = new FormKonten();
                 formKonten.user = userLogin;
                 formKonten.MdiParent = this;
                 formKonten.Show();
-                buttonEditProfil.Visible = false;
-                buttonCariTeman.Visible = false;
-                buttonChat.Visible = false;
-                buttonKonten.Visible = false;
-                buttonKeluar.Visible = false;
-                buttonEditProfil.Enabled = false;
-                buttonCariTeman.Enabled = false;
-                buttonChat.Enabled = false;
-                buttonKonten.Enabled = false;
-                buttonKeluar.Enabled = false;
+                DisableButton();
+                labelUser.Visible = false;
+                BackgroundImage = Properties.Resources.bg_only;
                 formKonten.BringToFront();
 
             }
@@ -202,6 +166,122 @@ namespace PamerYuk_Asgar
             {
                 form.Show();
             }
+        }
+
+        private void pictureBoxEditProfil_Click(object sender, EventArgs e)
+        {
+            Form form = Application.OpenForms["FormEditProfil"];
+
+            if (form == null)
+            {
+                panelBG.Visible = false;
+                FormEditProfil formEditProfil = new FormEditProfil();
+                formEditProfil.user = userLogin;
+                formEditProfil.MdiParent = this;
+                formEditProfil.Show();
+                DisableButton();
+                labelUser.Visible = false;
+                BackgroundImage = Properties.Resources.bg_only;
+                formEditProfil.BringToFront();
+            }
+            else
+            {
+                form.Show();
+            }
+        }
+
+        private void pictureBoxMulai_Click(object sender, EventArgs e)
+        {
+            pictureBoxMulai.Visible = false;
+            pictureBoxMulai.Enabled = false;
+            LoadButton();
+        }
+
+        private void pictureBoxNotif_Click(object sender, EventArgs e)
+        {
+            if (buka == false)
+            {
+                pictureBoxTerbaru.Visible = true;
+                pictureBoxTerbaru.Enabled = true;
+                pictureBoxPermintaan.Visible = true;
+                pictureBoxPermintaan.Enabled = true;
+                buka = true;    
+            }
+            else
+            {
+                pictureBoxTerbaru.Visible = false;
+                pictureBoxTerbaru.Enabled = false;
+                pictureBoxPermintaan.Visible = false;
+                pictureBoxPermintaan.Enabled = false;
+                buka = false;
+            }
+            
+
+        }
+
+        private void pictureBoxProfil_Click(object sender, EventArgs e)
+        {
+            if (buka == false)
+            {
+                pictureBoxLihat.Visible = true;
+                pictureBoxLihat.Enabled = true;
+                pictureBoxLogOut.Visible = true;
+                pictureBoxLogOut.Enabled = true;
+                buka = true;
+            }
+            else
+            {
+                pictureBoxLihat.Visible = false;
+                pictureBoxLihat.Enabled = false;
+                pictureBoxLogOut.Visible = false;
+                pictureBoxLogOut.Enabled = false;
+                buka = false;
+            }
+
+        }
+
+        private void labelUser_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBoxCr_Click(object sender, EventArgs e)
+        {
+            DisableButton();
+            labelUser.Visible = false;
+            BackgroundImage = Properties.Resources.bg_only;
+        }
+
+        private void pictureBoxPermintaan_Click(object sender, EventArgs e)
+        {
+            DisableButton();
+            labelUser.Visible = false;
+            BackgroundImage = Properties.Resources.bg_only;
+        }
+
+        private void pictureBoxTerbaru_Click(object sender, EventArgs e)
+        {
+            DisableButton();
+            labelUser.Visible = false;
+            BackgroundImage = Properties.Resources.bg_only;
+        }
+
+        private void pictureBoxLihat_Click(object sender, EventArgs e)
+        {
+            DisableButton();
+            labelUser.Visible = false;
+            BackgroundImage = Properties.Resources.bg_only;
+        }
+
+        private void pictureBoxLogOut_Click(object sender, EventArgs e)
+        {
+            FormMenu_Load(sender, e);
+            
+        }
+
+        private void panelBG_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

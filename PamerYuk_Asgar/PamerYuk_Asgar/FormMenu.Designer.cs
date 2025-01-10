@@ -28,143 +28,261 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.label1 = new System.Windows.Forms.Label();
-            this.buttonMulai = new System.Windows.Forms.Button();
-            this.buttonCariTeman = new System.Windows.Forms.Button();
-            this.buttonEditProfil = new System.Windows.Forms.Button();
-            this.buttonChat = new System.Windows.Forms.Button();
-            this.buttonKonten = new System.Windows.Forms.Button();
-            this.buttonKeluar = new System.Windows.Forms.Button();
+            this.panelBG = new System.Windows.Forms.Panel();
+            this.labelUser = new System.Windows.Forms.Label();
+            this.pictureBoxTerbaru = new System.Windows.Forms.PictureBox();
+            this.pictureBoxPermintaan = new System.Windows.Forms.PictureBox();
+            this.pictureBoxLihat = new System.Windows.Forms.PictureBox();
+            this.pictureBoxLogOut = new System.Windows.Forms.PictureBox();
+            this.pictureBoxMulai = new System.Windows.Forms.PictureBox();
+            this.pictureBoxCr = new System.Windows.Forms.PictureBox();
+            this.pictureBoxNotif = new System.Windows.Forms.PictureBox();
+            this.pictureBoxProfil = new System.Windows.Forms.PictureBox();
+            this.pictureBoxEditProfil = new System.Windows.Forms.PictureBox();
+            this.pictureBoxChat = new System.Windows.Forms.PictureBox();
+            this.pictureBoxKonten = new System.Windows.Forms.PictureBox();
+            this.pictureBoxCariTeman = new System.Windows.Forms.PictureBox();
+            this.panelBG.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTerbaru)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPermintaan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLihat)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogOut)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMulai)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCr)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNotif)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfil)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEditProfil)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxChat)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxKonten)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCariTeman)).BeginInit();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // panelBG
             // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1067, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
+            this.panelBG.BackgroundImage = global::PamerYuk_Asgar.Properties.Resources.bg_menu;
+            this.panelBG.Controls.Add(this.labelUser);
+            this.panelBG.Controls.Add(this.pictureBoxTerbaru);
+            this.panelBG.Controls.Add(this.pictureBoxPermintaan);
+            this.panelBG.Controls.Add(this.pictureBoxLihat);
+            this.panelBG.Controls.Add(this.pictureBoxLogOut);
+            this.panelBG.Controls.Add(this.pictureBoxMulai);
+            this.panelBG.Controls.Add(this.pictureBoxCr);
+            this.panelBG.Controls.Add(this.pictureBoxNotif);
+            this.panelBG.Controls.Add(this.pictureBoxProfil);
+            this.panelBG.Controls.Add(this.pictureBoxEditProfil);
+            this.panelBG.Controls.Add(this.pictureBoxChat);
+            this.panelBG.Controls.Add(this.pictureBoxKonten);
+            this.panelBG.Controls.Add(this.pictureBoxCariTeman);
+            this.panelBG.Location = new System.Drawing.Point(-4, -2);
+            this.panelBG.Name = "panelBG";
+            this.panelBG.Size = new System.Drawing.Size(810, 496);
+            this.panelBG.TabIndex = 0;
+            this.panelBG.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBG_Paint);
             // 
-            // label1
+            // labelUser
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Verdana", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(217, 76);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(561, 97);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Pamer Yuk!";
+            this.labelUser.AutoSize = true;
+            this.labelUser.BackColor = System.Drawing.Color.Transparent;
+            this.labelUser.Font = new System.Drawing.Font("MV Boli", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.labelUser.Location = new System.Drawing.Point(464, 18);
+            this.labelUser.Name = "labelUser";
+            this.labelUser.Size = new System.Drawing.Size(59, 28);
+            this.labelUser.TabIndex = 46;
+            this.labelUser.Text = "User";
             // 
-            // buttonMulai
+            // pictureBoxTerbaru
             // 
-            this.buttonMulai.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonMulai.Location = new System.Drawing.Point(376, 305);
-            this.buttonMulai.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonMulai.Name = "buttonMulai";
-            this.buttonMulai.Size = new System.Drawing.Size(297, 87);
-            this.buttonMulai.TabIndex = 2;
-            this.buttonMulai.Text = "MULAI";
-            this.buttonMulai.UseVisualStyleBackColor = true;
-            this.buttonMulai.Click += new System.EventHandler(this.buttonMulai_Click);
+            this.pictureBoxTerbaru.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxTerbaru.Image = global::PamerYuk_Asgar.Properties.Resources.chat_terbaru;
+            this.pictureBoxTerbaru.Location = new System.Drawing.Point(595, 120);
+            this.pictureBoxTerbaru.Name = "pictureBoxTerbaru";
+            this.pictureBoxTerbaru.Size = new System.Drawing.Size(114, 34);
+            this.pictureBoxTerbaru.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxTerbaru.TabIndex = 45;
+            this.pictureBoxTerbaru.TabStop = false;
+            this.pictureBoxTerbaru.Click += new System.EventHandler(this.pictureBoxTerbaru_Click);
             // 
-            // buttonCariTeman
+            // pictureBoxPermintaan
             // 
-            this.buttonCariTeman.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCariTeman.Location = new System.Drawing.Point(112, 100);
-            this.buttonCariTeman.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonCariTeman.Name = "buttonCariTeman";
-            this.buttonCariTeman.Size = new System.Drawing.Size(297, 87);
-            this.buttonCariTeman.TabIndex = 3;
-            this.buttonCariTeman.Text = "cari teman";
-            this.buttonCariTeman.UseVisualStyleBackColor = true;
-            this.buttonCariTeman.Click += new System.EventHandler(this.buttonCariTeman_Click);
+            this.pictureBoxPermintaan.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxPermintaan.Image = global::PamerYuk_Asgar.Properties.Resources.request;
+            this.pictureBoxPermintaan.Location = new System.Drawing.Point(598, 72);
+            this.pictureBoxPermintaan.Name = "pictureBoxPermintaan";
+            this.pictureBoxPermintaan.Size = new System.Drawing.Size(105, 44);
+            this.pictureBoxPermintaan.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxPermintaan.TabIndex = 44;
+            this.pictureBoxPermintaan.TabStop = false;
+            this.pictureBoxPermintaan.Click += new System.EventHandler(this.pictureBoxPermintaan_Click);
             // 
-            // buttonEditProfil
+            // pictureBoxLihat
             // 
-            this.buttonEditProfil.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEditProfil.Location = new System.Drawing.Point(112, 320);
-            this.buttonEditProfil.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonEditProfil.Name = "buttonEditProfil";
-            this.buttonEditProfil.Size = new System.Drawing.Size(297, 87);
-            this.buttonEditProfil.TabIndex = 4;
-            this.buttonEditProfil.Text = "edit profil";
-            this.buttonEditProfil.UseVisualStyleBackColor = true;
-            this.buttonEditProfil.Click += new System.EventHandler(this.buttonEditProfil_Click);
+            this.pictureBoxLihat.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxLihat.Image = global::PamerYuk_Asgar.Properties.Resources.Lihat_profil;
+            this.pictureBoxLihat.Location = new System.Drawing.Point(683, 72);
+            this.pictureBoxLihat.Name = "pictureBoxLihat";
+            this.pictureBoxLihat.Size = new System.Drawing.Size(118, 34);
+            this.pictureBoxLihat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxLihat.TabIndex = 43;
+            this.pictureBoxLihat.TabStop = false;
+            this.pictureBoxLihat.Click += new System.EventHandler(this.pictureBoxLihat_Click);
             // 
-            // buttonChat
+            // pictureBoxLogOut
             // 
-            this.buttonChat.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonChat.Location = new System.Drawing.Point(665, 100);
-            this.buttonChat.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonChat.Name = "buttonChat";
-            this.buttonChat.Size = new System.Drawing.Size(297, 87);
-            this.buttonChat.TabIndex = 5;
-            this.buttonChat.Text = "chat";
-            this.buttonChat.UseVisualStyleBackColor = true;
-            this.buttonChat.Click += new System.EventHandler(this.buttonChat_Click);
+            this.pictureBoxLogOut.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxLogOut.Image = global::PamerYuk_Asgar.Properties.Resources.Log_out;
+            this.pictureBoxLogOut.Location = new System.Drawing.Point(683, 112);
+            this.pictureBoxLogOut.Name = "pictureBoxLogOut";
+            this.pictureBoxLogOut.Size = new System.Drawing.Size(118, 34);
+            this.pictureBoxLogOut.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxLogOut.TabIndex = 42;
+            this.pictureBoxLogOut.TabStop = false;
+            this.pictureBoxLogOut.Click += new System.EventHandler(this.pictureBoxLogOut_Click);
             // 
-            // buttonKonten
+            // pictureBoxMulai
             // 
-            this.buttonKonten.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonKonten.Location = new System.Drawing.Point(665, 320);
-            this.buttonKonten.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonKonten.Name = "buttonKonten";
-            this.buttonKonten.Size = new System.Drawing.Size(297, 87);
-            this.buttonKonten.TabIndex = 6;
-            this.buttonKonten.Text = "konten";
-            this.buttonKonten.UseVisualStyleBackColor = true;
-            this.buttonKonten.Click += new System.EventHandler(this.buttonKonten_Click);
+            this.pictureBoxMulai.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxMulai.Image = global::PamerYuk_Asgar.Properties.Resources.mulai;
+            this.pictureBoxMulai.Location = new System.Drawing.Point(272, 257);
+            this.pictureBoxMulai.Name = "pictureBoxMulai";
+            this.pictureBoxMulai.Size = new System.Drawing.Size(275, 76);
+            this.pictureBoxMulai.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxMulai.TabIndex = 41;
+            this.pictureBoxMulai.TabStop = false;
+            this.pictureBoxMulai.Click += new System.EventHandler(this.pictureBoxMulai_Click);
             // 
-            // buttonKeluar
+            // pictureBoxCr
             // 
-            this.buttonKeluar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonKeluar.Location = new System.Drawing.Point(854, 451);
-            this.buttonKeluar.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonKeluar.Name = "buttonKeluar";
-            this.buttonKeluar.Size = new System.Drawing.Size(191, 51);
-            this.buttonKeluar.TabIndex = 7;
-            this.buttonKeluar.Text = "Keluar Akun";
-            this.buttonKeluar.UseVisualStyleBackColor = true;
-            this.buttonKeluar.Click += new System.EventHandler(this.buttonKeluar_Click);
+            this.pictureBoxCr.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxCr.Image = global::PamerYuk_Asgar.Properties.Resources.cr;
+            this.pictureBoxCr.Location = new System.Drawing.Point(28, 18);
+            this.pictureBoxCr.Name = "pictureBoxCr";
+            this.pictureBoxCr.Size = new System.Drawing.Size(64, 68);
+            this.pictureBoxCr.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxCr.TabIndex = 40;
+            this.pictureBoxCr.TabStop = false;
+            this.pictureBoxCr.Click += new System.EventHandler(this.pictureBoxCr_Click);
+            // 
+            // pictureBoxNotif
+            // 
+            this.pictureBoxNotif.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxNotif.Image = global::PamerYuk_Asgar.Properties.Resources.notif;
+            this.pictureBoxNotif.Location = new System.Drawing.Point(624, 15);
+            this.pictureBoxNotif.Name = "pictureBoxNotif";
+            this.pictureBoxNotif.Size = new System.Drawing.Size(55, 51);
+            this.pictureBoxNotif.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxNotif.TabIndex = 39;
+            this.pictureBoxNotif.TabStop = false;
+            this.pictureBoxNotif.Click += new System.EventHandler(this.pictureBoxNotif_Click);
+            // 
+            // pictureBoxProfil
+            // 
+            this.pictureBoxProfil.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxProfil.Image = global::PamerYuk_Asgar.Properties.Resources.profil;
+            this.pictureBoxProfil.Location = new System.Drawing.Point(712, 15);
+            this.pictureBoxProfil.Name = "pictureBoxProfil";
+            this.pictureBoxProfil.Size = new System.Drawing.Size(60, 51);
+            this.pictureBoxProfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxProfil.TabIndex = 38;
+            this.pictureBoxProfil.TabStop = false;
+            this.pictureBoxProfil.Click += new System.EventHandler(this.pictureBoxProfil_Click);
+            // 
+            // pictureBoxEditProfil
+            // 
+            this.pictureBoxEditProfil.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxEditProfil.Image = global::PamerYuk_Asgar.Properties.Resources.edit_profil;
+            this.pictureBoxEditProfil.Location = new System.Drawing.Point(469, 325);
+            this.pictureBoxEditProfil.Name = "pictureBoxEditProfil";
+            this.pictureBoxEditProfil.Size = new System.Drawing.Size(185, 121);
+            this.pictureBoxEditProfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxEditProfil.TabIndex = 37;
+            this.pictureBoxEditProfil.TabStop = false;
+            this.pictureBoxEditProfil.Click += new System.EventHandler(this.pictureBoxEditProfil_Click);
+            // 
+            // pictureBoxChat
+            // 
+            this.pictureBoxChat.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxChat.Image = global::PamerYuk_Asgar.Properties.Resources.chat;
+            this.pictureBoxChat.Location = new System.Drawing.Point(163, 329);
+            this.pictureBoxChat.Name = "pictureBoxChat";
+            this.pictureBoxChat.Size = new System.Drawing.Size(189, 117);
+            this.pictureBoxChat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxChat.TabIndex = 36;
+            this.pictureBoxChat.TabStop = false;
+            this.pictureBoxChat.Click += new System.EventHandler(this.pictureBoxChat_Click);
+            // 
+            // pictureBoxKonten
+            // 
+            this.pictureBoxKonten.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxKonten.Image = global::PamerYuk_Asgar.Properties.Resources.konten;
+            this.pictureBoxKonten.Location = new System.Drawing.Point(469, 195);
+            this.pictureBoxKonten.Name = "pictureBoxKonten";
+            this.pictureBoxKonten.Size = new System.Drawing.Size(185, 118);
+            this.pictureBoxKonten.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxKonten.TabIndex = 35;
+            this.pictureBoxKonten.TabStop = false;
+            this.pictureBoxKonten.Click += new System.EventHandler(this.pictureBoxKonten_Click);
+            // 
+            // pictureBoxCariTeman
+            // 
+            this.pictureBoxCariTeman.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxCariTeman.Image = global::PamerYuk_Asgar.Properties.Resources.cari_teman;
+            this.pictureBoxCariTeman.Location = new System.Drawing.Point(163, 195);
+            this.pictureBoxCariTeman.Name = "pictureBoxCariTeman";
+            this.pictureBoxCariTeman.Size = new System.Drawing.Size(189, 118);
+            this.pictureBoxCariTeman.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxCariTeman.TabIndex = 34;
+            this.pictureBoxCariTeman.TabStop = false;
+            this.pictureBoxCariTeman.Click += new System.EventHandler(this.pictureBoxCariTeman_Click);
             // 
             // FormMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
-            this.Controls.Add(this.buttonKeluar);
-            this.Controls.Add(this.buttonKonten);
-            this.Controls.Add(this.buttonChat);
-            this.Controls.Add(this.buttonEditProfil);
-            this.Controls.Add(this.buttonCariTeman);
-            this.Controls.Add(this.buttonMulai);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.BackgroundImage = global::PamerYuk_Asgar.Properties.Resources.bg_menu;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ClientSize = new System.Drawing.Size(800, 489);
+            this.Controls.Add(this.panelBG);
+            this.DoubleBuffered = true;
             this.Name = "FormMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
             this.Load += new System.EventHandler(this.FormMenu_Load);
+            this.panelBG.ResumeLayout(false);
+            this.panelBG.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTerbaru)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPermintaan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLihat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogOut)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMulai)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCr)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNotif)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfil)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEditProfil)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxChat)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxKonten)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCariTeman)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button buttonMulai;
-        public System.Windows.Forms.Button buttonCariTeman;
-        public System.Windows.Forms.Button buttonEditProfil;
-        public System.Windows.Forms.Button buttonChat;
-        public System.Windows.Forms.Button buttonKonten;
-        public System.Windows.Forms.Button buttonKeluar;
+        private System.Windows.Forms.Panel panelBG;
+        private System.Windows.Forms.Label labelUser;
+        private System.Windows.Forms.PictureBox pictureBoxTerbaru;
+        private System.Windows.Forms.PictureBox pictureBoxPermintaan;
+        private System.Windows.Forms.PictureBox pictureBoxLihat;
+        private System.Windows.Forms.PictureBox pictureBoxLogOut;
+        private System.Windows.Forms.PictureBox pictureBoxMulai;
+        private System.Windows.Forms.PictureBox pictureBoxCr;
+        private System.Windows.Forms.PictureBox pictureBoxNotif;
+        private System.Windows.Forms.PictureBox pictureBoxProfil;
+        private System.Windows.Forms.PictureBox pictureBoxEditProfil;
+        private System.Windows.Forms.PictureBox pictureBoxChat;
+        private System.Windows.Forms.PictureBox pictureBoxKonten;
+        private System.Windows.Forms.PictureBox pictureBoxCariTeman;
     }
 }
 

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.labelUsername = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -43,22 +42,15 @@
             this.ThAkhir = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Deskripsi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonTambah = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKisah)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(30, 26);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(150, 153);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(207, 51);
             this.label1.Name = "label1";
@@ -69,6 +61,7 @@
             // labelUsername
             // 
             this.labelUsername.AutoSize = true;
+            this.labelUsername.BackColor = System.Drawing.Color.Transparent;
             this.labelUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelUsername.Location = new System.Drawing.Point(308, 52);
             this.labelUsername.Name = "labelUsername";
@@ -79,6 +72,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(185, 93);
             this.label2.Name = "label2";
@@ -89,6 +83,7 @@
             // labelTglLahir
             // 
             this.labelTglLahir.AutoSize = true;
+            this.labelTglLahir.BackColor = System.Drawing.Color.Transparent;
             this.labelTglLahir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTglLahir.Location = new System.Drawing.Point(309, 93);
             this.labelTglLahir.Name = "labelTglLahir";
@@ -99,6 +94,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(213, 137);
             this.label3.Name = "label3";
@@ -109,6 +105,7 @@
             // labelKota
             // 
             this.labelKota.AutoSize = true;
+            this.labelKota.BackColor = System.Drawing.Color.Transparent;
             this.labelKota.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelKota.Location = new System.Drawing.Point(316, 137);
             this.labelKota.Name = "labelKota";
@@ -119,6 +116,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("MV Boli", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(146, 193);
             this.label4.Name = "label4";
@@ -129,6 +127,7 @@
             // dataGridViewKisah
             // 
             this.dataGridViewKisah.AllowUserToAddRows = false;
+            this.dataGridViewKisah.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.dataGridViewKisah.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewKisah.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Organisasi,
@@ -137,7 +136,7 @@
             this.ThAkhir,
             this.Deskripsi});
             this.dataGridViewKisah.Location = new System.Drawing.Point(16, 224);
-            this.dataGridViewKisah.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridViewKisah.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewKisah.Name = "dataGridViewKisah";
             this.dataGridViewKisah.RowHeadersWidth = 51;
             this.dataGridViewKisah.RowTemplate.Height = 24;
@@ -181,21 +180,32 @@
             // 
             // buttonTambah
             // 
+            this.buttonTambah.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.buttonTambah.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonTambah.Location = new System.Drawing.Point(130, 410);
-            this.buttonTambah.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonTambah.Margin = new System.Windows.Forms.Padding(2);
             this.buttonTambah.Name = "buttonTambah";
             this.buttonTambah.Size = new System.Drawing.Size(177, 32);
             this.buttonTambah.TabIndex = 9;
             this.buttonTambah.Text = "Tambah Teman";
-            this.buttonTambah.UseVisualStyleBackColor = true;
+            this.buttonTambah.UseVisualStyleBackColor = false;
             this.buttonTambah.Click += new System.EventHandler(this.buttonTambah_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(30, 37);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(150, 138);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // FormLihatProfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(450, 452);
+            this.BackgroundImage = global::PamerYuk_Asgar.Properties.Resources.bgregister;
+            this.ClientSize = new System.Drawing.Size(454, 452);
             this.Controls.Add(this.buttonTambah);
             this.Controls.Add(this.dataGridViewKisah);
             this.Controls.Add(this.label4);
@@ -206,13 +216,13 @@
             this.Controls.Add(this.labelUsername);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormLihatProfil";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormLihatProfil";
             this.Load += new System.EventHandler(this.FormLihatProfil_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKisah)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

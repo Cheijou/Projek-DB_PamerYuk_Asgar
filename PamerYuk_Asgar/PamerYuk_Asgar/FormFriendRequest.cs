@@ -75,5 +75,10 @@ namespace PamerYuk_Asgar
                 }
             }
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

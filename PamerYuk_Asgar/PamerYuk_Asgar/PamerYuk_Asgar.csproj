@@ -119,12 +119,6 @@
     <Compile Include="FormOrganisasi.Designer.cs">
       <DependentUpon>FormOrganisasi.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormProfile.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormProfile.Designer.cs">
-      <DependentUpon>FormProfile.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormRegister.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,9 +180,6 @@
     <EmbeddedResource Include="FormOrganisasi.resx">
       <DependentUpon>FormOrganisasi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormProfile.resx">
-      <DependentUpon>FormProfile.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormRegister.resx">
       <DependentUpon>FormRegister.cs</DependentUpon>
     </EmbeddedResource>
@@ -206,6 +197,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -248,6 +240,108 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Asset 3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg detail konten.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg kisah hidup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg konten.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg only.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg start.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bgregister.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cari teman.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chat terbaru.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chat-masuk-1-10-2025.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit profil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit-profil-1-10-2025.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kisah-hidup-1-10-2025.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\konten.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\konten-1-10-2025.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lihat profil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Log out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login-1-10-2025.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mulai.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notif.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\organisasi text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pamer-Yuk-1-10-2025.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\permintaan-pertemanan-1-10-2025.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\register-1-10-2025.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\request.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tambah-konten-1-10-2025.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled design %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Asset 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\organisasi.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

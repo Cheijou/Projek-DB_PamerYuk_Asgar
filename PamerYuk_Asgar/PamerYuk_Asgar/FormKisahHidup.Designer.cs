@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.buttonSimpanKisahHidup = new System.Windows.Forms.Button();
-            this.labelKisahHidup = new System.Windows.Forms.Label();
-            this.panelKisahHidup = new System.Windows.Forms.Panel();
             this.labelUsername = new System.Windows.Forms.Label();
             this.labelOrganisasi = new System.Windows.Forms.Label();
             this.comboBoxOrganisasi = new System.Windows.Forms.ComboBox();
@@ -54,16 +52,18 @@
             this.buttonTambah = new System.Windows.Forms.Button();
             this.labelKota = new System.Windows.Forms.Label();
             this.buttonHapusKisah = new System.Windows.Forms.Button();
-            this.panelKisahHidup.SuspendLayout();
+            this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewData)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonSimpanKisahHidup
             // 
-            this.buttonSimpanKisahHidup.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.buttonSimpanKisahHidup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.buttonSimpanKisahHidup.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSimpanKisahHidup.Location = new System.Drawing.Point(290, 627);
-            this.buttonSimpanKisahHidup.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonSimpanKisahHidup.Location = new System.Drawing.Point(289, 603);
+            this.buttonSimpanKisahHidup.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSimpanKisahHidup.Name = "buttonSimpanKisahHidup";
             this.buttonSimpanKisahHidup.Size = new System.Drawing.Size(110, 38);
             this.buttonSimpanKisahHidup.TabIndex = 7;
@@ -71,72 +71,57 @@
             this.buttonSimpanKisahHidup.UseVisualStyleBackColor = false;
             this.buttonSimpanKisahHidup.Click += new System.EventHandler(this.buttonSimpanKisahHidup_Click);
             // 
-            // labelKisahHidup
-            // 
-            this.labelKisahHidup.AutoSize = true;
-            this.labelKisahHidup.Font = new System.Drawing.Font("Arial Narrow", 28.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelKisahHidup.Location = new System.Drawing.Point(95, -1);
-            this.labelKisahHidup.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelKisahHidup.Name = "labelKisahHidup";
-            this.labelKisahHidup.Size = new System.Drawing.Size(200, 44);
-            this.labelKisahHidup.TabIndex = 3;
-            this.labelKisahHidup.Text = "Kisah Hidup";
-            // 
-            // panelKisahHidup
-            // 
-            this.panelKisahHidup.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.panelKisahHidup.Controls.Add(this.labelKisahHidup);
-            this.panelKisahHidup.Location = new System.Drawing.Point(8, 10);
-            this.panelKisahHidup.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.panelKisahHidup.Name = "panelKisahHidup";
-            this.panelKisahHidup.Size = new System.Drawing.Size(381, 44);
-            this.panelKisahHidup.TabIndex = 9;
-            // 
             // labelUsername
             // 
             this.labelUsername.AutoSize = true;
-            this.labelUsername.Location = new System.Drawing.Point(100, 74);
+            this.labelUsername.BackColor = System.Drawing.Color.Transparent;
+            this.labelUsername.Font = new System.Drawing.Font("MV Boli", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUsername.Location = new System.Drawing.Point(225, 75);
             this.labelUsername.Name = "labelUsername";
-            this.labelUsername.Size = new System.Drawing.Size(55, 13);
+            this.labelUsername.Size = new System.Drawing.Size(82, 20);
             this.labelUsername.TabIndex = 19;
             this.labelUsername.Text = "Username";
             // 
             // labelOrganisasi
             // 
             this.labelOrganisasi.AutoSize = true;
+            this.labelOrganisasi.BackColor = System.Drawing.Color.Transparent;
+            this.labelOrganisasi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelOrganisasi.Location = new System.Drawing.Point(12, 107);
             this.labelOrganisasi.Name = "labelOrganisasi";
-            this.labelOrganisasi.Size = new System.Drawing.Size(62, 13);
+            this.labelOrganisasi.Size = new System.Drawing.Size(84, 15);
             this.labelOrganisasi.TabIndex = 21;
             this.labelOrganisasi.Text = "Organisasi :";
             // 
             // comboBoxOrganisasi
             // 
             this.comboBoxOrganisasi.FormattingEnabled = true;
-            this.comboBoxOrganisasi.Location = new System.Drawing.Point(82, 107);
-            this.comboBoxOrganisasi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBoxOrganisasi.Location = new System.Drawing.Point(101, 107);
+            this.comboBoxOrganisasi.Margin = new System.Windows.Forms.Padding(2);
             this.comboBoxOrganisasi.Name = "comboBoxOrganisasi";
-            this.comboBoxOrganisasi.Size = new System.Drawing.Size(319, 21);
+            this.comboBoxOrganisasi.Size = new System.Drawing.Size(300, 21);
             this.comboBoxOrganisasi.TabIndex = 22;
             this.comboBoxOrganisasi.SelectedIndexChanged += new System.EventHandler(this.comboBoxOrganisasi_SelectedIndexChanged);
             // 
             // labelAwal
             // 
             this.labelAwal.AutoSize = true;
-            this.labelAwal.Location = new System.Drawing.Point(12, 184);
+            this.labelAwal.BackColor = System.Drawing.Color.Transparent;
+            this.labelAwal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAwal.Location = new System.Drawing.Point(14, 187);
             this.labelAwal.Name = "labelAwal";
-            this.labelAwal.Size = new System.Drawing.Size(70, 13);
+            this.labelAwal.Size = new System.Drawing.Size(89, 15);
             this.labelAwal.TabIndex = 23;
             this.labelAwal.Text = "Tahun Awal :";
             // 
             // buttonTambahOrganisasi
             // 
-            this.buttonTambahOrganisasi.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.buttonTambahOrganisasi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.buttonTambahOrganisasi.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonTambahOrganisasi.Location = new System.Drawing.Point(82, 131);
-            this.buttonTambahOrganisasi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonTambahOrganisasi.Location = new System.Drawing.Point(100, 133);
+            this.buttonTambahOrganisasi.Margin = new System.Windows.Forms.Padding(2);
             this.buttonTambahOrganisasi.Name = "buttonTambahOrganisasi";
-            this.buttonTambahOrganisasi.Size = new System.Drawing.Size(125, 20);
+            this.buttonTambahOrganisasi.Size = new System.Drawing.Size(125, 24);
             this.buttonTambahOrganisasi.TabIndex = 24;
             this.buttonTambahOrganisasi.Text = "Tambah Organisasi";
             this.buttonTambahOrganisasi.UseVisualStyleBackColor = false;
@@ -145,35 +130,41 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 74);
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("MV Boli", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(78, 73);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 13);
+            this.label1.Size = new System.Drawing.Size(151, 21);
             this.label1.TabIndex = 25;
-            this.label1.Text = "Selamat Datang :";
+            this.label1.Text = "Selamat Datang!";
             // 
             // labelAkhir
             // 
             this.labelAkhir.AutoSize = true;
-            this.labelAkhir.Location = new System.Drawing.Point(12, 227);
+            this.labelAkhir.BackColor = System.Drawing.Color.Transparent;
+            this.labelAkhir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAkhir.Location = new System.Drawing.Point(217, 185);
             this.labelAkhir.Name = "labelAkhir";
-            this.labelAkhir.Size = new System.Drawing.Size(71, 13);
+            this.labelAkhir.Size = new System.Drawing.Size(91, 15);
             this.labelAkhir.TabIndex = 28;
             this.labelAkhir.Text = "Tahun Akhir :";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 257);
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("MV Boli", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(158, 218);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 13);
+            this.label2.Size = new System.Drawing.Size(90, 20);
             this.label2.TabIndex = 29;
             this.label2.Text = "Deskirpsi :";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // textBoxDeskripsi
             // 
-            this.textBoxDeskripsi.Location = new System.Drawing.Point(82, 257);
-            this.textBoxDeskripsi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxDeskripsi.Location = new System.Drawing.Point(45, 240);
+            this.textBoxDeskripsi.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxDeskripsi.Multiline = true;
             this.textBoxDeskripsi.Name = "textBoxDeskripsi";
             this.textBoxDeskripsi.Size = new System.Drawing.Size(319, 110);
@@ -182,16 +173,16 @@
             // 
             // textBoxTanggalAwal
             // 
-            this.textBoxTanggalAwal.Location = new System.Drawing.Point(82, 184);
-            this.textBoxTanggalAwal.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxTanggalAwal.Location = new System.Drawing.Point(113, 185);
+            this.textBoxTanggalAwal.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxTanggalAwal.Name = "textBoxTanggalAwal";
             this.textBoxTanggalAwal.Size = new System.Drawing.Size(76, 20);
             this.textBoxTanggalAwal.TabIndex = 26;
             // 
             // textBoxTanggalAkhir
             // 
-            this.textBoxTanggalAkhir.Location = new System.Drawing.Point(82, 224);
-            this.textBoxTanggalAkhir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxTanggalAkhir.Location = new System.Drawing.Point(311, 185);
+            this.textBoxTanggalAkhir.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxTanggalAkhir.Name = "textBoxTanggalAkhir";
             this.textBoxTanggalAkhir.Size = new System.Drawing.Size(76, 20);
             this.textBoxTanggalAkhir.TabIndex = 27;
@@ -209,8 +200,8 @@
             this.thawal,
             this.thakhir,
             this.deskripsi});
-            this.dataGridViewData.Location = new System.Drawing.Point(8, 404);
-            this.dataGridViewData.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridViewData.Location = new System.Drawing.Point(7, 388);
+            this.dataGridViewData.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewData.Name = "dataGridViewData";
             this.dataGridViewData.RowHeadersWidth = 51;
             this.dataGridViewData.RowTemplate.Height = 24;
@@ -269,10 +260,10 @@
             // 
             // buttonTambah
             // 
-            this.buttonTambah.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.buttonTambah.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.buttonTambah.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonTambah.Location = new System.Drawing.Point(275, 371);
-            this.buttonTambah.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonTambah.Location = new System.Drawing.Point(138, 359);
+            this.buttonTambah.Margin = new System.Windows.Forms.Padding(2);
             this.buttonTambah.Name = "buttonTambah";
             this.buttonTambah.Size = new System.Drawing.Size(125, 20);
             this.buttonTambah.TabIndex = 34;
@@ -283,18 +274,19 @@
             // labelKota
             // 
             this.labelKota.AutoSize = true;
-            this.labelKota.Location = new System.Drawing.Point(80, 159);
+            this.labelKota.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelKota.Location = new System.Drawing.Point(100, 161);
             this.labelKota.Name = "labelKota";
-            this.labelKota.Size = new System.Drawing.Size(29, 13);
+            this.labelKota.Size = new System.Drawing.Size(38, 16);
             this.labelKota.TabIndex = 36;
             this.labelKota.Text = "Kota";
             // 
             // buttonHapusKisah
             // 
-            this.buttonHapusKisah.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.buttonHapusKisah.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.buttonHapusKisah.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonHapusKisah.Location = new System.Drawing.Point(8, 627);
-            this.buttonHapusKisah.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonHapusKisah.Location = new System.Drawing.Point(7, 605);
+            this.buttonHapusKisah.Margin = new System.Windows.Forms.Padding(2);
             this.buttonHapusKisah.Name = "buttonHapusKisah";
             this.buttonHapusKisah.Size = new System.Drawing.Size(110, 38);
             this.buttonHapusKisah.TabIndex = 37;
@@ -302,11 +294,36 @@
             this.buttonHapusKisah.UseVisualStyleBackColor = false;
             this.buttonHapusKisah.Click += new System.EventHandler(this.buttonHapusKisah_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(17, 158);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(75, 15);
+            this.label3.TabIndex = 38;
+            this.label3.Text = "Asal Kota :";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = global::PamerYuk_Asgar.Properties.Resources.kisah_hidup_1_10_2025;
+            this.pictureBox2.Location = new System.Drawing.Point(41, 9);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(331, 63);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 52;
+            this.pictureBox2.TabStop = false;
+            // 
             // FormKisahHidup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(415, 674);
+            this.BackgroundImage = global::PamerYuk_Asgar.Properties.Resources.bg_kisah_hidup;
+            this.ClientSize = new System.Drawing.Size(415, 654);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.buttonHapusKisah);
             this.Controls.Add(this.labelKota);
             this.Controls.Add(this.buttonTambah);
@@ -323,15 +340,13 @@
             this.Controls.Add(this.labelOrganisasi);
             this.Controls.Add(this.labelUsername);
             this.Controls.Add(this.buttonSimpanKisahHidup);
-            this.Controls.Add(this.panelKisahHidup);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormKisahHidup";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormKisahHidup";
             this.Load += new System.EventHandler(this.FormKisahHidup_Load);
-            this.panelKisahHidup.ResumeLayout(false);
-            this.panelKisahHidup.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewData)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -339,8 +354,6 @@
 
         #endregion
         private System.Windows.Forms.Button buttonSimpanKisahHidup;
-        private System.Windows.Forms.Label labelKisahHidup;
-        private System.Windows.Forms.Panel panelKisahHidup;
         private System.Windows.Forms.Label labelUsername;
         private System.Windows.Forms.Label labelOrganisasi;
         private System.Windows.Forms.ComboBox comboBoxOrganisasi;
@@ -364,5 +377,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn deskripsi;
         private System.Windows.Forms.Label labelKota;
         private System.Windows.Forms.Button buttonHapusKisah;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

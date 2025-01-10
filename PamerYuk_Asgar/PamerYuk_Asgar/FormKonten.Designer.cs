@@ -31,20 +31,19 @@
             this.buttonKontenSaya = new System.Windows.Forms.Button();
             this.buttonTambahKonten = new System.Windows.Forms.Button();
             this.dataGridViewKonten = new System.Windows.Forms.DataGridView();
-            this.labelKonten = new System.Windows.Forms.Label();
-            this.panelKonten = new System.Windows.Forms.Panel();
             this.buttonTutup = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKonten)).BeginInit();
-            this.panelKonten.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonKontenSaya
             // 
-            this.buttonKontenSaya.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.buttonKontenSaya.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.buttonKontenSaya.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonKontenSaya.ForeColor = System.Drawing.SystemColors.ControlText;
             this.buttonKontenSaya.Location = new System.Drawing.Point(10, 337);
-            this.buttonKontenSaya.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonKontenSaya.Margin = new System.Windows.Forms.Padding(2);
             this.buttonKontenSaya.Name = "buttonKontenSaya";
             this.buttonKontenSaya.Size = new System.Drawing.Size(110, 38);
             this.buttonKontenSaya.TabIndex = 0;
@@ -54,10 +53,10 @@
             // 
             // buttonTambahKonten
             // 
-            this.buttonTambahKonten.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.buttonTambahKonten.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.buttonTambahKonten.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonTambahKonten.Location = new System.Drawing.Point(247, 337);
-            this.buttonTambahKonten.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonTambahKonten.Margin = new System.Windows.Forms.Padding(2);
             this.buttonTambahKonten.Name = "buttonTambahKonten";
             this.buttonTambahKonten.Size = new System.Drawing.Size(110, 38);
             this.buttonTambahKonten.TabIndex = 1;
@@ -67,46 +66,25 @@
             // 
             // dataGridViewKonten
             // 
+            this.dataGridViewKonten.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.dataGridViewKonten.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewKonten.Location = new System.Drawing.Point(10, 56);
-            this.dataGridViewKonten.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridViewKonten.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dataGridViewKonten.Location = new System.Drawing.Point(10, 75);
+            this.dataGridViewKonten.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewKonten.Name = "dataGridViewKonten";
             this.dataGridViewKonten.RowHeadersWidth = 51;
             this.dataGridViewKonten.RowTemplate.Height = 24;
-            this.dataGridViewKonten.Size = new System.Drawing.Size(581, 276);
+            this.dataGridViewKonten.Size = new System.Drawing.Size(581, 248);
             this.dataGridViewKonten.TabIndex = 2;
             this.dataGridViewKonten.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewKonten_CellContentClick);
             // 
-            // labelKonten
-            // 
-            this.labelKonten.AutoSize = true;
-            this.labelKonten.Font = new System.Drawing.Font("Arial Narrow", 28.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelKonten.Location = new System.Drawing.Point(230, 0);
-            this.labelKonten.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelKonten.Name = "labelKonten";
-            this.labelKonten.Size = new System.Drawing.Size(125, 44);
-            this.labelKonten.TabIndex = 3;
-            this.labelKonten.Text = "Konten";
-            this.labelKonten.Click += new System.EventHandler(this.labelKonten_Click);
-            // 
-            // panelKonten
-            // 
-            this.panelKonten.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.panelKonten.Controls.Add(this.labelKonten);
-            this.panelKonten.Location = new System.Drawing.Point(9, 10);
-            this.panelKonten.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.panelKonten.Name = "panelKonten";
-            this.panelKonten.Size = new System.Drawing.Size(582, 44);
-            this.panelKonten.TabIndex = 4;
-            this.panelKonten.Paint += new System.Windows.Forms.PaintEventHandler(this.panelKonten_Paint);
-            // 
             // buttonTutup
             // 
-            this.buttonTutup.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.buttonTutup.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTutup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.buttonTutup.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonTutup.ForeColor = System.Drawing.SystemColors.ControlText;
             this.buttonTutup.Location = new System.Drawing.Point(482, 337);
-            this.buttonTutup.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonTutup.Margin = new System.Windows.Forms.Padding(2);
             this.buttonTutup.Name = "buttonTutup";
             this.buttonTutup.Size = new System.Drawing.Size(110, 38);
             this.buttonTutup.TabIndex = 5;
@@ -114,25 +92,37 @@
             this.buttonTutup.UseVisualStyleBackColor = false;
             this.buttonTutup.Click += new System.EventHandler(this.buttonTutup_Click);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = global::PamerYuk_Asgar.Properties.Resources.konten_1_10_2025;
+            this.pictureBox2.Location = new System.Drawing.Point(162, 7);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(276, 63);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 53;
+            this.pictureBox2.TabStop = false;
+            // 
             // FormKonten
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::PamerYuk_Asgar.Properties.Resources.bg_konten;
             this.ClientSize = new System.Drawing.Size(600, 385);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.buttonTutup);
-            this.Controls.Add(this.panelKonten);
             this.Controls.Add(this.dataGridViewKonten);
             this.Controls.Add(this.buttonTambahKonten);
             this.Controls.Add(this.buttonKontenSaya);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormKonten";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormKonten";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormKonten_FormClosing);
             this.Load += new System.EventHandler(this.FormKonten_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKonten)).EndInit();
-            this.panelKonten.ResumeLayout(false);
-            this.panelKonten.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -142,8 +132,7 @@
         private System.Windows.Forms.Button buttonKontenSaya;
         private System.Windows.Forms.Button buttonTambahKonten;
         private System.Windows.Forms.DataGridView dataGridViewKonten;
-        private System.Windows.Forms.Label labelKonten;
-        private System.Windows.Forms.Panel panelKonten;
         private System.Windows.Forms.Button buttonTutup;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
