@@ -54,9 +54,10 @@
             // pictureBoxGambar
             // 
             this.pictureBoxGambar.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pictureBoxGambar.Location = new System.Drawing.Point(26, 246);
+            this.pictureBoxGambar.Location = new System.Drawing.Point(21, 99);
+            this.pictureBoxGambar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBoxGambar.Name = "pictureBoxGambar";
-            this.pictureBoxGambar.Size = new System.Drawing.Size(314, 298);
+            this.pictureBoxGambar.Size = new System.Drawing.Size(253, 279);
             this.pictureBoxGambar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxGambar.TabIndex = 0;
             this.pictureBoxGambar.TabStop = false;
@@ -65,30 +66,27 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.panel1.Controls.Add(this.labelJudul);
-            this.panel1.Location = new System.Drawing.Point(26, 3);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Location = new System.Drawing.Point(21, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1080, 62);
+            this.panel1.Size = new System.Drawing.Size(810, 50);
             this.panel1.TabIndex = 24;
             // 
             // labelJudul
             // 
             this.labelJudul.AutoSize = true;
             this.labelJudul.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelJudul.Location = new System.Drawing.Point(341, 8);
-            this.labelJudul.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelJudul.Location = new System.Drawing.Point(256, 6);
             this.labelJudul.Name = "labelJudul";
-            this.labelJudul.Size = new System.Drawing.Size(413, 52);
+            this.labelJudul.Size = new System.Drawing.Size(327, 39);
             this.labelJudul.TabIndex = 0;
             this.labelJudul.Text = "TAMBAH KONTEN";
             // 
             // labelPicture
             // 
             this.labelPicture.AutoSize = true;
-            this.labelPicture.Location = new System.Drawing.Point(23, 227);
-            this.labelPicture.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelPicture.Location = new System.Drawing.Point(21, 77);
             this.labelPicture.Name = "labelPicture";
-            this.labelPicture.Size = new System.Drawing.Size(54, 16);
+            this.labelPicture.Size = new System.Drawing.Size(46, 13);
             this.labelPicture.TabIndex = 25;
             this.labelPicture.Text = "Picture :";
             this.labelPicture.Click += new System.EventHandler(this.labelPicture_Click);
@@ -97,10 +95,9 @@
             // 
             this.buttonTambahPicture.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.buttonTambahPicture.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonTambahPicture.Location = new System.Drawing.Point(121, 551);
-            this.buttonTambahPicture.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonTambahPicture.Location = new System.Drawing.Point(102, 393);
             this.buttonTambahPicture.Name = "buttonTambahPicture";
-            this.buttonTambahPicture.Size = new System.Drawing.Size(96, 36);
+            this.buttonTambahPicture.Size = new System.Drawing.Size(72, 29);
             this.buttonTambahPicture.TabIndex = 31;
             this.buttonTambahPicture.Text = "Tambah";
             this.buttonTambahPicture.UseVisualStyleBackColor = false;
@@ -110,10 +107,9 @@
             // 
             this.buttonTambahVideo.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.buttonTambahVideo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonTambahVideo.Location = new System.Drawing.Point(539, 551);
-            this.buttonTambahVideo.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonTambahVideo.Location = new System.Drawing.Point(408, 394);
             this.buttonTambahVideo.Name = "buttonTambahVideo";
-            this.buttonTambahVideo.Size = new System.Drawing.Size(96, 36);
+            this.buttonTambahVideo.Size = new System.Drawing.Size(72, 29);
             this.buttonTambahVideo.TabIndex = 32;
             this.buttonTambahVideo.Text = "Tambah";
             this.buttonTambahVideo.UseVisualStyleBackColor = false;
@@ -122,56 +118,56 @@
             // labelVideo
             // 
             this.labelVideo.AutoSize = true;
-            this.labelVideo.Location = new System.Drawing.Point(379, 104);
-            this.labelVideo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelVideo.Location = new System.Drawing.Point(284, 84);
             this.labelVideo.Name = "labelVideo";
-            this.labelVideo.Size = new System.Drawing.Size(49, 16);
+            this.labelVideo.Size = new System.Drawing.Size(40, 13);
             this.labelVideo.TabIndex = 33;
             this.labelVideo.Text = "Video :";
             // 
             // labelCaption
             // 
             this.labelCaption.AutoSize = true;
-            this.labelCaption.Location = new System.Drawing.Point(18, 104);
-            this.labelCaption.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelCaption.Location = new System.Drawing.Point(611, 248);
             this.labelCaption.Name = "labelCaption";
-            this.labelCaption.Size = new System.Drawing.Size(59, 16);
+            this.labelCaption.Size = new System.Drawing.Size(49, 13);
             this.labelCaption.TabIndex = 35;
             this.labelCaption.Text = "Caption :";
             // 
             // textBoxCaption
             // 
-            this.textBoxCaption.Location = new System.Drawing.Point(21, 123);
+            this.textBoxCaption.Location = new System.Drawing.Point(612, 271);
+            this.textBoxCaption.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBoxCaption.Multiline = true;
             this.textBoxCaption.Name = "textBoxCaption";
-            this.textBoxCaption.Size = new System.Drawing.Size(319, 71);
+            this.textBoxCaption.Size = new System.Drawing.Size(240, 94);
             this.textBoxCaption.TabIndex = 34;
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.axWindowsMediaPlayerVideo);
-            this.panel2.Location = new System.Drawing.Point(382, 123);
+            this.panel2.Location = new System.Drawing.Point(286, 100);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(403, 421);
+            this.panel2.Size = new System.Drawing.Size(302, 279);
             this.panel2.TabIndex = 36;
             // 
             // axWindowsMediaPlayerVideo
             // 
             this.axWindowsMediaPlayerVideo.Enabled = true;
             this.axWindowsMediaPlayerVideo.Location = new System.Drawing.Point(0, 0);
+            this.axWindowsMediaPlayerVideo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.axWindowsMediaPlayerVideo.Name = "axWindowsMediaPlayerVideo";
             this.axWindowsMediaPlayerVideo.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayerVideo.OcxState")));
-            this.axWindowsMediaPlayerVideo.Size = new System.Drawing.Size(315, 267);
+            this.axWindowsMediaPlayerVideo.Size = new System.Drawing.Size(315, 265);
             this.axWindowsMediaPlayerVideo.TabIndex = 0;
             // 
             // buttonTambahTag
             // 
             this.buttonTambahTag.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.buttonTambahTag.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonTambahTag.Location = new System.Drawing.Point(1044, 154);
-            this.buttonTambahTag.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonTambahTag.Location = new System.Drawing.Point(783, 125);
             this.buttonTambahTag.Name = "buttonTambahTag";
-            this.buttonTambahTag.Size = new System.Drawing.Size(88, 36);
+            this.buttonTambahTag.Size = new System.Drawing.Size(66, 29);
             this.buttonTambahTag.TabIndex = 37;
             this.buttonTambahTag.Text = "Tambah";
             this.buttonTambahTag.UseVisualStyleBackColor = false;
@@ -180,38 +176,37 @@
             // comboBoxTag
             // 
             this.comboBoxTag.FormattingEnabled = true;
-            this.comboBoxTag.Location = new System.Drawing.Point(816, 123);
+            this.comboBoxTag.Location = new System.Drawing.Point(612, 100);
+            this.comboBoxTag.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBoxTag.Name = "comboBoxTag";
-            this.comboBoxTag.Size = new System.Drawing.Size(316, 24);
+            this.comboBoxTag.Size = new System.Drawing.Size(238, 21);
             this.comboBoxTag.TabIndex = 38;
             // 
             // labelTag
             // 
             this.labelTag.AutoSize = true;
-            this.labelTag.Location = new System.Drawing.Point(813, 104);
-            this.labelTag.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelTag.Location = new System.Drawing.Point(610, 84);
             this.labelTag.Name = "labelTag";
-            this.labelTag.Size = new System.Drawing.Size(84, 16);
+            this.labelTag.Size = new System.Drawing.Size(68, 13);
             this.labelTag.TabIndex = 39;
             this.labelTag.Text = "Tag Teman :";
             // 
             // listBoxTag
             // 
             this.listBoxTag.FormattingEnabled = true;
-            this.listBoxTag.ItemHeight = 16;
-            this.listBoxTag.Location = new System.Drawing.Point(816, 154);
+            this.listBoxTag.Location = new System.Drawing.Point(612, 131);
+            this.listBoxTag.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listBoxTag.Name = "listBoxTag";
-            this.listBoxTag.Size = new System.Drawing.Size(221, 388);
+            this.listBoxTag.Size = new System.Drawing.Size(167, 108);
             this.listBoxTag.TabIndex = 40;
             // 
             // buttonTambahKonten
             // 
             this.buttonTambahKonten.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.buttonTambahKonten.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonTambahKonten.Location = new System.Drawing.Point(967, 630);
-            this.buttonTambahKonten.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonTambahKonten.Location = new System.Drawing.Point(709, 376);
             this.buttonTambahKonten.Name = "buttonTambahKonten";
-            this.buttonTambahKonten.Size = new System.Drawing.Size(159, 36);
+            this.buttonTambahKonten.Size = new System.Drawing.Size(140, 34);
             this.buttonTambahKonten.TabIndex = 41;
             this.buttonTambahKonten.Text = "Upload";
             this.buttonTambahKonten.UseVisualStyleBackColor = false;
@@ -219,9 +214,9 @@
             // 
             // FormTambahKonten
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1139, 679);
+            this.ClientSize = new System.Drawing.Size(854, 433);
             this.Controls.Add(this.buttonTambahKonten);
             this.Controls.Add(this.listBoxTag);
             this.Controls.Add(this.labelTag);
@@ -236,9 +231,10 @@
             this.Controls.Add(this.labelPicture);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBoxGambar);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormTambahKonten";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormTambahKonten";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormTambahKonten_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGambar)).EndInit();
             this.panel1.ResumeLayout(false);

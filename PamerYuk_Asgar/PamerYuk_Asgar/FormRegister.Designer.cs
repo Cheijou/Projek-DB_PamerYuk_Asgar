@@ -52,20 +52,18 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(13, 13);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Location = new System.Drawing.Point(10, 11);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(591, 62);
+            this.panel1.Size = new System.Drawing.Size(443, 50);
             this.panel1.TabIndex = 23;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(173, 10);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(130, 8);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(254, 52);
+            this.label1.Size = new System.Drawing.Size(201, 39);
             this.label1.TabIndex = 0;
             this.label1.Text = "REGISTER";
             // 
@@ -73,10 +71,9 @@
             // 
             this.buttonRegister.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.buttonRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRegister.Location = new System.Drawing.Point(504, 419);
-            this.buttonRegister.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonRegister.Location = new System.Drawing.Point(364, 380);
             this.buttonRegister.Name = "buttonRegister";
-            this.buttonRegister.Size = new System.Drawing.Size(100, 28);
+            this.buttonRegister.Size = new System.Drawing.Size(75, 23);
             this.buttonRegister.TabIndex = 30;
             this.buttonRegister.Text = "Register";
             this.buttonRegister.UseVisualStyleBackColor = false;
@@ -86,128 +83,121 @@
             // 
             this.buttonTutup.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.buttonTutup.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonTutup.Location = new System.Drawing.Point(13, 419);
-            this.buttonTutup.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonTutup.Location = new System.Drawing.Point(24, 378);
             this.buttonTutup.Name = "buttonTutup";
-            this.buttonTutup.Size = new System.Drawing.Size(100, 28);
+            this.buttonTutup.Size = new System.Drawing.Size(75, 23);
             this.buttonTutup.TabIndex = 28;
             this.buttonTutup.Text = "TUTUP";
             this.buttonTutup.UseVisualStyleBackColor = false;
             // 
             // textBoxPassword
             // 
-            this.textBoxPassword.Location = new System.Drawing.Point(119, 151);
-            this.textBoxPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxPassword.Location = new System.Drawing.Point(89, 123);
             this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.Size = new System.Drawing.Size(485, 22);
+            this.textBoxPassword.Size = new System.Drawing.Size(345, 20);
             this.textBoxPassword.TabIndex = 27;
             // 
             // textBoxUsername
             // 
-            this.textBoxUsername.Location = new System.Drawing.Point(119, 102);
-            this.textBoxUsername.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxUsername.Location = new System.Drawing.Point(89, 83);
             this.textBoxUsername.Name = "textBoxUsername";
-            this.textBoxUsername.Size = new System.Drawing.Size(485, 22);
+            this.textBoxUsername.Size = new System.Drawing.Size(346, 20);
             this.textBoxUsername.TabIndex = 26;
             // 
             // labelPassword
             // 
             this.labelPassword.AutoSize = true;
-            this.labelPassword.Location = new System.Drawing.Point(13, 151);
-            this.labelPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelPassword.Location = new System.Drawing.Point(20, 126);
             this.labelPassword.Name = "labelPassword";
-            this.labelPassword.Size = new System.Drawing.Size(73, 16);
+            this.labelPassword.Size = new System.Drawing.Size(59, 13);
             this.labelPassword.TabIndex = 25;
             this.labelPassword.Text = "Password :";
             // 
             // labelUsername
             // 
             this.labelUsername.AutoSize = true;
-            this.labelUsername.Location = new System.Drawing.Point(13, 108);
-            this.labelUsername.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelUsername.Location = new System.Drawing.Point(15, 83);
             this.labelUsername.Name = "labelUsername";
-            this.labelUsername.Size = new System.Drawing.Size(76, 16);
+            this.labelUsername.Size = new System.Drawing.Size(61, 13);
             this.labelUsername.TabIndex = 24;
             this.labelUsername.Text = "Username :";
             // 
             // labelTglLahir
             // 
             this.labelTglLahir.AutoSize = true;
-            this.labelTglLahir.Location = new System.Drawing.Point(10, 205);
-            this.labelTglLahir.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelTglLahir.Location = new System.Drawing.Point(8, 167);
             this.labelTglLahir.Name = "labelTglLahir";
-            this.labelTglLahir.Size = new System.Drawing.Size(96, 16);
+            this.labelTglLahir.Size = new System.Drawing.Size(78, 13);
             this.labelTglLahir.TabIndex = 31;
             this.labelTglLahir.Text = "Tanggal Lahir :";
             // 
             // labelFoto
             // 
             this.labelFoto.AutoSize = true;
-            this.labelFoto.Location = new System.Drawing.Point(13, 301);
-            this.labelFoto.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelFoto.Location = new System.Drawing.Point(36, 243);
             this.labelFoto.Name = "labelFoto";
-            this.labelFoto.Size = new System.Drawing.Size(40, 16);
+            this.labelFoto.Size = new System.Drawing.Size(34, 13);
             this.labelFoto.TabIndex = 32;
             this.labelFoto.Text = "Foto :";
             // 
             // labelKota
             // 
             this.labelKota.AutoSize = true;
-            this.labelKota.Location = new System.Drawing.Point(13, 354);
-            this.labelKota.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelKota.Location = new System.Drawing.Point(13, 327);
             this.labelKota.Name = "labelKota";
-            this.labelKota.Size = new System.Drawing.Size(43, 16);
+            this.labelKota.Size = new System.Drawing.Size(38, 13);
             this.labelKota.TabIndex = 33;
             this.labelKota.Text = "Kota  :";
             // 
             // comboBoxKota
             // 
             this.comboBoxKota.FormattingEnabled = true;
-            this.comboBoxKota.Location = new System.Drawing.Point(119, 351);
+            this.comboBoxKota.Location = new System.Drawing.Point(89, 322);
+            this.comboBoxKota.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBoxKota.Name = "comboBoxKota";
-            this.comboBoxKota.Size = new System.Drawing.Size(292, 24);
+            this.comboBoxKota.Size = new System.Drawing.Size(220, 21);
             this.comboBoxKota.TabIndex = 36;
             // 
             // labelNoKtp
             // 
             this.labelNoKtp.AutoSize = true;
-            this.labelNoKtp.Location = new System.Drawing.Point(10, 256);
-            this.labelNoKtp.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelNoKtp.Location = new System.Drawing.Point(25, 208);
             this.labelNoKtp.Name = "labelNoKtp";
-            this.labelNoKtp.Size = new System.Drawing.Size(60, 16);
+            this.labelNoKtp.Size = new System.Drawing.Size(51, 13);
             this.labelNoKtp.TabIndex = 37;
             this.labelNoKtp.Text = "No KTP :";
             // 
             // textBoxNoKTP
             // 
-            this.textBoxNoKTP.Location = new System.Drawing.Point(119, 250);
-            this.textBoxNoKTP.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxNoKTP.Location = new System.Drawing.Point(89, 203);
             this.textBoxNoKTP.Name = "textBoxNoKTP";
-            this.textBoxNoKTP.Size = new System.Drawing.Size(485, 22);
+            this.textBoxNoKTP.Size = new System.Drawing.Size(347, 20);
             this.textBoxNoKTP.TabIndex = 38;
             // 
             // dateTimePickerTanggalLahir
             // 
-            this.dateTimePickerTanggalLahir.Location = new System.Drawing.Point(119, 198);
+            this.dateTimePickerTanggalLahir.Location = new System.Drawing.Point(89, 161);
+            this.dateTimePickerTanggalLahir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateTimePickerTanggalLahir.Name = "dateTimePickerTanggalLahir";
-            this.dateTimePickerTanggalLahir.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePickerTanggalLahir.Size = new System.Drawing.Size(151, 20);
             this.dateTimePickerTanggalLahir.TabIndex = 39;
             // 
             // pictureBoxPFP
             // 
             this.pictureBoxPFP.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBoxPFP.Location = new System.Drawing.Point(118, 287);
+            this.pictureBoxPFP.Location = new System.Drawing.Point(88, 233);
+            this.pictureBoxPFP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBoxPFP.Name = "pictureBoxPFP";
-            this.pictureBoxPFP.Size = new System.Drawing.Size(51, 49);
+            this.pictureBoxPFP.Size = new System.Drawing.Size(84, 75);
             this.pictureBoxPFP.TabIndex = 40;
             this.pictureBoxPFP.TabStop = false;
             this.pictureBoxPFP.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pictureBoxPFP_MouseDoubleClick);
             // 
             // FormRegister
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(617, 460);
+            this.ClientSize = new System.Drawing.Size(463, 416);
             this.Controls.Add(this.pictureBoxPFP);
             this.Controls.Add(this.dateTimePickerTanggalLahir);
             this.Controls.Add(this.textBoxNoKTP);
@@ -223,7 +213,9 @@
             this.Controls.Add(this.textBoxUsername);
             this.Controls.Add(this.labelPassword);
             this.Controls.Add(this.labelUsername);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormRegister";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormRegister";
             this.Load += new System.EventHandler(this.FormRegister_Load);
             this.panel1.ResumeLayout(false);
