@@ -104,6 +104,7 @@
             this.Controls.Add(this.buttonTutup);
             this.Controls.Add(this.panelKonten);
             this.Name = "FormKontenSaya";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormKontenSaya";
             this.Load += new System.EventHandler(this.FormKontenSaya_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKonten)).EndInit();

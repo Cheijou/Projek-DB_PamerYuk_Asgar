@@ -20,17 +20,26 @@ namespace PamerYuk_Asgar
 
 
         FormKonten form;
+        FormKontenSaya formKontenSaya;
         public User user;
         public string kontenId;
         Konten konten;
+        public string cekForm;
 
         private void FormDetailKonten_Load(object sender, EventArgs e)
         {
             try
             {
-                form = (FormKonten)this.Owner;
+                if (cekForm == "FormKonten")
+                {
+                    form = (FormKonten)this.Owner;
+                }
+                else
+                {
+                    formKontenSaya=(FormKontenSaya)this.Owner;
+                }
                 int total = Konten.HitungTotalLikes("konten_id", kontenId);
-                bool isLiked = Konten.CekLike("user_username", user.Username, kontenId);
+                bool isLiked = Konten.CekLike("", user.Username, kontenId);
                 if (isLiked == true)
                 {
                     buttonLike.Text = "Dislike";

@@ -125,6 +125,7 @@
             this.Controls.Add(this.buttonKontenSaya);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormKonten";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormKonten";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormKonten_FormClosing);
             this.Load += new System.EventHandler(this.FormKonten_Load);

@@ -163,6 +163,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBoxProfile);
             this.Name = "FormProfile";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormProfile";
             this.Load += new System.EventHandler(this.FormProfile_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxProfile)).EndInit();

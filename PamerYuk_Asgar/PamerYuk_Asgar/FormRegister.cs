@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace PamerYuk_Asgar
 {
     public partial class FormRegister : Form
@@ -19,7 +20,7 @@ namespace PamerYuk_Asgar
             InitializeComponent();
         }
         FormLogin form;
-        string gambarPath;
+        string gambarPath ="";
 
         private void FormRegister_Load(object sender, EventArgs e)
         {
@@ -41,7 +42,6 @@ namespace PamerYuk_Asgar
                 u.Foto = gambarPath;
                 u.Kota = (Kota)comboBoxKota.SelectedItem;
                 User.TambahData(u);
-
                 MessageBox.Show("Registrasi Berhasil Disimpan");
                 this.Close();
                 FormKisahHidup form = new FormKisahHidup();
@@ -51,7 +51,7 @@ namespace PamerYuk_Asgar
             }
             catch (Exception ex) 
             {
-                MessageBox.Show("Username Sudah Pernah Terdaftar");
+                MessageBox.Show(ex.Message); 
             }
 
         }

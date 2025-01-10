@@ -68,10 +68,19 @@ namespace Class_PamerYuk
             }
             public static int JalankanPerintahNonQuery(string perintah)
             {
-                Koneksi koneksi = new Koneksi();
-                MySqlCommand cmd = new MySqlCommand(perintah, koneksi.KoneksiDB);
-                int hasil = cmd.ExecuteNonQuery();
-                return hasil;
+                try
+                {
+                    Koneksi koneksi = new Koneksi();
+                    MySqlCommand cmd = new MySqlCommand(perintah, koneksi.KoneksiDB);
+                    int hasil = cmd.ExecuteNonQuery();
+                    return hasil;
+                }
+                catch (MySqlException ex) when (ex.Number == 1062) 
+                {
+
+                    throw new Exception("Username sudah pernah terdaftarkan");
+                }
+                
             }
         #endregion
 

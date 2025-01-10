@@ -22,10 +22,7 @@ namespace PamerYuk_Asgar
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void FormEditProfil_Load(object sender, EventArgs e)
         {

@@ -87,6 +87,7 @@
             this.textBoxAdd.Name = "textBoxAdd";
             this.textBoxAdd.Size = new System.Drawing.Size(534, 55);
             this.textBoxAdd.TabIndex = 29;
+            this.textBoxAdd.TextChanged += new System.EventHandler(this.textBoxAdd_TextChanged);
             // 
             // buttonAddChat
             // 
@@ -125,6 +126,7 @@
             this.Controls.Add(this.listBoxChat);
             this.Controls.Add(this.comboBoxTeman);
             this.Name = "FormChatTeman";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormChat";
             this.Load += new System.EventHandler(this.FormChat_Load);
             this.ResumeLayout(false);

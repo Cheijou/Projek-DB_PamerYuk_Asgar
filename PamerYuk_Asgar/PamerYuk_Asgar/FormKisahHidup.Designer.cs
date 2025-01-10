@@ -326,6 +326,7 @@
             this.Controls.Add(this.buttonSimpanKisahHidup);
             this.Controls.Add(this.panelKisahHidup);
             this.Name = "FormKisahHidup";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormKisahHidup";
             this.Load += new System.EventHandler(this.FormKisahHidup_Load);
             this.panelKisahHidup.ResumeLayout(false);

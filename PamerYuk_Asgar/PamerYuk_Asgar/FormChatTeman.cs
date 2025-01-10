@@ -41,13 +41,18 @@ namespace PamerYuk_Asgar
                 Chat chat = new Chat();
                 chat.Saya = user;
                 chat.Temanku = Chat.Teman("username", comboBoxTeman.Text);
+                if (textBoxAdd.Text == "")
+                {
+                    throw new Exception("Isi Pesan Tidak Ada");
+                }
+
                 chat.Isi = textBoxAdd.Text;
                 chat.Tanggal = DateTime.Now;
                 Chat.TambahChat(chat);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Chat Gagal Terkirim");
+                MessageBox.Show(ex.Message);
             }
             comboBoxTeman_SelectedIndexChanged(sender, e);
         }
@@ -60,6 +65,11 @@ namespace PamerYuk_Asgar
             {
                 listBoxChat.Items.Add("[" + listChat[i].Tanggal.ToString() + "] " + listChat[i].Saya.Username + " : " + listChat[i].Isi + "\n");
             }
+        }
+
+        private void textBoxAdd_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

@@ -237,6 +237,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBoxGambar);
             this.Name = "FormTambahKonten";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormTambahKonten";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormTambahKonten_Load);

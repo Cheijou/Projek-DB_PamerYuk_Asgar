@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.dataGridViewTeman = new System.Windows.Forms.DataGridView();
+            this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labelCari = new System.Windows.Forms.Label();
             this.labelNama = new System.Windows.Forms.Label();
             this.comboBoxCari = new System.Windows.Forms.ComboBox();
             this.textBoxCari = new System.Windows.Forms.TextBox();
             this.buttonRequest = new System.Windows.Forms.Button();
-            this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTeman)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,6 +52,13 @@
             this.dataGridViewTeman.Size = new System.Drawing.Size(540, 261);
             this.dataGridViewTeman.TabIndex = 0;
             this.dataGridViewTeman.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewTeman_CellContentClick);
+            // 
+            // Username
+            // 
+            this.Username.HeaderText = "Username";
+            this.Username.MinimumWidth = 6;
+            this.Username.Name = "Username";
+            this.Username.Width = 125;
             // 
             // labelCari
             // 
@@ -105,13 +112,6 @@
             this.buttonRequest.UseVisualStyleBackColor = true;
             this.buttonRequest.Click += new System.EventHandler(this.buttonRequest_Click);
             // 
-            // Username
-            // 
-            this.Username.HeaderText = "Username";
-            this.Username.MinimumWidth = 6;
-            this.Username.Name = "Username";
-            this.Username.Width = 125;
-            // 
             // FormTambahTeman
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -125,7 +125,7 @@
             this.Controls.Add(this.dataGridViewTeman);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormTambahTeman";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormTambahTeman";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormTambahTeman_FormClosing);
             this.Load += new System.EventHandler(this.FormTambahTeman_Load);

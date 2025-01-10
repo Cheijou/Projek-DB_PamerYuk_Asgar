@@ -38,10 +38,10 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonUbah = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.comboBoxKota = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.buttonEditKisahHidup = new System.Windows.Forms.Button();
             this.labelUsername = new System.Windows.Forms.Label();
-            this.comboBoxKota = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -53,7 +53,7 @@
             this.panel1.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(4, -1);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(437, 78);
             this.panel1.TabIndex = 34;
@@ -68,14 +68,13 @@
             this.label1.Size = new System.Drawing.Size(249, 52);
             this.label1.TabIndex = 0;
             this.label1.Text = "Ubah Profil";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // buttonSimpan
             // 
             this.buttonSimpan.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.buttonSimpan.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSimpan.Location = new System.Drawing.Point(324, 390);
-            this.buttonSimpan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonSimpan.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSimpan.Name = "buttonSimpan";
             this.buttonSimpan.Size = new System.Drawing.Size(100, 28);
             this.buttonSimpan.TabIndex = 40;
@@ -88,7 +87,7 @@
             this.buttonTutup.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.buttonTutup.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonTutup.Location = new System.Drawing.Point(13, 390);
-            this.buttonTutup.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonTutup.Margin = new System.Windows.Forms.Padding(4);
             this.buttonTutup.Name = "buttonTutup";
             this.buttonTutup.Size = new System.Drawing.Size(100, 28);
             this.buttonTutup.TabIndex = 39;
@@ -110,7 +109,7 @@
             // 
             this.textBoxTanggalLahir.BackColor = System.Drawing.SystemColors.Control;
             this.textBoxTanggalLahir.Location = new System.Drawing.Point(99, 11);
-            this.textBoxTanggalLahir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxTanggalLahir.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxTanggalLahir.Name = "textBoxTanggalLahir";
             this.textBoxTanggalLahir.Size = new System.Drawing.Size(295, 22);
             this.textBoxTanggalLahir.TabIndex = 37;
@@ -140,7 +139,7 @@
             this.buttonUbah.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.buttonUbah.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonUbah.Location = new System.Drawing.Point(163, 183);
-            this.buttonUbah.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonUbah.Margin = new System.Windows.Forms.Padding(4);
             this.buttonUbah.Name = "buttonUbah";
             this.buttonUbah.Size = new System.Drawing.Size(131, 28);
             this.buttonUbah.TabIndex = 47;
@@ -158,6 +157,15 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(411, 43);
             this.panel4.TabIndex = 46;
+            // 
+            // comboBoxKota
+            // 
+            this.comboBoxKota.FormattingEnabled = true;
+            this.comboBoxKota.Location = new System.Drawing.Point(100, 10);
+            this.comboBoxKota.Name = "comboBoxKota";
+            this.comboBoxKota.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxKota.TabIndex = 38;
+            this.comboBoxKota.SelectedIndexChanged += new System.EventHandler(this.comboBoxKota_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -192,15 +200,6 @@
             this.labelUsername.TabIndex = 49;
             this.labelUsername.Text = "Username";
             // 
-            // comboBoxKota
-            // 
-            this.comboBoxKota.FormattingEnabled = true;
-            this.comboBoxKota.Location = new System.Drawing.Point(100, 10);
-            this.comboBoxKota.Name = "comboBoxKota";
-            this.comboBoxKota.Size = new System.Drawing.Size(121, 24);
-            this.comboBoxKota.TabIndex = 38;
-            this.comboBoxKota.SelectedIndexChanged += new System.EventHandler(this.comboBoxKota_SelectedIndexChanged);
-            // 
             // FormEditProfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -217,7 +216,7 @@
             this.Controls.Add(this.buttonTutup);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormEditProfil";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormEditProfil";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormEditProfil_FormClosing);
             this.Load += new System.EventHandler(this.FormEditProfil_Load);

@@ -19,6 +19,7 @@ namespace PamerYuk_Asgar
         }
         public User user;
         FormMenu form;
+        
         private void buttonTutup_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -30,16 +31,17 @@ namespace PamerYuk_Asgar
 
             if (e.ColumnIndex == dataGridViewKonten.Columns["btnDetailGrid"].Index)
             {
-                Form formApp = Application.OpenForms["FormKomen"];
+                Form formApp = Application.OpenForms["FormDetailKonten"];
                 if (formApp == null)
                 {
-                    FormDetailKonten formKomen = new FormDetailKonten();
-                    formKomen.Owner = this;
-                    formKomen.user = user;
-                    formKomen.kontenId = konten;
-                    formKomen.pictureBoxGambar.Image = (Image)dataGridViewKonten.CurrentRow.Cells["Gambar"].Value;
-                    formKomen.Show();
-                    formKomen.BringToFront();
+                    FormDetailKonten formDetailKonten = new FormDetailKonten();
+                    formDetailKonten.Owner = this;
+                    formDetailKonten.user = user;
+                    formDetailKonten.cekForm = "FormKonten";
+                    formDetailKonten.kontenId = konten;
+                    formDetailKonten.pictureBoxGambar.Image = (Image)dataGridViewKonten.CurrentRow.Cells["Gambar"].Value;
+                    formDetailKonten.Show();
+                    formDetailKonten.BringToFront();
                 }
                 else
                 {

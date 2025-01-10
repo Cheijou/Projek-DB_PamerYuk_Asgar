@@ -237,6 +237,7 @@
             this.Controls.Add(this.labelCaption);
             this.Controls.Add(this.panelKonten);
             this.Name = "FormDetailKonten";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormKomen";
             this.Load += new System.EventHandler(this.FormDetailKonten_Load);
             this.panelKonten.ResumeLayout(false);

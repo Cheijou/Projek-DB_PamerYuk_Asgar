@@ -112,6 +112,7 @@ namespace PamerYuk_Asgar
                 dataGridViewData.Rows.Clear();
                 user.ListKisahHidup = new List<KisahHidup>();
             }
+            this.Close();
 
         }
 

@@ -143,6 +143,7 @@
             this.Controls.Add(this.labelUsername);
             this.Controls.Add(this.panelKisahHidup);
             this.Name = "FormOrganisasi";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormOrganisasi";
             this.Load += new System.EventHandler(this.FormOrganisasi_Load);
             this.panelKisahHidup.ResumeLayout(false);

@@ -27,33 +27,75 @@ namespace Class_PamerYuk
         #region Constructor
         public User()
         {
-            this.Username = "";
-            this.Password = "";
-            this.TglLahir = DateTime.Now;
-            this.NoKtp = "";
-            this.Foto = null;
+            //this.Username = "";
+            //this.Password = "";
+            //this.TglLahir = DateTime.Now;
+            //this.NoKtp = "";
+            //this.Foto = null;
             this.Kota = new Kota();
             this.ListKisahHidup = new List<KisahHidup>();
             this.ListTeman = new List<Teman>();
 
         }
 
-        public User(string username, string password, DateTime tglLahir, string noKtp, string foto, Kota kota)
-        {
-            this.Username = username;
-            this.Password = password;
-            this.TglLahir = tglLahir;
-            this.NoKtp = noKtp;
-            this.Foto = foto;
-            this.Kota = kota;
-        }
+        //public User(string username, string password, DateTime tglLahir, string noKtp, string foto, Kota kota)
+        //{
+        //    this.Username = username;
+        //    this.Password = password;
+        //    this.TglLahir = tglLahir;
+        //    this.NoKtp = noKtp;
+        //    this.Foto = foto;
+        //    this.Kota = kota;
+        //}
         #endregion
 
         #region Properties
-        public string Username { get => username; set => username = value; }
-        public string Password { get => password; set => password = value; }
+        public string Username 
+        { 
+            get => username; 
+            set 
+            {
+                if (value == "")
+                {
+                    throw new Exception("Username Belum Terisi");
+                }
+                else
+                {
+                    username = value;
+                }
+            }  
+        }
+        public string Password 
+        { 
+            get => password;
+            set
+            {
+                if (value == "")
+                {
+                    throw new Exception("Password Belum Terisi");
+                }
+                else
+                {
+                    password = value;
+                }
+            }
+        }
         public DateTime TglLahir { get => tglLahir; set => tglLahir = value; }
-        public string NoKtp { get => noKtp; set => noKtp = value; }
+        public string NoKtp 
+        { 
+            get => noKtp;
+            set 
+            {
+                if (value == "")
+                {
+                    throw new Exception("NoKTP Belum Terisi");
+                }
+                else
+                {
+                    noKtp = value;
+                }
+            }
+        }
         public string Foto { get => foto; set => foto = value; }
         public  Kota Kota { get => kota; set => kota = value; }
         public List<KisahHidup> ListKisahHidup { get => listKisahHidup; set => listKisahHidup = value; }

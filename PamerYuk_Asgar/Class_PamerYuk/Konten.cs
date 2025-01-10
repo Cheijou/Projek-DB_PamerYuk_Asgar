@@ -147,7 +147,7 @@ namespace Class_PamerYuk
         {
             string perintah = "";
                 perintah = "delete from likes "
-                + "where konten_id = '" + kontenid + "' and User_username = '" + userLogin.Username+ "'";
+                + "where konten_id = '" + kontenid + "' and username = '" + userLogin.Username+ "'";
                 Koneksi.JalankanPerintahNonQuery(perintah);
 
         }
@@ -166,7 +166,7 @@ namespace Class_PamerYuk
         public void InsertLike(string kontenid)
         {
             string perintah;
-                perintah = "INSERT INTO Likes (Konten_id, user_username) "
+                perintah = "INSERT INTO Likes (Konten_id, username) "
                 + "VALUES ('" + kontenid + "', '" + this.ListLike[0].User.Username + "');";
                 Koneksi.JalankanPerintahNonQuery(perintah);
         }

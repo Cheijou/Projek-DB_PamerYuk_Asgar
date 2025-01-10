@@ -62,6 +62,7 @@
             this.Controls.Add(this.dataGridViewPermintaan);
             this.Controls.Add(this.label1);
             this.Name = "FormFriendRequest";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormFriendRequest";
             this.Load += new System.EventHandler(this.FormFriendRequest_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPermintaan)).EndInit();
