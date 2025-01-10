@@ -83,6 +83,5 @@ namespace Class_PamerYuk
                 
             }
         #endregion
-
     }
 }

@@ -11,8 +11,6 @@ namespace Class_PamerYuk
         #region Data Member
         private Konten konten;
         private User user;
-
-
         #endregion
 
         #region Constructor

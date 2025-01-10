@@ -16,14 +16,9 @@ namespace Class_PamerYuk
         private string isi;
         private DateTime tanggal;
         private bool notif;
-
-       
-
-       
         #endregion
 
         #region Constructor 
-        
         public Chat()
         {
             this.Id = 0;
@@ -33,8 +28,6 @@ namespace Class_PamerYuk
             this.Tanggal = DateTime.Now;
             
         }
-
-        
         #endregion
 
         #region Properties
@@ -44,11 +37,9 @@ namespace Class_PamerYuk
         public User Saya { get => saya; set => saya = value; }
         public User Temanku { get => temanku; set => temanku = value; }
         public bool Notif { get => notif; set => notif = value; }
-
         #endregion
 
         #region Method 
-
         public static void TambahChat(Chat objekTambah)
         {
             string perintah = "INSERT INTO Chat (saya, temanku, isi, tanggal) VALUES ('" + objekTambah.Saya.Username + "', '" + objekTambah.Temanku.Username + "', '" + objekTambah.Isi+ "', '" + objekTambah.Tanggal.ToString("yyyy-MM-dd HH:mm:ss") + "');";
@@ -95,25 +86,6 @@ namespace Class_PamerYuk
             }
             return listChat;
         }
-        //public static List<Chat> BacaData(Chat objek)
-        //{
-        //    string perintah = "select * from Chat where saya = '" + objek.Saya.Username + "' and temanku = '" +objek.Temanku.Username + "' ;";
-        //    Koneksi.JalankanPerintahSelect(perintah);
-
-        //    MySqlDataReader hasil = Koneksi.JalankanPerintahSelect(perintah);
-        //    List<Chat> listChat = new List<Chat>();
-        //    while (hasil.Read() == true)
-        //    {
-        //        Chat tampung = new Chat();
-        //        tampung.Id = int.Parse(hasil.GetValue(0).ToString());
-        //        tampung.Saya = User.BacaData("username", hasil.GetValue(1).ToString())[0];
-        //        tampung.Temanku = User.BacaData("username", hasil.GetValue(2).ToString())[0];
-        //        tampung.Isi = hasil.GetValue(3).ToString();
-        //        tampung.Tanggal = DateTime.Parse(hasil.GetValue(4).ToString());
-        //        listChat.Add(tampung);
-        //    }
-        //    return listChat;
-        //}
 
         public static User Teman(string filter = "", string nilai = "")
         {
@@ -158,12 +130,6 @@ namespace Class_PamerYuk
             }
             return total;
         }
-
-
-
-
-
-
         #endregion
     }
 }

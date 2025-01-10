@@ -28,11 +28,6 @@ namespace Class_PamerYuk
         #region Constructor
         public User()
         {
-            //this.Username = "";
-            //this.Password = "";
-            //this.TglLahir = DateTime.Now;
-            //this.NoKtp = "";
-            //this.Foto = null;
             this.Kota = new Kota();
             this.ListKisahHidup = new List<KisahHidup>();
             this.ListTeman = new List<Teman>();
