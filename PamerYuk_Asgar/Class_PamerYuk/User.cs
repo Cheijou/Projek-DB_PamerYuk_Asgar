@@ -330,7 +330,7 @@ namespace Class_PamerYuk
                 user.Password = "********";
                 user.TglLahir = DateTime.Parse(hasil.GetValue(2).ToString());
                 user.NoKtp = hasil.GetValue(3).ToString();
-                //user.Foto = hasil.GetValue(4).ToString();
+                user.Foto = hasil.GetValue(4).ToString();
                 user.Kota = Kota.BacaData("id", hasil.GetValue(5).ToString())[0];
                 // tambahkan ke list
                 listPengguna.Add(user);
