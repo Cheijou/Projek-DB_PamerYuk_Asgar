@@ -91,10 +91,38 @@ namespace Class_PamerYuk
 
             while (hasil.Read() == true)
             {
-                cek = true;
+                if (hasil.GetValue(0) ==  null)
+                {
+                    cek = false;
+                }
+                else
+                {
+                    cek = true;
+                }
             }
             return cek;
         }
+
+        public static List<Tag> BacaTag(string filter = "", string nilai = "")
+        {
+            string perintah = "select t.* from tag t";
+            if (filter != "")
+            {
+                perintah += " where " + filter + " = '" + nilai + "'";
+            }
+
+            MySqlDataReader hasil = Koneksi.JalankanPerintahSelect(perintah);
+
+            List<Tag> ListData = new List<Tag>();
+            while (hasil.Read() == true)
+            {
+                Tag tag = new Tag();
+                tag.User.Username = hasil.GetValue(1).ToString();
+                ListData.Add(tag);
+            }
+            return ListData;
+        }
+
         public void TambahTag(User user)
         {
 

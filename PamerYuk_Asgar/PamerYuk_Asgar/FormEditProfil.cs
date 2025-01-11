@@ -26,6 +26,7 @@ namespace PamerYuk_Asgar
 
         private void FormEditProfil_Load(object sender, EventArgs e)
         {
+            user = User.BacaDataTerbaruUser(user.Username);
             form = (FormMenu)this.MdiParent;
             if (user.Foto != "")
             {
@@ -79,6 +80,11 @@ namespace PamerYuk_Asgar
         private void comboBoxKota_SelectedIndexChanged(object sender, EventArgs e)
         {
             kotaPilih = (Kota)comboBoxKota.SelectedItem;
+        }
+
+        private void buttonTutup_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

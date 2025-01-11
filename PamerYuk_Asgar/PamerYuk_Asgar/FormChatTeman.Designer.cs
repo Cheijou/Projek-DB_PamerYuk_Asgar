@@ -99,7 +99,7 @@
             this.buttonAddChat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.buttonAddChat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAddChat.Location = new System.Drawing.Point(421, 412);
-            this.buttonAddChat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAddChat.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAddChat.Name = "buttonAddChat";
             this.buttonAddChat.Size = new System.Drawing.Size(129, 41);
             this.buttonAddChat.TabIndex = 31;

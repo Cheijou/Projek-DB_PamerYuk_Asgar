@@ -53,27 +53,10 @@ namespace PamerYuk_Asgar
                     dataGridViewTeman.Columns.Add(btnTambah);
                 }
             }
-            catch  
+            catch (Exception ex)
             {
-                MessageBox.Show("Anda sudah berteman dengan user ini");
+                MessageBox.Show(ex.Message);
             }
-
-                //for (int i = 0; i < dataGridViewTeman.Rows.Count; i++)
-                //{
-                //    string user = dataGridViewTeman.Rows[i].Cells["Username"].Value.ToString();
-                //    Console.WriteLine(user);
-                //    for (int j = 0; j < listTeman.Count; j++)
-                //    {
-                //        if (user != listTeman[j].User2.Username)
-                //        {
-                //            //btnTambah.Text = "Tambah Teman";
-                //            //btnTambah.HeaderText = "";
-                //            //btnTambah.UseColumnTextForButtonValue = true;
-                //            //btnTambah.Name = "btnTambahGrid";
-                //            dataGridViewTeman.Rows[i].Cells["btnTambahGrid"].Value = DBNull.Value;
-                //        }
-                //    }
-                //}
         }        
 
         private void dataGridViewTeman_CellContentClick(object sender, DataGridViewCellEventArgs e)

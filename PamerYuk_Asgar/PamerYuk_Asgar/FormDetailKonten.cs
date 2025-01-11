@@ -39,7 +39,7 @@ namespace PamerYuk_Asgar
                     formKontenSaya=(FormKontenSaya)this.Owner;
                 }
                 int total = Konten.HitungTotalLikes("konten_id", kontenId);
-                bool isLiked = Konten.CekLike("", user.Username, kontenId);
+                bool isLiked = Konten.CekLike("username", user.Username, kontenId);
                 if (isLiked == true)
                 {
                     buttonLike.Text = "Dislike";
@@ -47,7 +47,19 @@ namespace PamerYuk_Asgar
                 else
                 {
                     buttonLike.Text = "Like";
-                }    
+                }
+                List<Tag> listTag = Konten.BacaTag("konten_id", kontenId);
+                for (int i = 0; i < listTag.Count; i++)
+                {
+                    if (i < listTag.Count - 1)
+                    {
+                        labelTag.Text += listTag[i].User.Username + ", ";
+                    }
+                    else
+                    {
+                        labelTag.Text += listTag[i].User.Username;
+                    }
+                }
                 labelTotalLike.Text = total.ToString();
                 konten = Konten.BacaData("id", kontenId)[0];
                 axWindowsMediaPlayerVideo.URL = konten.Video;

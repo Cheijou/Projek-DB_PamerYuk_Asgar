@@ -21,7 +21,6 @@ namespace Class_PamerYuk
         private Kota kota;
         private List<KisahHidup> listKisahHidup;
         private List<Teman> listTeman;
-        private bool notif;
 
         #endregion
 
@@ -72,7 +71,7 @@ namespace Class_PamerYuk
             get => noKtp;
             set 
             {
-                if (value == "")
+                if (value.Length == 0)
                 {
                     throw new Exception("NoKTP Belum Terisi");
                 }
@@ -86,8 +85,6 @@ namespace Class_PamerYuk
         public  Kota Kota { get => kota; set => kota = value; }
         public List<KisahHidup> ListKisahHidup { get => listKisahHidup; set => listKisahHidup = value; }
         public List<Teman> ListTeman { get => listTeman; set => listTeman = value; }
-        public bool Notif { get => notif; set => notif = value; }
-
 
         #endregion
 
@@ -116,6 +113,29 @@ namespace Class_PamerYuk
             }
             // kirim kembali list ke pemanggilnya
         }
+
+        public static User BacaDataTerbaruUser(string uid = "")
+        {
+            string perintah = "select * from User " +
+                "where username ='" + uid + "'";
+            MySqlDataReader hasil = Koneksi.JalankanPerintahSelect(perintah);
+            if (hasil.Read() == true)
+            {
+                User user = new User();
+                user.Username = hasil.GetValue(0).ToString();
+                user.Password = hasil.GetValue(1).ToString();
+                user.TglLahir = DateTime.Parse(hasil.GetValue(2).ToString());
+                user.NoKtp = hasil.GetValue(3).ToString();
+                user.Foto = hasil.GetValue(4).ToString();
+                user.Kota = Kota.BacaData("id", hasil.GetValue(5).ToString())[0];
+                return user;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
         public static List<User> BacaData(string filter = "", string nilai = "")
         {
             string perintah = "select u.*,k.nama from User u inner join kota k on u.kota_id = k.id";
@@ -133,7 +153,7 @@ namespace Class_PamerYuk
                 user.TglLahir = DateTime.Parse(hasil.GetValue(2).ToString());
                 user.NoKtp = hasil.GetValue(3).ToString();
                 user.Foto = hasil.GetValue(4).ToString();
-                user.Kota.Nama = hasil.GetValue(7).ToString();
+                user.Kota.Nama = hasil.GetValue(6).ToString();
                 // tambahkan ke list
                 listPengguna.Add(user);
             }
@@ -142,7 +162,6 @@ namespace Class_PamerYuk
 
         public static void TambahData(User objekTambah)
         { 
-            //kurang foto
             string perintah = "INSERT INTO User (username, password, tglLahir, noKTP, foto, Kota_id) VALUES ('"+ objekTambah.Username + "', '" +objekTambah.Password + "', '" + objekTambah.tglLahir.ToString("yyyy-MM-dd")
                 + "', '" + objekTambah.noKtp + "', '" + objekTambah.Foto.Replace("\\", "\\\\") + "', '" + objekTambah.Kota.Id + "');";
 
@@ -162,6 +181,11 @@ namespace Class_PamerYuk
             string perintah = "UPDATE User SET password='" + objekUbah.Password + "' WHERE username='" + objekUbah.username + "';";
 
             Koneksi.JalankanPerintahNonQuery(perintah);
+        }
+
+        public override string ToString()
+        {
+            return Username;
         }
         #endregion
 
@@ -304,8 +328,6 @@ namespace Class_PamerYuk
                 " where u.username != '" + userLogin.Username +
                 "' and (o.Nama in (select o.nama from organisasi o inner join kisahhidup k on o.id = k.organisasi_id " +
                 "where k.username = '" + userLogin.Username + "'))";
-                //"and (u.username in (select u.username from user u " +
-                //"inner join teman t on u.username = t.username1 where t.username1 = '"+userLogin.Username+"'))";
 
             if (filter == "username")
             {
@@ -337,7 +359,6 @@ namespace Class_PamerYuk
             }
             return listPengguna;         
         }
-        
 
         public static List<Teman> CariTeman(User userLogin)
         {
@@ -365,40 +386,6 @@ namespace Class_PamerYuk
             }
             return listPermintaan;
         }
-
-        //public static void UpdateNotif(User userLogin)
-        //{
-        //    string perintah = "UPDATE User SET dilihat = '" + 1 + "' where username = '" + userLogin.Username + "' ;";
-
-        //    Koneksi.JalankanPerintahNonQuery(perintah);
-        //}
-        //public static void UpdateDilihat(User userLogin)
-        //{
-        //    string perintah = "UPDATE User SET dilihat = '" + 0 + "' where username = '" + userLogin.Username + "' ;";
-
-        //    Koneksi.JalankanPerintahNonQuery(perintah);
-        //}
-        //public static int TotalFriendRequest(User userLogin)
-        //{
-        //    string perintah = "select count(dilihat) from user where dilihat = '0' and username = '" + userLogin.Username + "'; " ;
-        //    Koneksi.JalankanPerintahNonQuery(perintah);
-        //    MySqlDataReader hasil = Koneksi.JalankanPerintahSelect(perintah);
-        //    int total = 0;
-        //    while (hasil.Read() == true)
-        //    {
-        //        total = int.Parse(hasil.GetValue(0).ToString());
-        //    }
-        //    return total;
-        //}
-
-
         #endregion
-
-        public override string ToString()
-        {
-            return Username;
-        }
-
-  
     }
 }

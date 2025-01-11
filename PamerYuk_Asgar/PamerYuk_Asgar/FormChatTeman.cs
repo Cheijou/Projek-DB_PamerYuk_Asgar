@@ -15,14 +15,13 @@ namespace PamerYuk_Asgar
     {
         FormChat form;
         public User user;
-        public bool check = false;
+        public bool check;
+        public string selectedFriend;
 
         public FormChatTeman()
         {
             InitializeComponent();
         }
-
-        
 
         private void buttonAddChat_Click(object sender, EventArgs e)
         {
@@ -68,6 +67,7 @@ namespace PamerYuk_Asgar
             List<Teman> listTeman = User.CariTeman(user);
             comboBoxTeman.DataSource = listTeman;
             comboBoxTeman.DisplayMember = "user2";
+            comboBoxTeman.Text = selectedFriend;
             if (check == false)
             {
                 comboBoxTeman.SelectedIndex = -1;

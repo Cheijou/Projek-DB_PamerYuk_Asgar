@@ -13,14 +13,25 @@ namespace PamerYuk_Asgar
 {
     public partial class FormLihatProfil : Form
     {
+        FormMenu form;
+        FormTambahTeman form2;
         public User user;
+        public string cek;
         public FormLihatProfil()
         {
             InitializeComponent();
         }
 
         private void FormLihatProfil_Load(object sender, EventArgs e)
-        {          
+        {
+            if (cek == "FormMenu")
+            {
+                form = (FormMenu)this.Owner;
+            }
+            else
+            {
+                form2 = (FormTambahTeman)this.Owner;
+            }
             labelUsername.Text = user.Username;
             labelTglLahir.Text = user.TglLahir.ToString("MM-dd-yyyy");
             if (user.Foto != "")
@@ -52,6 +63,17 @@ namespace PamerYuk_Asgar
                 {
                     MessageBox.Show("Anda sekarang telah berteman dengan " + teman);
                 }
+            }
+        }
+
+        private void FormLihatProfil_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (cek == "FormMenu")
+            {
+                form.panelBG.Visible = true;
+                form.LoadButton();
+                form.labelUser.Visible = true;
+                form.labelJumlahNotif.Visible = false;
             }
         }
     }

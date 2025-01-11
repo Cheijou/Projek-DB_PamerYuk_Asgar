@@ -25,11 +25,6 @@ namespace PamerYuk_Asgar
             form.ShowDialog();
         }
 
-        private void FormLogin_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonLogin_Click(object sender, EventArgs e)
         {
             FormMenu formParent = (FormMenu)this.Owner;

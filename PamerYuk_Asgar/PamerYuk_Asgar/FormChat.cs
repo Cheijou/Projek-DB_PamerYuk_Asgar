@@ -53,11 +53,10 @@ namespace PamerYuk_Asgar
                 {
                     FormChatTeman formChatTeman = new FormChatTeman();
                     formChatTeman.user = user;
-                    formChatTeman.comboBoxTeman.Text = teman;
+                    formChatTeman.selectedFriend = teman;
                     formChatTeman.check = true;
                     formChatTeman.Show();
                     formChatTeman.BringToFront();
-
                 }
                 else
                 {
@@ -88,7 +87,7 @@ namespace PamerYuk_Asgar
             form.panelBG.Visible = true;
             form.LoadButton();
             form.labelUser.Visible = true;
-            form.labelJumlahNotif.Refresh();
+            form.labelJumlahNotif.Visible = false;
         }
     }
 }

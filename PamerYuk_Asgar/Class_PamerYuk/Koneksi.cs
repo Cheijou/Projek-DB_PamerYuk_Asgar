@@ -39,7 +39,7 @@ namespace Class_PamerYuk
             }
             public Koneksi(string pS, string pD, string pU, string pP)
             {
-                string conString = "Server=" + pS + ";Database=" + pD + ";Uid=" + pU + ";pwd=" + pP+ ";Max Pool Size=200;";
+                string conString = "Server=" + pS + ";Database=" + pD + ";Uid=" + pU + ";pwd=" + pP+ ";Max Pool Size=300;";
                 koneksiDB = new MySqlConnection();
                 KoneksiDB.ConnectionString = conString;
                 Connect();

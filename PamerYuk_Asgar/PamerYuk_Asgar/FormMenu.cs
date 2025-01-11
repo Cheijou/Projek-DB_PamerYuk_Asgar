@@ -22,7 +22,7 @@ namespace PamerYuk_Asgar
 
         private void FormMenu_Load(object sender, EventArgs e)
         {
-           labelJumlahNotif.Visible = false;
+            labelJumlahNotif.Visible = false;
             this.IsMdiContainer = true;
             this.Visible = false;
             DisableButton();
@@ -267,9 +267,9 @@ namespace PamerYuk_Asgar
                 FormChat formChat = new FormChat();
                 formChat.user = userLogin;
                 formChat.MdiParent = this;
-                //FormChatTeman formChatTeman = new FormChatTeman();
-                //formChatTeman.MdiParent = this;
-                //formChat.Show();
+                FormChatTeman formChatTeman = new FormChatTeman();
+                formChatTeman.MdiParent = this;
+                formChat.Show();
                 DisableButton();
                 labelUser.Visible = false;
                 BackgroundImage = Properties.Resources.bg_only;
@@ -287,6 +287,11 @@ namespace PamerYuk_Asgar
             DisableButton();
             labelUser.Visible = false;
             BackgroundImage = Properties.Resources.bg_only;
+            FormLihatProfil form = new FormLihatProfil();
+            form.cek = "FormMenu";
+            form.user = User.BacaData("username", userLogin.Username)[0];
+            form.Owner = this;
+            form.ShowDialog();
         }
 
         private void pictureBoxLogOut_Click(object sender, EventArgs e)
