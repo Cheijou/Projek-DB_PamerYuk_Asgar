@@ -77,7 +77,6 @@
             this.panelBG.Name = "panelBG";
             this.panelBG.Size = new System.Drawing.Size(1080, 610);
             this.panelBG.TabIndex = 0;
-            this.panelBG.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBG_Paint);
             // 
             // labelJumlahNotif
             // 

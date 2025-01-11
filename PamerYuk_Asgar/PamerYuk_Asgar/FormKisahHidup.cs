@@ -70,16 +70,6 @@ namespace PamerYuk_Asgar
             labelKota.Text = orgPilih.Kota.Nama.ToString();
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxDeskripsi_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonSimpanKisahHidup_Click(object sender, EventArgs e)
         {
             try
@@ -115,12 +105,6 @@ namespace PamerYuk_Asgar
             this.Close();
 
         }
-
-        private void dataGridViewData_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void buttonHapusKisah_Click(object sender, EventArgs e)
         {
             dataGridViewData.Rows.Clear();

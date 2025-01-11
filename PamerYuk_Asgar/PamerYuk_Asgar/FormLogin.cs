@@ -47,5 +47,10 @@ namespace PamerYuk_Asgar
         {
             Application.Exit();
         }
+
+        private void FormLogin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

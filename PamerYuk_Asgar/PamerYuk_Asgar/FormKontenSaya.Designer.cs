@@ -73,6 +73,7 @@
             this.buttonTutup.TabIndex = 10;
             this.buttonTutup.Text = "Tutup";
             this.buttonTutup.UseVisualStyleBackColor = false;
+            this.buttonTutup.Click += new System.EventHandler(this.buttonTutup_Click);
             // 
             // pictureBox2
             // 

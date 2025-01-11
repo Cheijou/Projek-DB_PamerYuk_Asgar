@@ -86,7 +86,7 @@
             this.comboBoxCari.Name = "comboBoxCari";
             this.comboBoxCari.Size = new System.Drawing.Size(107, 24);
             this.comboBoxCari.TabIndex = 3;
-            this.comboBoxCari.SelectedIndexChanged += new System.EventHandler(this.comboBoxCari_SelectedIndexChanged);
+            
             // 
             // textBoxCari
             // 

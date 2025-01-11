@@ -159,7 +159,6 @@
             this.label2.Size = new System.Drawing.Size(90, 20);
             this.label2.TabIndex = 29;
             this.label2.Text = "Deskirpsi :";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // textBoxDeskripsi
             // 
@@ -169,7 +168,6 @@
             this.textBoxDeskripsi.Name = "textBoxDeskripsi";
             this.textBoxDeskripsi.Size = new System.Drawing.Size(319, 110);
             this.textBoxDeskripsi.TabIndex = 30;
-            this.textBoxDeskripsi.TextChanged += new System.EventHandler(this.textBoxDeskripsi_TextChanged);
             // 
             // textBoxTanggalAwal
             // 
@@ -207,7 +205,6 @@
             this.dataGridViewData.RowTemplate.Height = 24;
             this.dataGridViewData.Size = new System.Drawing.Size(392, 206);
             this.dataGridViewData.TabIndex = 32;
-            this.dataGridViewData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewData_CellContentClick);
             // 
             // idOrganisasi
             // 

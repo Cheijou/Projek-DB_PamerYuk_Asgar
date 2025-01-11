@@ -241,11 +241,6 @@ namespace PamerYuk_Asgar
 
         }
 
-        private void labelUser_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void pictureBoxCr_Click(object sender, EventArgs e)
         {
             DisableButton();
@@ -296,11 +291,6 @@ namespace PamerYuk_Asgar
         {
             FormMenu_Load(sender, e);
             
-        }
-
-        private void panelBG_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

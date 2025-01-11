@@ -95,10 +95,6 @@ namespace PamerYuk_Asgar
                 MessageBox.Show("Anda sudah berteman dengan user ini");
             }
         }
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void textBoxCari_TextChanged(object sender, EventArgs e)
         {
@@ -130,17 +126,6 @@ namespace PamerYuk_Asgar
             form.LoadButton();
             form.labelUser.Visible = true;
         }
-
-        private void comboBoxCari_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonRequest_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void buttonFriendRequest_Click(object sender, EventArgs e)
         { 
             FormFriendRequest form = new FormFriendRequest();
