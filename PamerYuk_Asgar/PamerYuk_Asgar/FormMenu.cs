@@ -242,9 +242,8 @@ namespace PamerYuk_Asgar
 
         private void pictureBoxCr_Click(object sender, EventArgs e)
         {
-            DisableButton();
-            labelUser.Visible = false;
-            BackgroundImage = Properties.Resources.bg_only;
+            FormCredit form = new FormCredit();
+            form.ShowDialog();
         }
 
         

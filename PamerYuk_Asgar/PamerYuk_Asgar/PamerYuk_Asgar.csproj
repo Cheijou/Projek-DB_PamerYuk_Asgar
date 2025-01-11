@@ -59,6 +59,12 @@
     <Compile Include="FormChatTeman.Designer.cs">
       <DependentUpon>FormChatTeman.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCredit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCredit.Designer.cs">
+      <DependentUpon>FormCredit.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormEditProfil.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,6 +155,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormChatTeman.resx">
       <DependentUpon>FormChatTeman.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCredit.resx">
+      <DependentUpon>FormCredit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormEditProfil.resx">
       <DependentUpon>FormEditProfil.cs</DependentUpon>
@@ -342,6 +351,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\organisasi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Credits To.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
