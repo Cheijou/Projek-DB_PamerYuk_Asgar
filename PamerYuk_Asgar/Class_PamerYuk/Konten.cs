@@ -237,10 +237,6 @@ namespace Class_PamerYuk
             {
                 videoPath = k.Video.Replace("\\", "\\\\");
             }
-            if(foto)
-            {
-                
-            }
            
             perintah = "INSERT INTO konten (caption, foto, video, tglUpload, username) "
                 + "VALUES ('" + k.Caption + "', '" + fotoPath + "', '" + videoPath + "', '" + k.TglUpload.ToString("yyyy-MM-dd HH:mm:ss") + "', '" + k.User.Username + "');";
