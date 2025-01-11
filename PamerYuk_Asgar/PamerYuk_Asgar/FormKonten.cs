@@ -104,15 +104,5 @@ namespace PamerYuk_Asgar
             form.Owner = this;
             form.ShowDialog();  
         }
-
-        private void labelKonten_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panelKonten_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }

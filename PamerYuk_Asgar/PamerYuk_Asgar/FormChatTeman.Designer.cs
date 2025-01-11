@@ -90,7 +90,7 @@
             this.textBoxAdd.Name = "textBoxAdd";
             this.textBoxAdd.Size = new System.Drawing.Size(402, 45);
             this.textBoxAdd.TabIndex = 29;
-            this.textBoxAdd.TextChanged += new System.EventHandler(this.textBoxAdd_TextChanged);
+            
             // 
             // buttonAddChat
             // 
