@@ -38,8 +38,8 @@ namespace PamerYuk_Asgar
             }
             else
             {
-                formParent.Visible = true;
                 this.Close();
+                formParent.Visible = true;
             }
         }
 

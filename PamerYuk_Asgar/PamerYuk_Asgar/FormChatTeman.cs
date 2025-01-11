@@ -81,5 +81,10 @@ namespace PamerYuk_Asgar
                 menu = false;
             }
         }
+
+        private void buttonTutup_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

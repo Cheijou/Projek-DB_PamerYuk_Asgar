@@ -38,7 +38,8 @@ namespace PamerYuk_Asgar
                     Koneksi koneksi = new Koneksi();
                     pictureBoxMulai.Visible = true;
                     pictureBoxMulai.Enabled = true;
-                    MessageBox.Show("Selamat datang " + userLogin.Username, "Welcome");
+                    pictureBoxQuit.Visible = true;
+                    pictureBoxQuit.Enabled = true;
                     labelUser.Text = userLogin.Username;
                 }
                 else
@@ -75,8 +76,8 @@ namespace PamerYuk_Asgar
             pictureBoxNotif.Enabled = true;
             pictureBoxCr.Visible = true;
             pictureBoxCr.Enabled = true;
-
-
+            pictureBoxQuit.Visible = true;
+            pictureBoxQuit.Enabled = true;
         }
         public void DisableButton()
         {
@@ -100,6 +101,8 @@ namespace PamerYuk_Asgar
             pictureBoxLihat.Enabled = false;
             pictureBoxLogOut.Visible = false;
             pictureBoxLogOut.Enabled = false;
+            pictureBoxQuit.Visible = false;
+            pictureBoxQuit.Enabled = false;
         }
         private void pictureBoxCariTeman_Click(object sender, EventArgs e)
         {
@@ -275,20 +278,30 @@ namespace PamerYuk_Asgar
 
         private void pictureBoxLihat_Click(object sender, EventArgs e)
         {
-            DisableButton();
             labelUser.Visible = false;
             BackgroundImage = Properties.Resources.bg_only;
+            DisableButton();
             FormLihatProfil form = new FormLihatProfil();
             form.cek = "FormMenu";
             form.user = User.BacaData("username", userLogin.Username)[0];
             form.Owner = this;
             form.ShowDialog();
+            
         }
 
         private void pictureBoxLogOut_Click(object sender, EventArgs e)
         {
             FormMenu_Load(sender, e);
             
+        }
+
+        private void pictureBoxQuit_Click(object sender, EventArgs e)
+        {
+            DialogResult jawaban = MessageBox.Show("Keluar aplikasi PamerYuk ?", "Keluar", MessageBoxButtons.YesNo);
+            if (jawaban == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
     }
 }

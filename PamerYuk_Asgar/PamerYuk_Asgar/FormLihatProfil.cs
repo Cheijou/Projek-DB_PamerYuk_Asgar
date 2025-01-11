@@ -27,6 +27,8 @@ namespace PamerYuk_Asgar
             if (cek == "FormMenu")
             {
                 form = (FormMenu)this.Owner;
+                buttonTambah.Visible = false;
+                buttonTambah.Enabled = false;
             }
             else
             {

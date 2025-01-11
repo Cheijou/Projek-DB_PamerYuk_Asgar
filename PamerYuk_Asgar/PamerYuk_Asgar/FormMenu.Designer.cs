@@ -42,6 +42,7 @@
             this.pictureBoxChat = new System.Windows.Forms.PictureBox();
             this.pictureBoxKonten = new System.Windows.Forms.PictureBox();
             this.pictureBoxCariTeman = new System.Windows.Forms.PictureBox();
+            this.pictureBoxQuit = new System.Windows.Forms.PictureBox();
             this.panelBG.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTerbaru)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLihat)).BeginInit();
@@ -54,11 +55,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxChat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxKonten)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCariTeman)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxQuit)).BeginInit();
             this.SuspendLayout();
             // 
             // panelBG
             // 
             this.panelBG.BackgroundImage = global::PamerYuk_Asgar.Properties.Resources.bg_menu;
+            this.panelBG.Controls.Add(this.pictureBoxQuit);
             this.panelBG.Controls.Add(this.labelJumlahNotif);
             this.panelBG.Controls.Add(this.labelUser);
             this.panelBG.Controls.Add(this.pictureBoxTerbaru);
@@ -72,10 +75,9 @@
             this.panelBG.Controls.Add(this.pictureBoxChat);
             this.panelBG.Controls.Add(this.pictureBoxKonten);
             this.panelBG.Controls.Add(this.pictureBoxCariTeman);
-            this.panelBG.Location = new System.Drawing.Point(-5, -2);
-            this.panelBG.Margin = new System.Windows.Forms.Padding(4);
+            this.panelBG.Location = new System.Drawing.Point(-4, -2);
             this.panelBG.Name = "panelBG";
-            this.panelBG.Size = new System.Drawing.Size(1080, 610);
+            this.panelBG.Size = new System.Drawing.Size(810, 496);
             this.panelBG.TabIndex = 0;
             // 
             // labelJumlahNotif
@@ -84,9 +86,10 @@
             this.labelJumlahNotif.BackColor = System.Drawing.Color.Red;
             this.labelJumlahNotif.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelJumlahNotif.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelJumlahNotif.Location = new System.Drawing.Point(878, 6);
+            this.labelJumlahNotif.Location = new System.Drawing.Point(658, 5);
+            this.labelJumlahNotif.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelJumlahNotif.Name = "labelJumlahNotif";
-            this.labelJumlahNotif.Size = new System.Drawing.Size(27, 29);
+            this.labelJumlahNotif.Size = new System.Drawing.Size(21, 24);
             this.labelJumlahNotif.TabIndex = 48;
             this.labelJumlahNotif.Text = "1";
             // 
@@ -96,10 +99,9 @@
             this.labelUser.BackColor = System.Drawing.Color.Transparent;
             this.labelUser.Font = new System.Drawing.Font("MV Boli", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.labelUser.Location = new System.Drawing.Point(619, 22);
-            this.labelUser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelUser.Location = new System.Drawing.Point(464, 18);
             this.labelUser.Name = "labelUser";
-            this.labelUser.Size = new System.Drawing.Size(74, 34);
+            this.labelUser.Size = new System.Drawing.Size(59, 28);
             this.labelUser.TabIndex = 46;
             this.labelUser.Text = "User";
             // 
@@ -107,10 +109,9 @@
             // 
             this.pictureBoxTerbaru.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxTerbaru.Image = global::PamerYuk_Asgar.Properties.Resources.chat_terbaru;
-            this.pictureBoxTerbaru.Location = new System.Drawing.Point(792, 89);
-            this.pictureBoxTerbaru.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBoxTerbaru.Location = new System.Drawing.Point(594, 72);
             this.pictureBoxTerbaru.Name = "pictureBoxTerbaru";
-            this.pictureBoxTerbaru.Size = new System.Drawing.Size(152, 42);
+            this.pictureBoxTerbaru.Size = new System.Drawing.Size(114, 34);
             this.pictureBoxTerbaru.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxTerbaru.TabIndex = 45;
             this.pictureBoxTerbaru.TabStop = false;
@@ -120,10 +121,9 @@
             // 
             this.pictureBoxLihat.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxLihat.Image = global::PamerYuk_Asgar.Properties.Resources.Lihat_profil;
-            this.pictureBoxLihat.Location = new System.Drawing.Point(911, 89);
-            this.pictureBoxLihat.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBoxLihat.Location = new System.Drawing.Point(683, 72);
             this.pictureBoxLihat.Name = "pictureBoxLihat";
-            this.pictureBoxLihat.Size = new System.Drawing.Size(157, 42);
+            this.pictureBoxLihat.Size = new System.Drawing.Size(118, 34);
             this.pictureBoxLihat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxLihat.TabIndex = 43;
             this.pictureBoxLihat.TabStop = false;
@@ -133,10 +133,9 @@
             // 
             this.pictureBoxLogOut.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxLogOut.Image = global::PamerYuk_Asgar.Properties.Resources.Log_out;
-            this.pictureBoxLogOut.Location = new System.Drawing.Point(911, 138);
-            this.pictureBoxLogOut.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBoxLogOut.Location = new System.Drawing.Point(683, 112);
             this.pictureBoxLogOut.Name = "pictureBoxLogOut";
-            this.pictureBoxLogOut.Size = new System.Drawing.Size(157, 42);
+            this.pictureBoxLogOut.Size = new System.Drawing.Size(118, 34);
             this.pictureBoxLogOut.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxLogOut.TabIndex = 42;
             this.pictureBoxLogOut.TabStop = false;
@@ -146,10 +145,9 @@
             // 
             this.pictureBoxMulai.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxMulai.Image = global::PamerYuk_Asgar.Properties.Resources.mulai;
-            this.pictureBoxMulai.Location = new System.Drawing.Point(363, 316);
-            this.pictureBoxMulai.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBoxMulai.Location = new System.Drawing.Point(272, 257);
             this.pictureBoxMulai.Name = "pictureBoxMulai";
-            this.pictureBoxMulai.Size = new System.Drawing.Size(367, 94);
+            this.pictureBoxMulai.Size = new System.Drawing.Size(275, 76);
             this.pictureBoxMulai.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxMulai.TabIndex = 41;
             this.pictureBoxMulai.TabStop = false;
@@ -159,10 +157,9 @@
             // 
             this.pictureBoxCr.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxCr.Image = global::PamerYuk_Asgar.Properties.Resources.cr;
-            this.pictureBoxCr.Location = new System.Drawing.Point(37, 22);
-            this.pictureBoxCr.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBoxCr.Location = new System.Drawing.Point(28, 18);
             this.pictureBoxCr.Name = "pictureBoxCr";
-            this.pictureBoxCr.Size = new System.Drawing.Size(85, 84);
+            this.pictureBoxCr.Size = new System.Drawing.Size(64, 68);
             this.pictureBoxCr.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxCr.TabIndex = 40;
             this.pictureBoxCr.TabStop = false;
@@ -172,10 +169,9 @@
             // 
             this.pictureBoxNotif.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxNotif.Image = global::PamerYuk_Asgar.Properties.Resources.notif;
-            this.pictureBoxNotif.Location = new System.Drawing.Point(832, 18);
-            this.pictureBoxNotif.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBoxNotif.Location = new System.Drawing.Point(624, 15);
             this.pictureBoxNotif.Name = "pictureBoxNotif";
-            this.pictureBoxNotif.Size = new System.Drawing.Size(73, 63);
+            this.pictureBoxNotif.Size = new System.Drawing.Size(55, 51);
             this.pictureBoxNotif.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxNotif.TabIndex = 39;
             this.pictureBoxNotif.TabStop = false;
@@ -185,10 +181,9 @@
             // 
             this.pictureBoxProfil.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxProfil.Image = global::PamerYuk_Asgar.Properties.Resources.profil;
-            this.pictureBoxProfil.Location = new System.Drawing.Point(949, 18);
-            this.pictureBoxProfil.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBoxProfil.Location = new System.Drawing.Point(712, 15);
             this.pictureBoxProfil.Name = "pictureBoxProfil";
-            this.pictureBoxProfil.Size = new System.Drawing.Size(80, 63);
+            this.pictureBoxProfil.Size = new System.Drawing.Size(60, 51);
             this.pictureBoxProfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxProfil.TabIndex = 38;
             this.pictureBoxProfil.TabStop = false;
@@ -198,10 +193,9 @@
             // 
             this.pictureBoxEditProfil.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxEditProfil.Image = global::PamerYuk_Asgar.Properties.Resources.edit_profil;
-            this.pictureBoxEditProfil.Location = new System.Drawing.Point(625, 400);
-            this.pictureBoxEditProfil.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBoxEditProfil.Location = new System.Drawing.Point(469, 325);
             this.pictureBoxEditProfil.Name = "pictureBoxEditProfil";
-            this.pictureBoxEditProfil.Size = new System.Drawing.Size(247, 149);
+            this.pictureBoxEditProfil.Size = new System.Drawing.Size(185, 121);
             this.pictureBoxEditProfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxEditProfil.TabIndex = 37;
             this.pictureBoxEditProfil.TabStop = false;
@@ -211,10 +205,9 @@
             // 
             this.pictureBoxChat.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxChat.Image = global::PamerYuk_Asgar.Properties.Resources.chat;
-            this.pictureBoxChat.Location = new System.Drawing.Point(217, 405);
-            this.pictureBoxChat.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBoxChat.Location = new System.Drawing.Point(163, 329);
             this.pictureBoxChat.Name = "pictureBoxChat";
-            this.pictureBoxChat.Size = new System.Drawing.Size(252, 144);
+            this.pictureBoxChat.Size = new System.Drawing.Size(189, 117);
             this.pictureBoxChat.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxChat.TabIndex = 36;
             this.pictureBoxChat.TabStop = false;
@@ -224,10 +217,9 @@
             // 
             this.pictureBoxKonten.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxKonten.Image = global::PamerYuk_Asgar.Properties.Resources.konten;
-            this.pictureBoxKonten.Location = new System.Drawing.Point(625, 240);
-            this.pictureBoxKonten.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBoxKonten.Location = new System.Drawing.Point(469, 195);
             this.pictureBoxKonten.Name = "pictureBoxKonten";
-            this.pictureBoxKonten.Size = new System.Drawing.Size(247, 145);
+            this.pictureBoxKonten.Size = new System.Drawing.Size(185, 118);
             this.pictureBoxKonten.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxKonten.TabIndex = 35;
             this.pictureBoxKonten.TabStop = false;
@@ -237,26 +229,36 @@
             // 
             this.pictureBoxCariTeman.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxCariTeman.Image = global::PamerYuk_Asgar.Properties.Resources.cari_teman;
-            this.pictureBoxCariTeman.Location = new System.Drawing.Point(217, 240);
-            this.pictureBoxCariTeman.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBoxCariTeman.Location = new System.Drawing.Point(163, 195);
             this.pictureBoxCariTeman.Name = "pictureBoxCariTeman";
-            this.pictureBoxCariTeman.Size = new System.Drawing.Size(252, 145);
+            this.pictureBoxCariTeman.Size = new System.Drawing.Size(189, 118);
             this.pictureBoxCariTeman.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxCariTeman.TabIndex = 34;
             this.pictureBoxCariTeman.TabStop = false;
             this.pictureBoxCariTeman.Click += new System.EventHandler(this.pictureBoxCariTeman_Click);
             // 
+            // pictureBoxQuit
+            // 
+            this.pictureBoxQuit.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBoxQuit.Image = global::PamerYuk_Asgar.Properties.Resources.quit;
+            this.pictureBoxQuit.Location = new System.Drawing.Point(743, 435);
+            this.pictureBoxQuit.Name = "pictureBoxQuit";
+            this.pictureBoxQuit.Size = new System.Drawing.Size(49, 44);
+            this.pictureBoxQuit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxQuit.TabIndex = 49;
+            this.pictureBoxQuit.TabStop = false;
+            this.pictureBoxQuit.Click += new System.EventHandler(this.pictureBoxQuit_Click);
+            // 
             // FormMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.BackgroundImage = global::PamerYuk_Asgar.Properties.Resources.bg_menu;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1067, 602);
+            this.ClientSize = new System.Drawing.Size(800, 489);
             this.Controls.Add(this.panelBG);
             this.DoubleBuffered = true;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
@@ -274,6 +276,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxChat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxKonten)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCariTeman)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxQuit)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -293,6 +296,7 @@
         public System.Windows.Forms.Panel panelBG;
         public System.Windows.Forms.Label labelUser;
         public System.Windows.Forms.Label labelJumlahNotif;
+        private System.Windows.Forms.PictureBox pictureBoxQuit;
     }
 }
 

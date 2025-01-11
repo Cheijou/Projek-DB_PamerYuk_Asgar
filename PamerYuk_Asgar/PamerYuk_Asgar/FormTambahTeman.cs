@@ -133,5 +133,10 @@ namespace PamerYuk_Asgar
             form.Owner = this;
             form.ShowDialog();
         }
+
+        private void buttonTutup_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

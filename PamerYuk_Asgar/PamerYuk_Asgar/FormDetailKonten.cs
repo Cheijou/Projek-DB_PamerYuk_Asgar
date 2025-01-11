@@ -42,7 +42,7 @@ namespace PamerYuk_Asgar
                 bool isLiked = Konten.CekLike("username", user.Username, kontenId);
                 if (isLiked == true)
                 {
-                    buttonLike.Text = "Dislike";
+                    buttonLike.Text = "Unlike";
                 }
                 else
                 {
@@ -129,13 +129,11 @@ namespace PamerYuk_Asgar
                 if (buttonLike.Text == "Like")
                 {
                     konten.TambahLike(user, kontenId);
-                    MessageBox.Show("Berhasil Like");
-                    buttonLike.Text = "Dislike";
+                    buttonLike.Text = "Unlike";
                 }
                 else
                 {
                     konten.HapusLike(kontenId, user);
-                    MessageBox.Show("Sdh dislik");
                     buttonLike.Text = "Like";
                 }
                 int total = Konten.HitungTotalLikes("konten_id", kontenId);
