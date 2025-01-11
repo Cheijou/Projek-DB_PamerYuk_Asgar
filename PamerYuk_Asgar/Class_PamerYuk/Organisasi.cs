@@ -61,13 +61,6 @@ namespace Class_PamerYuk
 
             Koneksi.JalankanPerintahNonQuery(perintah);
         }
-
-        public static void UpdateData(Organisasi objekUbah)
-        {
-            string perintah = "UPDATE Organisasi SET nama ='" + objekUbah.nama + "' ,Kota_id='" + objekUbah.Kota.Id + "' WHERE id='" + objekUbah.Id + "';";
-
-            Koneksi.JalankanPerintahNonQuery(perintah);
-        }
         #endregion
     }
 }
