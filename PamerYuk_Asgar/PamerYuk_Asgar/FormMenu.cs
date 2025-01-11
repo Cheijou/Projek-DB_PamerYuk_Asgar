@@ -132,11 +132,10 @@ namespace PamerYuk_Asgar
             if (form == null)
             {
                 panelBG.Visible = false;
-                FormChat formChat = new FormChat();
+                FormChatTeman formChat = new FormChatTeman();
                 formChat.user = userLogin;
                 formChat.MdiParent = this;
-                FormChatTeman formChatTeman = new FormChatTeman();
-                formChatTeman.MdiParent = this;
+                formChat.menu = true;
                 formChat.Show();
                 DisableButton();
                 labelUser.Visible = false;

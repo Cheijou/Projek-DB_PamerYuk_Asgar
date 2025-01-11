@@ -13,7 +13,8 @@ namespace PamerYuk_Asgar
 {
     public partial class FormChatTeman : Form
     {
-        FormChat form;
+        FormMenu form;
+        public bool menu = false;
         public User user;
         public bool check;
         public string selectedFriend;
@@ -63,7 +64,7 @@ namespace PamerYuk_Asgar
 
         private void FormChatTeman_Load(object sender, EventArgs e)
         {
-            form = (FormChat)this.MdiParent;
+            form = (FormMenu)this.MdiParent;
             List<Teman> listTeman = User.CariTeman(user);
             comboBoxTeman.DataSource = listTeman;
             comboBoxTeman.DisplayMember = "user2";
@@ -71,6 +72,18 @@ namespace PamerYuk_Asgar
             if (check == false)
             {
                 comboBoxTeman.SelectedIndex = -1;
+            }
+        }
+
+        private void FormChatTeman_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (menu == true)
+            {
+                form.panelBG.Visible = true;
+                form.LoadButton();
+                form.labelUser.Visible = true;
+                form.labelJumlahNotif.Visible = false;
+                menu = false;
             }
         }
     }

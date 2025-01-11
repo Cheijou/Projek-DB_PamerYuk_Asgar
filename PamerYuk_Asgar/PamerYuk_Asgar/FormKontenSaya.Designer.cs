@@ -32,14 +32,26 @@
             this.buttonTambahKonten = new System.Windows.Forms.Button();
             this.buttonTutup = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Caption = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TanggalUpload = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Foto = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKonten)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewKonten
             // 
+            this.dataGridViewKonten.AllowUserToAddRows = false;
             this.dataGridViewKonten.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.dataGridViewKonten.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewKonten.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Username,
+            this.Caption,
+            this.TanggalUpload,
+            this.Id,
+            this.Foto});
             this.dataGridViewKonten.Location = new System.Drawing.Point(9, 76);
             this.dataGridViewKonten.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewKonten.Name = "dataGridViewKonten";
@@ -86,6 +98,33 @@
             this.pictureBox2.TabIndex = 54;
             this.pictureBox2.TabStop = false;
             // 
+            // Username
+            // 
+            this.Username.HeaderText = "Username";
+            this.Username.Name = "Username";
+            // 
+            // Caption
+            // 
+            this.Caption.HeaderText = "Caption";
+            this.Caption.Name = "Caption";
+            // 
+            // TanggalUpload
+            // 
+            this.TanggalUpload.HeaderText = "Tanggal Upload";
+            this.TanggalUpload.Name = "TanggalUpload";
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            // 
+            // Foto
+            // 
+            this.Foto.HeaderText = "Foto";
+            this.Foto.Name = "Foto";
+            this.Foto.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Foto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
             // FormKontenSaya
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -113,5 +152,10 @@
         private System.Windows.Forms.Button buttonTambahKonten;
         private System.Windows.Forms.Button buttonTutup;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Username;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Caption;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TanggalUpload;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewImageColumn Foto;
     }
 }

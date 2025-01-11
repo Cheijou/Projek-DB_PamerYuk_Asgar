@@ -13,6 +13,7 @@ namespace PamerYuk_Asgar
 {
     public partial class FormKonten : Form
     {
+        string kontenId;
         public FormKonten()
         {
             InitializeComponent();
@@ -30,7 +31,7 @@ namespace PamerYuk_Asgar
 
         private void dataGridViewKonten_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            string konten = dataGridViewKonten.CurrentRow.Cells["id"].Value.ToString();
+            string konten = dataGridViewKonten.CurrentRow.Cells["Id"].Value.ToString();
 
             if (e.ColumnIndex == dataGridViewKonten.Columns["btnDetailGrid"].Index)
             {
@@ -42,7 +43,7 @@ namespace PamerYuk_Asgar
                     formDetailKonten.user = user;
                     formDetailKonten.cekForm = "FormKonten";
                     formDetailKonten.kontenId = konten;
-                    formDetailKonten.pictureBoxGambar.Image = (Image)dataGridViewKonten.CurrentRow.Cells["Gambar"].Value;
+                    formDetailKonten.pictureBoxGambar.Image = (Image)dataGridViewKonten.CurrentRow.Cells["Foto"].Value;
                     formDetailKonten.Show();
                     formDetailKonten.BringToFront();
                 }
@@ -58,22 +59,19 @@ namespace PamerYuk_Asgar
             form = (FormMenu)this.MdiParent;
 
             List<Konten> listKonten = Konten.DaftarkontenTeman(user);
-            dataGridViewKonten.DataSource = listKonten;
-            DataGridViewImageColumn imageColumn = new DataGridViewImageColumn
+            for (int i = 0; i < listKonten.Count; i++)
             {
-                Name = "Gambar",
-                HeaderText = "Foto",
-            };
-            dataGridViewKonten.Columns["Gambar"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dataGridViewKonten.Rows.Add(listKonten[i].User.Username, listKonten[i].Caption, listKonten[i].TglUpload, listKonten[i].Id);
+            }
+            dataGridViewKonten.Columns["Foto"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dataGridViewKonten.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
                 
             for (int i = 0; i < listKonten.Count; i++)
             {
-                
-                dataGridViewKonten.Rows[i].Cells[6].Value = listKonten[i].Gambar; 
+                dataGridViewKonten.Rows[i].Cells[4].Value = listKonten[i].Gambar; 
             }
 
-            if (dataGridViewKonten.ColumnCount == 7)
+            if (dataGridViewKonten.ColumnCount == 5)
             {
                 DataGridViewButtonColumn btnDetail = new DataGridViewButtonColumn();
                 btnDetail.Text = "Detail";
