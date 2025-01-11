@@ -40,14 +40,6 @@ namespace PamerYuk_Asgar
                     pictureBoxMulai.Enabled = true;
                     MessageBox.Show("Selamat datang " + userLogin.Username, "Welcome");
                     labelUser.Text = userLogin.Username;
-                    int total = 0;
-                    total += Chat.TotalChat(userLogin);
-                    if (total > 0)
-                    {
-                        labelJumlahNotif.Visible = true;
-                        labelJumlahNotif.Text = total.ToString();
-                    }
-                    
                 }
                 else
                 {
@@ -62,6 +54,13 @@ namespace PamerYuk_Asgar
         }
         public void LoadButton()
         {
+            int total = 0;
+            total += Chat.TotalChat(userLogin);
+            if (total > 0)
+            {
+                labelJumlahNotif.Visible = true;
+                labelJumlahNotif.Text = total.ToString();
+            }
             pictureBoxCariTeman.Visible = true;
             pictureBoxCariTeman.Enabled = true;
             pictureBoxEditProfil.Visible = true;
@@ -116,8 +115,7 @@ namespace PamerYuk_Asgar
                 DisableButton();
                 
                 labelUser.Visible = false;
-                BackgroundImage = Properties.Resources.bg_only;
-                
+                BackgroundImage = Properties.Resources.bg_only;               
                 formTambahTeman.BringToFront();
 
             }
