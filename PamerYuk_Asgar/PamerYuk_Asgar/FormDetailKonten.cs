@@ -62,11 +62,17 @@ namespace PamerYuk_Asgar
                 }
                 labelTotalLike.Text = total.ToString();
                 konten = Konten.BacaData("id", kontenId)[0];
-                axWindowsMediaPlayerVideo.URL = konten.Video;
-                axWindowsMediaPlayerVideo.Ctlcontrols.play();
-                axWindowsMediaPlayerVideo.stretchToFit = true;
-                pictureBoxGambar.Image = Image.FromFile(konten.Foto);
-                labelHasilCaption.Text = konten.Caption;
+                if (konten.Video != "")
+                {
+                    axWindowsMediaPlayerVideo.URL = konten.Video;
+                    axWindowsMediaPlayerVideo.Ctlcontrols.play();
+                    axWindowsMediaPlayerVideo.stretchToFit = true;
+                }
+                if (konten.Foto != "")
+                {
+                    pictureBoxGambar.Image = Image.FromFile(konten.Foto);
+                    labelHasilCaption.Text = konten.Caption;
+                }
                 List<Komen> listKomen = Komen.BacaData(kontenId);
                 for (int i = 0; i < listKomen.Count; i++)
                 {
