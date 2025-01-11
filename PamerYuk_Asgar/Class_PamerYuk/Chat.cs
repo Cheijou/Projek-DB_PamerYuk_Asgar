@@ -112,15 +112,15 @@ namespace Class_PamerYuk
 
         public static void UpdateNotif(User userLogin)
         {
-            string perintah = "UPDATE Chat SET dibaca = '" + 1 + "' where saya = '" + userLogin.Username + "' ;";
+            string perintah = "UPDATE Chat SET dibaca = '" + 1 + "' where temanku = '" + userLogin.Username + "' ;";
 
             Koneksi.JalankanPerintahNonQuery(perintah);
         }
 
 
-        public static int TotalChat()
+        public static int TotalChat(User userLogin)
         {
-            string perintah = "select count(dibaca) from Chat where dibaca = 0";
+            string perintah = "select count(dibaca) from Chat where dibaca = '0' and temanku = '" + userLogin.Username + "' ;";
             Koneksi.JalankanPerintahNonQuery(perintah);
             MySqlDataReader hasil = Koneksi.JalankanPerintahSelect(perintah);
             int total = 0;

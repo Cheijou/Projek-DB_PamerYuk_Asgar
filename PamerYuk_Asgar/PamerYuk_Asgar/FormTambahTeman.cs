@@ -158,8 +158,8 @@ namespace PamerYuk_Asgar
             
         }
 
-        private void buttonTambahKonten_Click(object sender, EventArgs e)
-        {
+        private void buttonFriendRequest_Click(object sender, EventArgs e)
+        { 
             FormFriendRequest form = new FormFriendRequest();
             form.userLogin = user;
             form.Owner = this;

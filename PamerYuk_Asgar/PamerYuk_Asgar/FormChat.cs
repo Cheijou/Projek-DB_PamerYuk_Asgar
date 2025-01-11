@@ -24,6 +24,7 @@ namespace PamerYuk_Asgar
         {
             form = (FormMenu)this.MdiParent;
             Chat.UpdateNotif(user);
+            
             List<Chat> listChat = Chat.BacaDataChatTerbaru(user);
             for (int i = 0; i < listChat.Count; i++)
             {
@@ -87,6 +88,7 @@ namespace PamerYuk_Asgar
             form.panelBG.Visible = true;
             form.LoadButton();
             form.labelUser.Visible = true;
+            form.labelJumlahNotif.Refresh();
         }
     }
 }

@@ -366,24 +366,30 @@ namespace Class_PamerYuk
             return listPermintaan;
         }
 
-        public static void UpdateNotif(User userLogin)
-        {
-            string perintah = "UPDATE User SET dilihat = '" + 1 + "' where username = '" + userLogin.Username + "' ;";
+        //public static void UpdateNotif(User userLogin)
+        //{
+        //    string perintah = "UPDATE User SET dilihat = '" + 1 + "' where username = '" + userLogin.Username + "' ;";
 
-            Koneksi.JalankanPerintahNonQuery(perintah);
-        }
-        public static int TotalFriendRequest()
-        {
-            string perintah = "select count(tglBerteman) from teman where tglBerteman = " + null;
-            Koneksi.JalankanPerintahNonQuery(perintah);
-            MySqlDataReader hasil = Koneksi.JalankanPerintahSelect(perintah);
-            int total = 0;
-            while (hasil.Read() == true)
-            {
-                total = int.Parse(hasil.GetValue(0).ToString());
-            }
-            return total;
-        }
+        //    Koneksi.JalankanPerintahNonQuery(perintah);
+        //}
+        //public static void UpdateDilihat(User userLogin)
+        //{
+        //    string perintah = "UPDATE User SET dilihat = '" + 0 + "' where username = '" + userLogin.Username + "' ;";
+
+        //    Koneksi.JalankanPerintahNonQuery(perintah);
+        //}
+        //public static int TotalFriendRequest(User userLogin)
+        //{
+        //    string perintah = "select count(dilihat) from user where dilihat = '0' and username = '" + userLogin.Username + "'; " ;
+        //    Koneksi.JalankanPerintahNonQuery(perintah);
+        //    MySqlDataReader hasil = Koneksi.JalankanPerintahSelect(perintah);
+        //    int total = 0;
+        //    while (hasil.Read() == true)
+        //    {
+        //        total = int.Parse(hasil.GetValue(0).ToString());
+        //    }
+        //    return total;
+        //}
 
 
         #endregion

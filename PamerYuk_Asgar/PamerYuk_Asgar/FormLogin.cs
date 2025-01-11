@@ -36,6 +36,7 @@ namespace PamerYuk_Asgar
             string uid = textBoxUsername.Text;
             string pwd = textBoxPassword.Text;
             formParent.userLogin = User.CekLogin(uid, pwd);
+            
             if (formParent.userLogin is null)
             {
                 MessageBox.Show("Your username/password is incorrect");

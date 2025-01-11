@@ -22,6 +22,7 @@ namespace PamerYuk_Asgar
 
         private void FormMenu_Load(object sender, EventArgs e)
         {
+           labelJumlahNotif.Visible = false;
             this.IsMdiContainer = true;
             this.Visible = false;
             DisableButton();
@@ -31,6 +32,7 @@ namespace PamerYuk_Asgar
                 frm.Owner = this;
                 this.Visible = false;
                 frm.ShowDialog();
+                
                 if (userLogin != null)
                 {
                     Koneksi koneksi = new Koneksi();
@@ -38,6 +40,13 @@ namespace PamerYuk_Asgar
                     pictureBoxMulai.Enabled = true;
                     MessageBox.Show("Selamat datang " + userLogin.Username, "Welcome");
                     labelUser.Text = userLogin.Username;
+                    int total = 0;
+                    total += Chat.TotalChat(userLogin);
+                    if (total > 0)
+                    {
+                        labelJumlahNotif.Visible = true;
+                        labelJumlahNotif.Text = total.ToString();
+                    }
                     
                 }
                 else
@@ -86,8 +95,6 @@ namespace PamerYuk_Asgar
             pictureBoxNotif.Enabled = false;
             pictureBoxCr.Visible = false;
             pictureBoxCr.Enabled = false;
-            pictureBoxPermintaan.Visible = false;
-            pictureBoxPermintaan.Enabled = false;
             pictureBoxTerbaru.Enabled = false;
             pictureBoxTerbaru.Visible = false;
             pictureBoxLihat.Visible = false;
@@ -203,16 +210,12 @@ namespace PamerYuk_Asgar
             {
                 pictureBoxTerbaru.Visible = true;
                 pictureBoxTerbaru.Enabled = true;
-                pictureBoxPermintaan.Visible = true;
-                pictureBoxPermintaan.Enabled = true;
                 buka = true;    
             }
             else
             {
                 pictureBoxTerbaru.Visible = false;
                 pictureBoxTerbaru.Enabled = false;
-                pictureBoxPermintaan.Visible = false;
-                pictureBoxPermintaan.Enabled = false;
                 buka = false;
             }
             
@@ -252,18 +255,31 @@ namespace PamerYuk_Asgar
             BackgroundImage = Properties.Resources.bg_only;
         }
 
-        private void pictureBoxPermintaan_Click(object sender, EventArgs e)
-        {
-            DisableButton();
-            labelUser.Visible = false;
-            BackgroundImage = Properties.Resources.bg_only;
-        }
+        
 
         private void pictureBoxTerbaru_Click(object sender, EventArgs e)
         {
-            DisableButton();
-            labelUser.Visible = false;
-            BackgroundImage = Properties.Resources.bg_only;
+            Form form = Application.OpenForms["FormChat"];
+
+            if (form == null)
+            {
+                panelBG.Visible = false;
+                FormChat formChat = new FormChat();
+                formChat.user = userLogin;
+                formChat.MdiParent = this;
+                //FormChatTeman formChatTeman = new FormChatTeman();
+                //formChatTeman.MdiParent = this;
+                //formChat.Show();
+                DisableButton();
+                labelUser.Visible = false;
+                BackgroundImage = Properties.Resources.bg_only;
+                formChat.BringToFront();
+
+            }
+            else
+            {
+                form.Show();
+            }
         }
 
         private void pictureBoxLihat_Click(object sender, EventArgs e)

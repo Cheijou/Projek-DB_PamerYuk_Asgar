@@ -23,7 +23,6 @@ namespace PamerYuk_Asgar
         private void FormFriendRequest_Load(object sender, EventArgs e)
         {
             form = (FormTambahTeman)this.Owner;
-            User.UpdateNotif(userLogin);
             RefreshForm();
         }
         private void RefreshForm()
@@ -50,6 +49,13 @@ namespace PamerYuk_Asgar
                 dataGridViewPermintaan.Columns.Add(btnTolak);
             }
         }
+       
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void dataGridViewPermintaan_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             string kode = dataGridViewPermintaan.CurrentRow.Cells["user2"].Value.ToString();
@@ -62,7 +68,7 @@ namespace PamerYuk_Asgar
                     userLogin.TerimaTeman(kode);
                     MessageBox.Show("Berhasil Menerima Pertemanan");
                     RefreshForm();
-        
+
                 }
             }
             if (e.ColumnIndex == dataGridViewPermintaan.Columns["btnTolakGrid"].Index)
@@ -75,11 +81,6 @@ namespace PamerYuk_Asgar
                     RefreshForm();
                 }
             }
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
