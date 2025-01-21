@@ -25,7 +25,7 @@ namespace PamerYuk_Asgar
         public string kontenId;
         Konten konten;
         public string cekForm;
-
+        FormTagMasuk formTag;
         private void FormDetailKonten_Load(object sender, EventArgs e)
         {
             try
@@ -33,6 +33,10 @@ namespace PamerYuk_Asgar
                 if (cekForm == "FormKonten")
                 {
                     form = (FormKonten)this.Owner;
+                }
+                else if (cekForm == "FormTag")
+                {
+                    formTag = (FormTagMasuk)this.Owner;
                 }
                 else
                 {

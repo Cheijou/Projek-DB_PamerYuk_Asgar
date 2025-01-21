@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.dataGridViewKonten = new System.Windows.Forms.DataGridView();
-            this.buttonTutup = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Caption = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TanggalUpload = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Foto = new System.Windows.Forms.DataGridViewImageColumn();
+            this.buttonTutup = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKonten)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -60,6 +60,43 @@
             this.dataGridViewKonten.TabIndex = 8;
             this.dataGridViewKonten.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewKonten_CellContentClick);
             // 
+            // Username
+            // 
+            this.Username.HeaderText = "Username";
+            this.Username.MinimumWidth = 6;
+            this.Username.Name = "Username";
+            this.Username.Width = 125;
+            // 
+            // Caption
+            // 
+            this.Caption.HeaderText = "Caption";
+            this.Caption.MinimumWidth = 6;
+            this.Caption.Name = "Caption";
+            this.Caption.Width = 125;
+            // 
+            // TanggalUpload
+            // 
+            this.TanggalUpload.HeaderText = "Tanggal Upload";
+            this.TanggalUpload.MinimumWidth = 6;
+            this.TanggalUpload.Name = "TanggalUpload";
+            this.TanggalUpload.Width = 125;
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.MinimumWidth = 6;
+            this.Id.Name = "Id";
+            this.Id.Width = 125;
+            // 
+            // Foto
+            // 
+            this.Foto.HeaderText = "Foto";
+            this.Foto.MinimumWidth = 6;
+            this.Foto.Name = "Foto";
+            this.Foto.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Foto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Foto.Width = 125;
+            // 
             // buttonTutup
             // 
             this.buttonTutup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -79,39 +116,13 @@
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = global::PamerYuk_Asgar.Properties.Resources.Asset_1;
             this.pictureBox2.Location = new System.Drawing.Point(103, 10);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(587, 78);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 54;
             this.pictureBox2.TabStop = false;
-            // 
-            // Username
-            // 
-            this.Username.HeaderText = "Username";
-            this.Username.Name = "Username";
-            // 
-            // Caption
-            // 
-            this.Caption.HeaderText = "Caption";
-            this.Caption.Name = "Caption";
-            // 
-            // TanggalUpload
-            // 
-            this.TanggalUpload.HeaderText = "Tanggal Upload";
-            this.TanggalUpload.Name = "TanggalUpload";
-            // 
-            // Id
-            // 
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            // 
-            // Foto
-            // 
-            this.Foto.HeaderText = "Foto";
-            this.Foto.Name = "Foto";
-            this.Foto.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Foto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // FormKontenSaya
             // 

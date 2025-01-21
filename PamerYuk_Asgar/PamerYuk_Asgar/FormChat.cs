@@ -87,7 +87,6 @@ namespace PamerYuk_Asgar
             form.panelBG.Visible = true;
             form.LoadButton();
             form.labelUser.Visible = true;
-            form.labelJumlahNotif.Visible = false;
         }
     }
 }

@@ -15,6 +15,11 @@ namespace PamerYuk_Asgar
     {
         public User userLogin;
         public bool buka = false;
+        public int total = 0;
+        public int totalChat = 0;
+        public int totalKonten = 0;
+        public bool chatMasuk = false;
+        public bool tagMasuk = false;
         public FormMenu()
         {
             InitializeComponent();
@@ -55,12 +60,21 @@ namespace PamerYuk_Asgar
         }
         public void LoadButton()
         {
-            int total = 0;
-            total += Chat.TotalChat(userLogin);
+            totalChat = 0;
+            totalKonten = 0;
+            total = 0;
+            totalChat = Chat.TotalChat(userLogin);
+            totalKonten = Konten.TotalTag(userLogin);
+            total += totalChat;
+            total += totalKonten;
             if (total > 0)
             {
                 labelJumlahNotif.Visible = true;
                 labelJumlahNotif.Text = total.ToString();
+            }
+            else
+            {
+                labelJumlahNotif.Visible = false;
             }
             pictureBoxCariTeman.Visible = true;
             pictureBoxCariTeman.Enabled = true;
@@ -78,6 +92,10 @@ namespace PamerYuk_Asgar
             pictureBoxCr.Enabled = true;
             pictureBoxQuit.Visible = true;
             pictureBoxQuit.Enabled = true;
+            labelChat.Visible = false;
+            labelTag.Visible = false;
+            pictureBoxTag.Visible = false;
+            pictureBoxTag.Enabled = false;
         }
         public void DisableButton()
         {
@@ -103,6 +121,10 @@ namespace PamerYuk_Asgar
             pictureBoxLogOut.Enabled = false;
             pictureBoxQuit.Visible = false;
             pictureBoxQuit.Enabled = false;
+            labelChat.Visible = false;
+            labelTag.Visible = false;
+            pictureBoxTag.Visible = false;
+            pictureBoxTag.Enabled = false;
         }
         private void pictureBoxCariTeman_Click(object sender, EventArgs e)
         {
@@ -210,12 +232,28 @@ namespace PamerYuk_Asgar
             {
                 pictureBoxTerbaru.Visible = true;
                 pictureBoxTerbaru.Enabled = true;
-                buka = true;    
+                pictureBoxTag.Visible = true;
+                pictureBoxTag.Enabled = true;
+                if (totalChat > 0)
+                {
+                    labelChat.Visible = true;
+                    labelChat.Text = totalChat.ToString();
+                }
+                if (totalKonten > 0)
+                {
+                    labelTag.Visible = true;
+                    labelTag.Text = totalKonten.ToString();
+                }
+                buka = true;
             }
             else
             {
                 pictureBoxTerbaru.Visible = false;
                 pictureBoxTerbaru.Enabled = false;
+                pictureBoxTag.Visible = false;
+                pictureBoxTag.Enabled = false;
+                labelChat.Visible = false;
+                labelTag.Visible = false;
                 buka = false;
             }
             
@@ -301,6 +339,28 @@ namespace PamerYuk_Asgar
             if (jawaban == DialogResult.Yes)
             {
                 Application.Exit();
+            }
+        }
+
+        private void pictureBoxTag_Click(object sender, EventArgs e)
+        {
+            Form form = Application.OpenForms["FormTagMasuk"];
+
+            if (form == null)
+            {
+                panelBG.Visible = false;
+                FormTagMasuk formTag = new FormTagMasuk();
+                formTag.userlogin = userLogin;
+                formTag.MdiParent = this;
+                formTag.Show();
+                DisableButton();
+                labelUser.Visible = false;
+                BackgroundImage = Properties.Resources.bg_only;
+                formTag.BringToFront();
+            }
+            else
+            {
+                form.Show();
             }
         }
     }

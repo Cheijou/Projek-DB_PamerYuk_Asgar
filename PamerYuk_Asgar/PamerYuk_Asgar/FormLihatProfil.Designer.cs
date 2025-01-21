@@ -34,7 +34,7 @@
             this.labelTglLahir = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.labelKota = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.labelKisah = new System.Windows.Forms.Label();
             this.dataGridViewKisah = new System.Windows.Forms.DataGridView();
             this.Organisasi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Kota = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,6 +43,8 @@
             this.Deskripsi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonTambah = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.labelKonten = new System.Windows.Forms.Label();
+            this.labelTag = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKisah)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -119,17 +121,18 @@
             this.labelKota.TabIndex = 6;
             this.labelKota.Text = "Kota";
             // 
-            // label4
+            // labelKisah
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("MV Boli", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(195, 238);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(174, 29);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Kisah Hidup :";
+            this.labelKisah.AutoSize = true;
+            this.labelKisah.BackColor = System.Drawing.Color.Transparent;
+            this.labelKisah.Font = new System.Drawing.Font("MV Boli", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelKisah.Location = new System.Drawing.Point(66, 232);
+            this.labelKisah.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelKisah.Name = "labelKisah";
+            this.labelKisah.Size = new System.Drawing.Size(165, 29);
+            this.labelKisah.TabIndex = 7;
+            this.labelKisah.Text = "Kisah Hidup ";
+            this.labelKisah.Click += new System.EventHandler(this.labelKisah_Click);
             // 
             // dataGridViewKisah
             // 
@@ -147,7 +150,7 @@
             this.dataGridViewKisah.Name = "dataGridViewKisah";
             this.dataGridViewKisah.RowHeadersWidth = 51;
             this.dataGridViewKisah.RowTemplate.Height = 24;
-            this.dataGridViewKisah.Size = new System.Drawing.Size(567, 210);
+            this.dataGridViewKisah.Size = new System.Drawing.Size(567, 310);
             this.dataGridViewKisah.TabIndex = 8;
             // 
             // Organisasi
@@ -189,7 +192,7 @@
             // 
             this.buttonTambah.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.buttonTambah.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonTambah.Location = new System.Drawing.Point(173, 505);
+            this.buttonTambah.Location = new System.Drawing.Point(169, 604);
             this.buttonTambah.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonTambah.Name = "buttonTambah";
             this.buttonTambah.Size = new System.Drawing.Size(236, 39);
@@ -208,15 +211,43 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // labelKonten
+            // 
+            this.labelKonten.AutoSize = true;
+            this.labelKonten.BackColor = System.Drawing.Color.Transparent;
+            this.labelKonten.Font = new System.Drawing.Font("MV Boli", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelKonten.Location = new System.Drawing.Point(276, 232);
+            this.labelKonten.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelKonten.Name = "labelKonten";
+            this.labelKonten.Size = new System.Drawing.Size(108, 29);
+            this.labelKonten.TabIndex = 10;
+            this.labelKonten.Text = "Konten ";
+            this.labelKonten.Click += new System.EventHandler(this.labelKonten_Click);
+            // 
+            // labelTag
+            // 
+            this.labelTag.AutoSize = true;
+            this.labelTag.BackColor = System.Drawing.Color.Transparent;
+            this.labelTag.Font = new System.Drawing.Font("MV Boli", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTag.Location = new System.Drawing.Point(465, 232);
+            this.labelTag.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelTag.Name = "labelTag";
+            this.labelTag.Size = new System.Drawing.Size(53, 29);
+            this.labelTag.TabIndex = 11;
+            this.labelTag.Text = "Tag";
+            this.labelTag.Click += new System.EventHandler(this.labelTag_Click);
+            // 
             // FormLihatProfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::PamerYuk_Asgar.Properties.Resources.bgregister;
-            this.ClientSize = new System.Drawing.Size(605, 556);
+            this.ClientSize = new System.Drawing.Size(605, 666);
+            this.Controls.Add(this.labelTag);
+            this.Controls.Add(this.labelKonten);
             this.Controls.Add(this.buttonTambah);
             this.Controls.Add(this.dataGridViewKisah);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.labelKisah);
             this.Controls.Add(this.labelKota);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.labelTglLahir);
@@ -246,7 +277,7 @@
         private System.Windows.Forms.Label labelTglLahir;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label labelKota;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelKisah;
         private System.Windows.Forms.DataGridView dataGridViewKisah;
         private System.Windows.Forms.DataGridViewTextBoxColumn Organisasi;
         private System.Windows.Forms.DataGridViewTextBoxColumn Kota;
@@ -254,5 +285,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ThAkhir;
         private System.Windows.Forms.DataGridViewTextBoxColumn Deskripsi;
         private System.Windows.Forms.Button buttonTambah;
+        private System.Windows.Forms.Label labelKonten;
+        private System.Windows.Forms.Label labelTag;
     }
 }

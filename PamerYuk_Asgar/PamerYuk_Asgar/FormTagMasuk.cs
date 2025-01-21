@@ -11,21 +11,19 @@ using Class_PamerYuk;
 
 namespace PamerYuk_Asgar
 {
-    public partial class FormKontenSaya : Form
+    public partial class FormTagMasuk : Form
     {
-        public User user;
-        FormKonten form;
-        public FormKontenSaya()
+        public User userlogin;
+        FormMenu form;
+        public FormTagMasuk()
         {
             InitializeComponent();
         }
 
-        private void FormKontenSaya_Load(object sender, EventArgs e)
+        private void FormTagMasuk_Load(object sender, EventArgs e)
         {
-            form = (FormKonten)this.Owner;
-
-
-            List<Konten> listKonten = Konten.DaftarkontenSaya(user);
+            form = (FormMenu)this.MdiParent;
+            List<Konten> listKonten = Konten.KontenTag(userlogin);
             for (int i = 0; i < listKonten.Count; i++)
             {
                 dataGridViewKonten.Rows.Add(listKonten[i].User.Username, listKonten[i].Caption, listKonten[i].TglUpload, listKonten[i].Id);
@@ -47,11 +45,12 @@ namespace PamerYuk_Asgar
                 btnDetail.Name = "btnDetailGrid";
                 dataGridViewKonten.Columns.Add(btnDetail);
             }
+            Konten.UpdateTag(userlogin);
         }
 
         private void dataGridViewKonten_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            string konten = dataGridViewKonten.CurrentRow.Cells["id"].Value.ToString();
+            string konten = dataGridViewKonten.CurrentRow.Cells["Id"].Value.ToString();
 
             if (e.ColumnIndex == dataGridViewKonten.Columns["btnDetailGrid"].Index)
             {
@@ -60,10 +59,11 @@ namespace PamerYuk_Asgar
                 {
                     FormDetailKonten formDetailKonten = new FormDetailKonten();
                     formDetailKonten.Owner = this;
-                    formDetailKonten.user = user;
-                    formDetailKonten.cekForm = "FormKontenSaya";
+                    formDetailKonten.user = userlogin;
+                    formDetailKonten.cekForm = "FormKonten";
                     formDetailKonten.kontenId = konten;
                     formDetailKonten.pictureBoxGambar.Image = (Image)dataGridViewKonten.CurrentRow.Cells["Foto"].Value;
+                    formDetailKonten.cekForm = "FormTag";
                     formDetailKonten.Show();
                     formDetailKonten.BringToFront();
                 }
@@ -74,14 +74,19 @@ namespace PamerYuk_Asgar
             }
         }
 
-        private void buttonTutup_Click(object sender, EventArgs e)
+        private void FormTagMasuk_FormClosing(object sender, FormClosingEventArgs e)
         {
-            this.Close();
+            form.panelBG.Visible = true;
+            form.LoadButton();
+            form.labelUser.Visible = true;
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
+        private void buttonTutup_Click(object sender, EventArgs e)
         {
-
+            form.panelBG.Visible = true;
+            form.LoadButton();
+            form.labelUser.Visible = true;
+            this.Close();
         }
     }
 }

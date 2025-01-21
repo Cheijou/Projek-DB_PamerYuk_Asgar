@@ -1,6 +1,6 @@
 ﻿namespace PamerYuk_Asgar
 {
-    partial class FormKonten
+    partial class FormTagMasuk
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonKontenSaya = new System.Windows.Forms.Button();
-            this.buttonTambahKonten = new System.Windows.Forms.Button();
             this.dataGridViewKonten = new System.Windows.Forms.DataGridView();
             this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Caption = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,33 +40,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
-            // buttonKontenSaya
-            // 
-            this.buttonKontenSaya.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.buttonKontenSaya.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonKontenSaya.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.buttonKontenSaya.Location = new System.Drawing.Point(13, 415);
-            this.buttonKontenSaya.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonKontenSaya.Name = "buttonKontenSaya";
-            this.buttonKontenSaya.Size = new System.Drawing.Size(147, 47);
-            this.buttonKontenSaya.TabIndex = 0;
-            this.buttonKontenSaya.Text = "Konten Saya";
-            this.buttonKontenSaya.UseVisualStyleBackColor = false;
-            this.buttonKontenSaya.Click += new System.EventHandler(this.buttonKontenSaya_Click);
-            // 
-            // buttonTambahKonten
-            // 
-            this.buttonTambahKonten.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.buttonTambahKonten.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonTambahKonten.Location = new System.Drawing.Point(329, 415);
-            this.buttonTambahKonten.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttonTambahKonten.Name = "buttonTambahKonten";
-            this.buttonTambahKonten.Size = new System.Drawing.Size(147, 47);
-            this.buttonTambahKonten.TabIndex = 1;
-            this.buttonTambahKonten.Text = "Tambah Konten";
-            this.buttonTambahKonten.UseVisualStyleBackColor = false;
-            this.buttonTambahKonten.Click += new System.EventHandler(this.buttonTambahKonten_Click);
-            // 
             // dataGridViewKonten
             // 
             this.dataGridViewKonten.AllowUserToAddRows = false;
@@ -80,14 +51,13 @@
             this.TanggalUpload,
             this.Id,
             this.Foto});
-            this.dataGridViewKonten.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dataGridViewKonten.Location = new System.Drawing.Point(13, 92);
-            this.dataGridViewKonten.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridViewKonten.Location = new System.Drawing.Point(14, 157);
+            this.dataGridViewKonten.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewKonten.Name = "dataGridViewKonten";
             this.dataGridViewKonten.RowHeadersWidth = 51;
             this.dataGridViewKonten.RowTemplate.Height = 24;
-            this.dataGridViewKonten.Size = new System.Drawing.Size(775, 305);
-            this.dataGridViewKonten.TabIndex = 2;
+            this.dataGridViewKonten.Size = new System.Drawing.Size(775, 304);
+            this.dataGridViewKonten.TabIndex = 55;
             this.dataGridViewKonten.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewKonten_CellContentClick);
             // 
             // Username
@@ -132,11 +102,11 @@
             this.buttonTutup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.buttonTutup.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonTutup.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.buttonTutup.Location = new System.Drawing.Point(643, 415);
+            this.buttonTutup.Location = new System.Drawing.Point(337, 475);
             this.buttonTutup.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonTutup.Name = "buttonTutup";
             this.buttonTutup.Size = new System.Drawing.Size(147, 47);
-            this.buttonTutup.TabIndex = 5;
+            this.buttonTutup.TabIndex = 56;
             this.buttonTutup.Text = "Tutup";
             this.buttonTutup.UseVisualStyleBackColor = false;
             this.buttonTutup.Click += new System.EventHandler(this.buttonTutup_Click);
@@ -145,32 +115,27 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = global::PamerYuk_Asgar.Properties.Resources.konten_1_10_2025;
-            this.pictureBox2.Location = new System.Drawing.Point(216, 9);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Location = new System.Drawing.Point(222, 26);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(368, 78);
+            this.pictureBox2.Size = new System.Drawing.Size(374, 114);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 53;
+            this.pictureBox2.TabIndex = 57;
             this.pictureBox2.TabStop = false;
             // 
-            // FormKonten
+            // FormTagMasuk
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::PamerYuk_Asgar.Properties.Resources.bg_konten;
-            this.ClientSize = new System.Drawing.Size(800, 474);
+            this.BackgroundImage = global::PamerYuk_Asgar.Properties.Resources.bg_detail_konten;
+            this.ClientSize = new System.Drawing.Size(800, 542);
+            this.Controls.Add(this.dataGridViewKonten);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.buttonTutup);
-            this.Controls.Add(this.dataGridViewKonten);
-            this.Controls.Add(this.buttonTambahKonten);
-            this.Controls.Add(this.buttonKontenSaya);
-            this.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "FormKonten";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FormKonten";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormKonten_FormClosing);
-            this.Load += new System.EventHandler(this.FormKonten_Load);
+            this.Name = "FormTagMasuk";
+            this.Text = "FormTagMasuk";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormTagMasuk_FormClosing);
+            this.Load += new System.EventHandler(this.FormTagMasuk_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKonten)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
@@ -179,15 +144,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Button buttonKontenSaya;
-        private System.Windows.Forms.Button buttonTambahKonten;
         private System.Windows.Forms.DataGridView dataGridViewKonten;
-        private System.Windows.Forms.Button buttonTutup;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Username;
         private System.Windows.Forms.DataGridViewTextBoxColumn Caption;
         private System.Windows.Forms.DataGridViewTextBoxColumn TanggalUpload;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewImageColumn Foto;
+        private System.Windows.Forms.Button buttonTutup;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

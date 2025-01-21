@@ -340,5 +340,61 @@ namespace Class_PamerYuk
             return squareImg;
         }
         #endregion
+
+        #region Tag
+
+        public static List<Konten> KontenTag(User userLogin, string cek = "")
+        {
+            string perintah = "select k.* from konten k inner join tag t on k.id = t.Konten_id where t.username = '" + userLogin.Username + "'";
+            if (cek == "")
+            {
+                perintah += " and t.dilihat = '0'";
+            }
+            MySqlDataReader hasil = Koneksi.JalankanPerintahSelect(perintah);
+
+            List<Konten> ListData = new List<Konten>();
+            while (hasil.Read() == true)
+            {
+                Konten tampung = new Konten();
+                tampung.Id = int.Parse(hasil.GetValue(0).ToString());
+                tampung.Caption = hasil.GetValue(1).ToString();
+                tampung.Foto = hasil.GetValue(2).ToString();
+                tampung.Video = hasil.GetValue(3).ToString();
+                tampung.TglUpload = DateTime.Parse(hasil.GetValue(4).ToString());
+                User user = new User();
+                user.Username = hasil.GetValue(5).ToString();
+                if (System.IO.File.Exists(tampung.Foto))
+                {
+                    tampung.Gambar = UbahUkuran(Image.FromFile(tampung.Foto), 189);
+                }
+                else
+                {
+                    tampung.Gambar = null;
+                }
+                tampung.User = user;
+                ListData.Add(tampung);
+            }
+            return ListData;
+        }
+        public static void UpdateTag(User userLogin)
+        {
+            string perintah = "UPDATE Tag SET dilihat = '" + 1 + "' where username = '" + userLogin.Username + "' ;";
+
+            Koneksi.JalankanPerintahNonQuery(perintah);
+        }
+
+        public static int TotalTag(User userLogin)
+        {
+            string perintah = "select count(dilihat) from tag where dilihat = '0' and username = '" + userLogin.Username + "' ;";
+            Koneksi.JalankanPerintahNonQuery(perintah);
+            MySqlDataReader hasil = Koneksi.JalankanPerintahSelect(perintah);
+            int total = 0;
+            while (hasil.Read() == true)
+            {
+                total = int.Parse(hasil.GetValue(0).ToString());
+            }
+            return total;
+        }
+        #endregion
     }
 }

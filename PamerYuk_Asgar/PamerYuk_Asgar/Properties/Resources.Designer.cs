@@ -403,6 +403,16 @@ namespace PamerYuk_Asgar.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap tag {
+            get {
+                object obj = ResourceManager.GetObject("tag", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap tambah_konten_1_10_2025 {
             get {
                 object obj = ResourceManager.GetObject("tambah_konten_1_10_2025", resourceCulture);
